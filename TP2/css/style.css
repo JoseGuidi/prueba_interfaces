@@ -1,49 +1,230 @@
-:root{
-    --Primario: #464646;
-    --PrimarioL1:#919191;
-    --PrimarioL2:#D9D9D9;
-    --PrimarioL3:#E6E5E5;
-    --PrimarioS1:#3F3F3F;
-    --PrimarioS2:#2A2A2A;
-    --Secundario: #BC1616;
-    --SecundarioL1:#DB1A1A;
-    --SecundarioL2:#FD2B2B;
-    --SecundarioS1:#921111;
-    --SecundarioS2:#500808;
-    --Blanco:#F8F8F8;
-    --Negro:#1F1A1F;
-    --Acento:#A2258E;
-    --Exito:#317028;
-    --ExitoS1:#2B6123;
-    --Error:#E81D1D;
+:root {
+  --Primario: #464646;
+  --PrimarioL1: #919191;
+  --PrimarioL2: #d9d9d9;
+  --PrimarioL3: #e6e5e5;
+  --PrimarioS1: #3f3f3f;
+  --PrimarioS2: #2a2a2a;
+  --Secundario: #bc1616;
+  --SecundarioL1: #db1a1a;
+  --SecundarioL2: #fd2b2b;
+  --SecundarioS1: #921111;
+  --SecundarioS2: #500808;
+  --Blanco: #f8f8f8;
+  --BlancoS1:#F3F3F3;
+  --Negro: #1f1a1f;
+  --Acento: #a2258e;
+  --Exito: #317028;
+  --ExitoS1: #2b6123;
+  --Error: #e81d1d;
 
-    --DegradeAcento: linear-gradient(97deg, #A2258E 30.73%, #670E59 89.24%);
-    
-    --font-family-Roboto: "Roboto", sans-serif;
-    --h1-banner-font-size: 60px;
-    --h1-banner-font-style: italic;
-    --h1-banner-font-weight: 700;
-    --h2-font-size: 35px;
-    --h2-font-weight: 800;
-    --h2-letter-spacing: 0.35px;
-    --h3-font-weight: 400;
-    --h3-letter-spacing: 0.27px;
-    --h4-font-weight: 400;
-    --h4-letter-spacing: 0.2px;
-    --body_bold_boton-font-size:16px;
-    --body-font-weight: 300;
-    --body-letter-spacing: 0.16px;
-    --bodyBold-weight: 600;
-    --enlace-font-weight: 500;
-    --enlace-letter-spacing: 0.16px;
-    --enlace-text-decoration-line: underline;
-    --boton-font-weight: 400;
-    --boton-letter-spacing: 0.16px;
+  --DegradeAcento: linear-gradient(97deg, #a2258e 30.73%, #670e59 89.24%);
 
-    --SombraCards: 1px 1px 8px 0px rgba(31, 26, 31, 0.75);
-    --SombraHeader:0px 1px 2px 0px rgba(79, 79, 79, 0.49);
-    --SombraMiPerfil:-2px -2px 10px 0px rgba(79, 79, 79, 0.45);
-    --SombraEsparcida:1px 1px 20px 0px rgba(31, 26, 31, 0.51);
-    --SombraChicaInputs:1px 1px 3px 0px rgba(113, 107, 107, 0.10);
+  --font-family-Roboto: "Roboto", sans-serif;
+  --h1-banner-font-size: 60px;
+  --h1-banner-font-style: italic;
+  --h1-banner-font-weight: 700;
+  --h2-font-size: 35px;
+  --h2-font-weight: 800;
+  --h2-letter-spacing: 0.35px;
+  --h3-font-size: 27px;
+  --h3-font-weight: 400;
+  --h3-letter-spacing: 0.27px;
+  --h4-font-weight: 400;
+  --h4-letter-spacing: 0.2px;
+  --body_bold_boton-font-size: 16px;
+  --body-font-weight: 300;
+  --body-letter-spacing: 0.16px;
+  --bodyBold-weight: 600;
+  --enlace-font-weight: 500;
+  --enlace-letter-spacing: 0.16px;
+  --enlace-text-decoration-line: underline;
+  --boton-font-weight: 400;
+  --boton-letter-spacing: 0.16px;
+
+  --SombraCards: 1px 1px 8px 0px rgba(31, 26, 31, 0.75);
+  --SombraHeader: 0px 1px 2px 0px rgba(79, 79, 79, 0.49);
+  --SombraMiPerfil: -2px -2px 10px 0px rgba(79, 79, 79, 0.45);
+  --SombraEsparcida: 1px 1px 20px 0px rgba(31, 26, 31, 0.51);
+  --SombraChicaInputs: 1px 1px 3px 0px rgba(113, 107, 107, 0.1);
+}
+* {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-family-Roboto);
+  box-sizing: border-box;
+}
+header {
+  background-color: var(--Primario);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding: 0 30px;
+}
+header div {
+  display: flex;
+  gap: 29px;
+  align-items: center;
+}
+header div img.logo {
+  height: 75px;
+}
+.fondo_ingreso {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../assets/images/fondo-login.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fondo_ingreso main {
+  display: flex;
+  width: 617px;
+  padding: 30px;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  background-color: var(--Blanco);
+  border-radius: 7px;
+}
+.fondo_ingreso section.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 50px;
+}
+.fondo_ingreso section.formulario div.cabecera {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.fondo_ingreso section.formulario h1 {
+  font-size: var(--h3-font-size);
+  font-weight: var(--h3-font-weight);
+  letter-spacing: var(--h3-letter-spacing);
+  color: var(--Negro);
+}
+.fondo_ingreso section.formulario h2 {
+  font-size: var(--body_bold_boton-font-size);
+  font-weight: var(--body-font-weight);
+  letter-spacing: var(--body-font-weight);
+  color: var(--Negro);
+}
+.fondo_ingreso section.formulario h2 a {
+  color: var(--Acento);
+  font: var(--body_bold_boton-font-size) var(--body-letter-spacing)
+    var(--body-font-weight);
 }
 
+.fondo_ingreso section.formulario form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.fondo_ingreso section.formulario form section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.fondo_ingreso section.formulario form section > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+}
+
+.fondo_ingreso section.formulario form section div label {
+  font: var(--body_bold_boton-font-size) var(--body-letter-spacing)
+    var(--body-font-weight);
+  color: var(--PrimarioL1);
+}
+.fondo_ingreso .contenedor_input {
+  position: relative;
+}
+.fondo_ingreso .contenedor_input input {
+  width: 350px;
+  height: 40px;
+  border-radius: 7px;
+  border: 1px solid var(--PrimarioL1);
+  background-color: var(--Blanco);
+  padding: 0 12px;
+}
+.fondo_ingreso .contenedor_input svg {
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  right: 12px;
+  top: 7px;
+}
+.fondo_ingreso form button {
+  display: flex;
+  width: 155px;
+  height: 36px;
+  padding: 9px 37px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 7px;
+  background: var(--Acento);
+  color: var(--Blanco);
+  font: var(--body_bold_boton-font-size) var(--boton-font-weight)
+    var(--boton-letter-spacing);
+  border: none;
+  cursor: pointer;
+}
+.fondo_ingreso form button:hover {
+  transition: 300ms ease-out;
+  background-color: #952583;
+}
+.fondo_ingreso .linea_divisora {
+  width: 557px;
+  height: 0.75px;
+  position: relative;
+  background-color: var(--PrimarioL2);
+}
+.fondo_ingreso .linea_divisora span {
+  padding: 0 10px;
+  position: absolute;
+  left: calc(50% - 29px / 2);
+  top: -9px;
+  background-color: var(--Blanco);
+}
+.fondo_ingreso .redes {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.fondo_ingreso .redes button{
+  display: flex;
+  width: 353px;
+  height: 40px;
+  padding: 10px 0px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 30px;
+  border: 0.5px solid var(--PrimarioL1);
+  background: var(--Blanco);
+  box-shadow: var(--SombraChicaInputs);
+  cursor: pointer;
+}
+.fondo_ingreso .redes button:hover{
+  background: var(--BlancoS1);
+  transition: 100ms ease-out;
+}
+.fondo_ingreso .redes button label{
+  font: var(--body_bold_boton-font-size) var(--boton-font-weight)
+    var(--boton-letter-spacing);
+  color: var(--Negro);
+}
