@@ -158,12 +158,19 @@ header div img.logo {
   background-color: var(--Blanco);
   padding: 0 12px;
 }
-.fondo_ingreso .contenedor_input svg {
+.fondo_ingreso .contenedor_input input::-webkit-calendar-picker-indicator {
+  background: none;
+}
+.fondo_ingreso .contenedor_input svg,.fondo_ingreso .contenedor_input img {
   width: 26px;
   height: 26px;
   position: absolute;
   right: 12px;
   top: 7px;
+}
+.fondo_ingreso .contenedor_input img{
+  width: 22px;
+  height: 22px;
 }
 .fondo_ingreso form button {
   display: flex;
