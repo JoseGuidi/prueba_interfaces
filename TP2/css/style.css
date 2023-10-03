@@ -33,7 +33,9 @@
   --h4-font-weight: 400;
   --h4-letter-spacing: 0.2px;
   --body_bold_boton-font-size: 16px;
+  --body-font-size:16px;
   --body-font-weight: 300;
+  --footer-font-opacity: 0.85;
   --body-letter-spacing: 0.16px;
   --bodyBold-weight: 600;
   --enlace-font-weight: 500;
@@ -234,4 +236,92 @@ header div img.logo {
   font: var(--body_bold_boton-font-size) var(--boton-font-weight)
     var(--boton-letter-spacing);
   color: var(--Negro);
+}
+footer{
+
+  max-height: 372px;
+  width: 100%;
+}
+.info_footer{
+  max-height: 372px;
+  display: flex;
+  padding: 92px 57px 93px 58px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Primario);
+}
+.info_footer_categorias{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 144px;
+
+}
+.secciones_footer{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+}
+.secciones_footer ul li:first-child{
+  font-family: var(--font-family-Roboto);
+  font-size: var(--body_bold_boton-font-size);
+  font-style: normal;
+  font-weight: var(--bodyBold-weight);
+  letter-spacing: var(--body-letter-spacing);
+  opacity: 1;
+}
+.secciones_footer ul li:last-child{
+  margin-bottom: 0;
+}
+.secciones_footer li{
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-bottom: 10px;
+  color: var(--Blanco);
+  font-family: var(--font-family-Roboto);
+  font-size: var(--body-font-size);
+  font-style: normal;
+  font-weight: var(--body-font-weight);
+  letter-spacing: var(--body-letter-spacing);
+  opacity: var(--footer-font-opacity);
+}
+.secciones_footer li svg{
+  margin-right: 5px;
+}
+.redes_footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.iconos_redes{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
+  align-self: stretch;
+  
+}
+.linea_separadora_icono{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 283px;
+  height: 1px;
+  background-color: var(--Blanco);
+}
+.contenedor_icono{
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+.logo_footer{
+  width: 279px;
+  height: 79px;
+}
+h3{
+  color: var(--Blanco);
+  font-size: var(--h3-font-size);
+  font-weight: var(--h3-font-weight);
+  letter-spacing: var(--h3-letter-spacing);
 }
