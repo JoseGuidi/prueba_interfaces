@@ -57,15 +57,33 @@
   font-family: var(--font-family-Roboto);
   box-sizing: border-box;
 }
-.h3 {
-  font: var(--h3-font-size) var(--h3-font-weight) var(--h3-letter-spacing);
+h2{
+  font-size: var(--h2-font-size);
+  font-weight: var(--h2-font-weight);
+  letter-spacing: var(--h2-letter-spacing);
 }
-.h4 {
-  font: var(--h4-font-size) var(--h4-font-weight) var(--h4-letter-spacing);
+h3 {
+  color: var(--Blanco);
+  font-size: var(--h3-font-size);
+  font-weight: var(--h3-font-weight);
+  letter-spacing: var(--h3-letter-spacing);
+}
+h4{
+  font-size:  var(--h4-font-size);
+  font-weight:  var(--h4-font-weight);
+  letter-spacing:  var(--h4-letter-spacing);
 }
 .font_boton {
-  font: var(--body_bold_boton-font-size) var(--boton-font-weight)
+  font-size:  var(--body_bold_boton-font-size);
+  font-weight:  var(--boton-font-weight);
+  letter-spacing: 
     var(--boton-letter-spacing);
+}
+.font_body{
+  font-size:  var(--body_bold_boton-font-size);
+  font-weight:  var(--body-font-weight);
+  letter-spacing: 
+    var(--body-letter-spacing);
 }
 .font_banner {
   font-size: 50px;
@@ -373,6 +391,9 @@ header div img.logo {
   border-radius: 7px;
   border: none;
 }
+.boton.primario{
+  background-color: var(--Primario);
+}
 .boton.violeta {
   background-color: var(--Acento);
 }
@@ -473,10 +494,4 @@ footer {
 .logo_footer {
   width: 279px;
   height: 79px;
-}
-h3 {
-  color: var(--Blanco);
-  font-size: var(--h3-font-size);
-  font-weight: var(--h3-font-weight);
-  letter-spacing: var(--h3-letter-spacing);
 }
