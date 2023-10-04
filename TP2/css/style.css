@@ -30,7 +30,7 @@
   --h3-font-size: 27px;
   --h3-font-weight: 400;
   --h3-letter-spacing: 0.27px;
-  --h4-font-size:20px;
+  --h4-font-size: 20px;
   --h4-font-weight: 400;
   --h4-letter-spacing: 0.2px;
   --body_bold_boton-font-size: 16px;
@@ -57,20 +57,21 @@
   font-family: var(--font-family-Roboto);
   box-sizing: border-box;
 }
-.h3{
-  font: var(--h3-font-size) var(--h3-font-weight) var(--h3-letter-spacing) 
+.h3 {
+  font: var(--h3-font-size) var(--h3-font-weight) var(--h3-letter-spacing);
 }
-.h4{
-  font: var(--h4-font-size) var(--h4-font-weight) var(--h4-letter-spacing) 
+.h4 {
+  font: var(--h4-font-size) var(--h4-font-weight) var(--h4-letter-spacing);
 }
-.font_boton{
-  font: var(--body_bold_boton-font-size) var(--boton-font-weight) var(--boton-letter-spacing) 
+.font_boton {
+  font: var(--body_bold_boton-font-size) var(--boton-font-weight)
+    var(--boton-letter-spacing);
 }
-.font_banner{
-font-size: 50px;
-font-style: italic;
-font-weight: 700;
-line-height: normal;
+.font_banner {
+  font-size: 50px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: normal;
 }
 header {
   background-color: var(--Primario);
@@ -255,41 +256,53 @@ header div img.logo {
     var(--boton-letter-spacing);
   color: var(--Negro);
 }
-/* BANNER */
+/* BANNERS */
+
+.carrusel_banners {
+  max-width: 1440px;
+  display: flex;
+  overflow-x: scroll;
+}
+
+.banner img.vs {
+  position: absolute;
+  width: 286px;
+  height: 316px;
+  bottom: 81px;
+  left: 881px;
+}
 
 
-
-
-.slider {
-  width: 100%;
+.banner {
+  width: 1440px;
   height: 530px;
-  overflow: hidden;
+ position: relative;
   display: flex;
   justify-content: space-between;
 }
-.slider img {
-  width: 100%;
-  height: 531px;
+.banner img {
+  width: 1014px;
 }
-.slider .informacion {
+.banner .informacion {
   position: relative;
   display: flex;
   align-items: center;
+  width: 589px;
 }
-.slider .informacion svg{
+.banner .informacion svg{
   position: absolute;
 }
-.slider .informacion svg.degrade{
+.banner .informacion svg.degrade{
 }
-.slider .informacion .mensaje {
+.banner .informacion .mensaje {
   z-index: 10;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   gap: 45px;
-  transform: translateX(calc(50% - 289px/2));
+  transform: translateX(60px);
 }
-.slider .informacion .mensaje > div{
+.banner .informacion .mensaje > div{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -309,11 +322,11 @@ header div img.logo {
   box-shadow: var(--SombraCards);
   overflow: hidden;
 }
-.card_juego img{
+.card_juego img {
   width: 374px;
   height: 220px;
 }
-.card_juego > div{
+.card_juego > div {
   display: flex;
   padding: 0px 14px 14px 14px;
   flex-direction: column;
@@ -321,19 +334,19 @@ header div img.logo {
   gap: 5px;
   align-self: stretch;
 }
-.card_juego > div h3{
+.card_juego > div h3 {
   text-overflow: ellipsis;
   overflow: hidden;
   color: var(--Negro);
 }
-.card_juego > div h4{
+.card_juego > div h4 {
   text-overflow: ellipsis;
   overflow: hidden;
   color: var(--PrimarioS1);
 }
 
 /* CARRUSEL*/
-.contenedor_carrusel{
+.contenedor_carrusel {
   width: 1440px;
   min-width: 320px;
   background-color: red;
@@ -342,15 +355,15 @@ header div img.logo {
   padding: 20px;
   gap: 30px;
 }
-.carrusel{
+.carrusel {
   display: flex;
   flex-direction: row;
   width: 100%;
   align-items: flex-start;
-  gap:20px;
+  gap: 20px;
 }
 
-.boton{
+.boton {
   display: flex;
   width: 155px;
   height: 36px;
@@ -360,33 +373,27 @@ header div img.logo {
   border-radius: 7px;
   border: none;
 }
-.boton.violeta{
+.boton.violeta {
   background-color: var(--Acento);
 }
-.boton.verde{
+.boton.verde {
   background-color: var(--Exito);
 }
-.boton.rojo{
+.boton.rojo {
   background-color: var(--Secundario);
 }
-.boton span{
+.boton span {
   color: var(--Blanco);
 }
-.boton .svg{
+.boton .svg {
   width: fit-content;
   height: fit-content;
 }
-body{
+body {
   display: flex;
   flex-direction: column;
   align-items: center;
   color: var(--Blanco);
-}
-.container{
-  max-width: 1440px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 footer {
