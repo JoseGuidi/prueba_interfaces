@@ -19,7 +19,13 @@
   --Error: #e81d1d;
 
   --DegradeAcento: linear-gradient(97deg, #a2258e 30.73%, #670e59 89.24%);
-  --DegradeRojoNaranja: linear-gradient(287deg, #F9A217 -20.3%, #E64E19 -12.35%, #DB1A1A -7.44%, #500808 97.12%);
+  --DegradeRojoNaranja: linear-gradient(
+    287deg,
+    #f9a217 -20.3%,
+    #e64e19 -12.35%,
+    #db1a1a -7.44%,
+    #500808 97.12%
+  );
   --font-family-Roboto: "Roboto", sans-serif;
   --h1-banner-font-size: 60px;
   --h1-banner-font-style: italic;
@@ -57,14 +63,14 @@
   font-family: var(--font-family-Roboto);
   box-sizing: border-box;
 }
-h1{
+h1 {
   font-size: var(--h1-banner-font-size);
   font-style: var(--h1-banner-font-style);
   font-weight: var(--h1-banner-font-weight);
   color: var(--Blanco);
   text-align: center;
 }
-h2{
+h2 {
   font-size: var(--h2-font-size);
   font-weight: var(--h2-font-weight);
   letter-spacing: var(--h2-letter-spacing);
@@ -75,23 +81,21 @@ h3 {
   font-weight: var(--h3-font-weight);
   letter-spacing: var(--h3-letter-spacing);
 }
-h4{
-  font-size:  var(--h4-font-size);
-  font-weight:  var(--h4-font-weight);
-  letter-spacing:  var(--h4-letter-spacing);
+h4 {
+  font-size: var(--h4-font-size);
+  font-weight: var(--h4-font-weight);
+  letter-spacing: var(--h4-letter-spacing);
 }
 .font_boton {
-  font-size:  var(--body_bold_boton-font-size);
-  font-weight:  var(--boton-font-weight);
-  letter-spacing: 
-    var(--boton-letter-spacing);
-    color: var(--Blanco);
+  font-size: var(--body_bold_boton-font-size);
+  font-weight: var(--boton-font-weight);
+  letter-spacing: var(--boton-letter-spacing);
+  color: var(--Blanco);
 }
-.font_body{
-  font-size:  var(--body_bold_boton-font-size);
-  font-weight:  var(--body-font-weight);
-  letter-spacing: 
-    var(--body-letter-spacing);
+.font_body {
+  font-size: var(--body_bold_boton-font-size);
+  font-weight: var(--body-font-weight);
+  letter-spacing: var(--body-letter-spacing);
   color: var(--Blanco);
 }
 .font_banner {
@@ -101,7 +105,7 @@ h4{
   line-height: normal;
 }
 
-.boton{
+.boton {
   display: flex;
   padding: 10px;
   justify-content: center;
@@ -111,8 +115,9 @@ h4{
   border: none;
   cursor: pointer;
   position: relative;
+  min-width: 125px;
 }
-.boton.primario{
+.boton.primario {
   background-color: var(--Primario);
 }
 .boton.violeta {
@@ -123,15 +128,15 @@ h4{
 }
 .boton.rojo {
   background-color: var(--Secundario);
-  min-width: 125px;
+  
 }
-.boton div{
+.boton div {
   position: relative;
 }
-.boton div svg{
+.boton div svg {
   position: absolute;
 }
-.boton .tilde{
+.boton .tilde {
   position: absolute;
   right: 9px;
   bottom: calc(50% + 9px / 2);
@@ -213,9 +218,8 @@ header > div a img {
   display: none;
 }
 
-
- /* CARD JUEGO */
- .card_juego {
+/* CARD JUEGO */
+.card_juego {
   display: flex;
   min-width: 265px;
   max-width: 265px;
@@ -238,12 +242,13 @@ header > div a img {
   align-items: flex-start;
   gap: 5px;
   align-self: stretch;
-  overflow:hidden;
+  overflow: hidden;
 }
 .card_juego > div h3 {
   width: calc(265px - 28px);
   text-overflow: ellipsis;
   overflow: hidden;
+  white-space: nowrap;
   color: var(--Negro);
 }
 .card_juego > div h4 {
@@ -251,84 +256,92 @@ header > div a img {
   overflow: hidden;
   color: var(--PrimarioS1);
 }
-.card_juego.conCinta{
+.card_juego.conCinta {
   position: relative;
   overflow: visible;
 }
-.card_juego img{
+.card_juego img {
   object-fit: cover;
 }
-.card_juego .contenedorImagen{
+.card_juego .contenedorImagen {
   padding: 0;
   border-top-right-radius: 7px;
   border-top-left-radius: 7px;
 }
-.card_juego .contenedor_cinta{
+.card_juego .contenedor_cinta {
   position: absolute;
   top: -28px;
   left: -17px;
   padding: 0;
-  
 }
-.cinta{
+.cinta {
   position: relative;
   height: 108px;
   width: 122px;
 }
-.cinta svg{
+.contenedor_juegos .card_juego.conCinta .cinta svg {
+  display: inline;
   position: absolute;
-  box-shadow: var(--SombraCards);
 }
-.cinta svg.izquierda{
+.cinta.carrito svg.medio path{
+  fill: var(--Acento);
+}
+.cinta.carrito svg.izquierda path,.cinta.carrito svg.derecha path{
+  fill: #6e1b60;
+}
+.cinta svg.izquierda {
   bottom: 0;
   left: 0;
   position: absolute;
-  box-shadow: var(--SombraCards);
+
 }
-.cinta svg.derecha{
+.cinta svg.derecha {
   right: 0;
   top: 5px;
   position: absolute;
   box-shadow: none;
 }
-.cinta p{
+.cinta p {
   position: absolute;
   color: var(--Blanco);
   rotate: -39deg;
   top: calc(108px / 2 - 33px / 2);
   left: calc(122px / 2 - 67px / 2);
 }
-.cinta.carrito p{
-  rotate: -35.5deg;
-  top: calc(108px / 2 - 33px / 2);
-  left: calc(122px / 2 - 80px / 2);
+.cinta.carrito p {
+  rotate: -40deg;
+  top: 48px;
+  left: 38px;
 }
-  /* CARRUSELES JUEGOS */
-        .carrusel_juegos{
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          
-        }
-        .carrusel_juegos h2{
-          margin-left: 12px;
-          font-size: 30px;
-        }
-        .carrusel_juegos > div{
-          display: flex;
-          align-items: center;
-        }
-        .carrusel_juegos > div svg{
-          display: none;
-        }
-        .carrusel_juegos > div .contenedor_juegos{
-          display: flex;
-          overflow-x: scroll;
-          width: calc(100vw - 30px);
-          max-width: 1440px;
-          gap: 20px;
-          padding: 30px 10px;
-        }
+.cinta.carrito p svg path{
+  stroke: var(--PrimarioL3);
+}
+/* CARRUSELES JUEGOS */
+.carrusel_juegos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.carrusel_juegos h2 {
+  margin-left: 12px;
+  font-size: 30px;
+}
+.carrusel_juegos > div {
+  display: flex;
+  align-items: center;
+}
+.carrusel_juegos > div svg {
+  display: none;
+}
+
+.carrusel_juegos > div .contenedor_juegos {
+  display: flex;
+  overflow-x: scroll;
+  width: calc(100vw - 30px);
+  max-width: 1440px;
+  gap: 20px;
+  padding: 30px 10px;
+}
 
 /* FOOTER */
 footer {
@@ -472,7 +485,6 @@ footer .bot {
     align-items: flex-start;
     gap: 10px;
   }
-  
 
   /*categorias populares*/
   .contenedor_general .contenedor_categorias {
@@ -515,24 +527,22 @@ footer .bot {
     fill: var(--SecundarioL1);
   }
   /* carruseles juego */
-  .carrusel_juegos h2{
+  .carrusel_juegos h2 {
     margin-left: 42px;
     font-size: var(--h2-font-size);
   }
-  .carrusel_juegos > div svg{
+  .carrusel_juegos > div svg {
     display: inline;
   }
-  .carrusel_juegos > div .contenedor_juegos{
+  .carrusel_juegos > div .contenedor_juegos {
     width: calc(100vw - 90px);
     overflow: hidden;
   }
 
   /*footer*/
-  .info_footer_categorias{
-      max-width: 1440px;
-      justify-content: space-between;
-      gap: 144px;
+  .info_footer_categorias {
+    max-width: 1440px;
+    justify-content: space-between;
+    gap: 144px;
   }
 }
-
-
