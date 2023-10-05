@@ -5,8 +5,277 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inicio - UP</title>
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      header {
+        width: 100%;
+        display: flex;
+        height: 100px;
+        padding: 0px 10px;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--Primario);
+      }
+      header > div {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+      }
+      header > div a img {
+        width: 200px;
+      }
+      .contenedor_general {
+        max-width: 600px;
+      }
+
+      /* BANNERS */
+
+      .carrusel_banner {
+        display: flex;
+        overflow-x: scroll;
+        width: 100vw;
+        align-self: center;
+        max-width: 430px;
+      }
+      .bannerCelu {
+        display: flex;
+        flex-direction: column;
+      }
+      .bannerCelu > img {
+        width: 430px;
+        height: 235px;
+      }
+      .bannerCelu .texto {
+        background: var(--DegradeRojoNaranja);
+        display: flex;
+        width: 430px;
+        padding: 15px 0px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 11px;
+        min-height: 120px;
+      }
+      .bannerCelu .texto h1 {
+        font-size: 40px;
+      }
+      .bannerCelu .texto button,
+      .bannerCompu .informacion button {
+        font-size: 30px;
+      }
+      .bannerCompu {
+        display: none;
+      }
+      .contenedor_general .pelotitas_banners {
+        display: none;
+      }
+      .contenedor_general .contenedor_categorias {
+        display: none;
+      }
+      /* FOOTER */
+      footer {
+        width: 100%;
+      }
+      .info_footer {
+        display: flex;
+        padding: 92px 57px 93px 58px;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--Primario);
+      }
+      .info_footer_categorias {
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 30px;
+      }
+      .secciones_footer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .secciones_footer ul li:first-child {
+        font-family: var(--font-family-Roboto);
+        font-size: var(--body_bold_boton-font-size);
+        font-style: normal;
+        font-weight: var(--bodyBold-weight);
+        letter-spacing: var(--body-letter-spacing);
+        opacity: 1;
+      }
+      .secciones_footer ul li:last-child {
+        margin-bottom: 0;
+      }
+      .secciones_footer li {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        margin-bottom: 10px;
+        color: var(--Blanco);
+        font-family: var(--font-family-Roboto);
+        font-size: var(--body-font-size);
+        font-style: normal;
+        font-weight: var(--body-font-weight);
+        letter-spacing: var(--body-letter-spacing);
+        opacity: var(--footer-font-opacity);
+      }
+      .secciones_footer li svg {
+        margin-right: 5px;
+      }
+      .redes_footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .iconos_redes {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 15px;
+        align-self: stretch;
+      }
+      .linea_separadora_icono {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 283px;
+        height: 1px;
+        background-color: var(--Blanco);
+      }
+      .contenedor_icono {
+        display: flex;
+        align-items: flex-end;
+        gap: 12px;
+      }
+      .logo_footer {
+        width: 279px;
+        height: 79px;
+      }
+      footer .bot {
+        display: flex;
+        height: 52px;
+        justify-content: center;
+        align-items: center;
+        background: var(--PrimarioS2);
+      }
+
+      @media only screen and (min-width: 1024px) {
+        header {
+          padding: 0 30px;
+        }
+        header > div a img {
+          width: 283px;
+        }
+        .contenedor_general {
+          max-width: none;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        /* BANNERS */
+        .carrusel_banner {
+          width: 100%;
+          max-width: 1440px;
+        }
+        .bannerCelu {
+          display: none;
+        }
+        .bannerCompu {
+          width: 1440px;
+          height: 530px;
+          position: relative;
+          display: flex;
+          justify-content: space-between;
+        }
+        .bannerCompu img {
+          width: 1014px;
+        }
+        .bannerCompu .informacion {
+          position: relative;
+          display: flex;
+          align-items: center;
+          width: 455px;
+        }
+        .bannerCompu .informacion svg {
+          position: absolute;
+        }
+
+        .bannerCompu .informacion .mensaje {
+          z-index: 10;
+          display: inline-flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 45px;
+          transform: translateX(60px);
+        }
+        .bannerCompu .informacion .mensaje > div {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
+        .contenedor_general .pelotitas_banners {
+          display: flex;
+          align-items: flex-end;
+          gap: 35px;
+          margin-top: 20px;
+        }
+
+        /*categorias populares*/
+        .contenedor_general .contenedor_categorias {
+          display: flex;
+          padding: 22px 10px;
+          justify-content: center;
+          align-items: center;
+          gap: 35px;
+          align-self: stretch;
+        }
+        .categoria_popular {
+          display: flex;
+          width: 110px;
+          height: 110px;
+          padding: 22px 13px 25px 14px;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 6.764px;
+          border-radius: 1540px;
+          background-color: var(--Blanco);
+          box-shadow: var(--SombraHeader);
+          cursor: pointer;
+        }
+        .categoria_popular label {
+          color: var(--SecundarioL1);
+          font-size: var(--body-font-size);
+          font-weight: var(--bodyBold-weight);
+          letter-spacing: var(--body-letter-spacing);
+        }
+        .icono_categoria {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .icono_categoria svg {
+          width: 31.72px;
+          height: 37.236px;
+          fill: var(--SecundarioL1);
+        }
+
+        /*footer*/
+        .info_footer_categorias{
+            max-width: 1440px;
+            justify-content: space-between;
+            gap: 144px;
+        }
+      }
+    </style>
   </head>
-  
+  <body>
     <header>
       <div>
         <svg
@@ -21,11 +290,9 @@
             fill="#F8F8F8"
           />
         </svg>
-        <img
-          class="logo"
-          src="assets/images/logo.png"
-          alt="Logo de Universo Pixelado"
-        />
+        <a href="index.html">
+          <img src="assets/images/logo.png" alt="Logo de UP" />
+        </a>
       </div>
       <div>
         <svg
@@ -35,888 +302,330 @@
           viewBox="0 0 32 34"
           fill="none"
         >
-          <g clip-path="url(#clip0_104_652)">
+          <g clip-path="url(#clip0_603_468)">
             <path
               d="M0 1.57895C0 0.703947 0.594445 0 1.33333 0H3.86111C5.08333 0 6.16667 0.842105 6.67222 2.10526H29.5056C30.9667 2.10526 32.0333 3.75 31.65 5.42105L29.3722 15.4408C28.9 17.5066 27.3167 18.9474 25.5111 18.9474H9.48333L9.78333 20.8224C9.90556 21.5658 10.4556 22.1053 11.0944 22.1053H27.1111C27.85 22.1053 28.4444 22.8092 28.4444 23.6842C28.4444 24.5592 27.85 25.2632 27.1111 25.2632H11.0944C9.17222 25.2632 7.52222 23.6447 7.16667 21.4145L4.3 3.58553C4.26111 3.33553 4.07778 3.15789 3.86111 3.15789H1.33333C0.594445 3.15789 0 2.45395 0 1.57895ZM7.11111 30.5263C7.11111 30.1116 7.18009 29.701 7.3141 29.3178C7.44811 28.9347 7.64454 28.5866 7.89216 28.2933C8.13978 28.0001 8.43375 27.7675 8.75729 27.6088C9.08082 27.4501 9.42759 27.3684 9.77778 27.3684C10.128 27.3684 10.4747 27.4501 10.7983 27.6088C11.1218 27.7675 11.4158 28.0001 11.6634 28.2933C11.911 28.5866 12.1074 28.9347 12.2415 29.3178C12.3755 29.701 12.4444 30.1116 12.4444 30.5263C12.4444 30.941 12.3755 31.3517 12.2415 31.7348C12.1074 32.1179 11.911 32.466 11.6634 32.7593C11.4158 33.0525 11.1218 33.2851 10.7983 33.4438C10.4747 33.6025 10.128 33.6842 9.77778 33.6842C9.42759 33.6842 9.08082 33.6025 8.75729 33.4438C8.43375 33.2851 8.13978 33.0525 7.89216 32.7593C7.64454 32.466 7.44811 32.1179 7.3141 31.7348C7.18009 31.3517 7.11111 30.941 7.11111 30.5263ZM25.7778 27.3684C26.485 27.3684 27.1633 27.7011 27.6634 28.2933C28.1635 28.8856 28.4444 29.6888 28.4444 30.5263C28.4444 31.3638 28.1635 32.1671 27.6634 32.7593C27.1633 33.3515 26.485 33.6842 25.7778 33.6842C25.0705 33.6842 24.3923 33.3515 23.8922 32.7593C23.3921 32.1671 23.1111 31.3638 23.1111 30.5263C23.1111 29.6888 23.3921 28.8856 23.8922 28.2933C24.3923 27.7011 25.0705 27.3684 25.7778 27.3684Z"
               fill="#F8F8F8"
             />
           </g>
           <defs>
-            <clipPath id="clip0_104_652">
+            <clipPath id="clip0_603_468">
               <rect width="32" height="34" fill="white" />
             </clipPath>
           </defs>
         </svg>
-        <img
-          src="assets/images/foto-perfil.png"
-          alt="Foto de perfil del usuario"
-        />
+        <img src="assets/images/foto-perfil.png" alt="Foto de perfil" />
       </div>
     </header>
-    <!--<div class="container">
-
-        
-        
-        
-        
-
-        
-
-        
-
-        
-    </div>-->
-    <div class="container">
-        <div class="carrusel_banners">
-            <div class="banner">
-                <div class="informacion">
-                <svg
-                    
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="589"
-                    height="530"
-                    viewBox="0 0 589 530"
-                    fill="none"
-                >
-                    <path d="M0 0H445L589 252L445 530.5H0V0Z" fill="#921111" />
-                </svg>
-                <svg
-                class="degrade"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="578"
-                    height="530"
-                    viewBox="0 0 578 530"
-                    fill="none"
-                >
-                    <path
-                    d="M0 0H434L578 250L432.5 530.5H0V0Z"
-                    fill="url(#paint0_linear_50_190)"
-                    />
-                    <defs>
-                    <linearGradient
-                        id="paint0_linear_50_190"
-                        x1="822.999"
-                        y1="318"
-                        x2="-63.5"
-                        y2="25.5001"
-                        gradientUnits="userSpaceOnUse"
-                    >
-                        <stop offset="0.0224164" stop-color="#F9A217" />
-                        <stop offset="0.0833333" stop-color="#E64E19" />
-                        <stop offset="0.120928" stop-color="#DB1A1A" />
-                        <stop offset="0.921875" stop-color="#500808" />
-                    </linearGradient>
-                    </defs>
-                </svg>
-                <div class="mensaje">
-                    <div>
-                    <h1 class="font_banner">VIALE VS SAMID</h1>
-                    <h2 class="h3">
-                        Reviví el historico momento de la television argentina jugando a
-                        nuestro 4 en linea y descubre quien ganaria en la actualidad
-                    </h2>
-                    </div>
-                    <button class="boton violeta">JUEGA YA!</button>
-                </div>
-                </div>
-                <img src="assets/images/portadas/vialevssamid.png" alt="Juego 4 en linea" />
-                <img src="assets/images/vspng.png" class="vs" alt="Dibujo VS">
-            </div>
-        <div class="banner">
-            <div class="informacion">
+    <div class="contenedor_general">
+      <section class="carrusel_banner">
+        <div class="bannerCelu">
+          <img
+            src="assets/images/portadas/vialevssamid.png"
+            alt="Portada del juego Viale VS Samid"
+          />
+          <div class="texto">
+            <h1>VIALE VS SAMID</h1>
+            <button class="boton violeta font_boton">JUEGA YA!</button>
+          </div>
+        </div>
+        <div class="bannerCelu">
+          <img
+            src="assets/images/portadas/Sniper.png"
+            alt="Portada del juego Sniper"
+          />
+          <div class="texto">
+            <h1>SNIPER ELITE 4</h1>
+            <button class="boton violeta font_boton">CONSEGUILO HOY</button>
+          </div>
+        </div>
+        <div class="bannerCelu">
+          <img
+            src="assets/images/portadas/uno.png"
+            alt="Portada del juego Uno"
+          />
+          <div class="texto">
+            <h1>UNO</h1>
+            <button class="boton violeta font_boton">JUEGA YA!</button>
+          </div>
+        </div>
+        <div class="bannerCompu">
+          <div class="informacion">
             <svg
-                
-                xmlns="http://www.w3.org/2000/svg"
-                width="589"
-                height="530"
-                viewBox="0 0 589 530"
-                fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              width="589"
+              height="530"
+              viewBox="0 0 589 530"
+              fill="none"
             >
-                <path d="M0 0H445L589 252L445 530.5H0V0Z" fill="#921111" />
+              <path d="M0 0H445L589 252L445 530.5H0V0Z" fill="#921111" />
             </svg>
             <svg
-            class="degrade"
-                xmlns="http://www.w3.org/2000/svg"
-                width="578"
-                height="530"
-                viewBox="0 0 578 530"
-                fill="none"
+              class="degrade"
+              xmlns="http://www.w3.org/2000/svg"
+              width="578"
+              height="530"
+              viewBox="0 0 578 530"
+              fill="none"
             >
-                <path
+              <path
                 d="M0 0H434L578 250L432.5 530.5H0V0Z"
                 fill="url(#paint0_linear_50_190)"
-                />
-                <defs>
+              />
+              <defs>
                 <linearGradient
-                    id="paint0_linear_50_190"
-                    x1="822.999"
-                    y1="318"
-                    x2="-63.5"
-                    y2="25.5001"
-                    gradientUnits="userSpaceOnUse"
+                  id="paint0_linear_50_190"
+                  x1="822.999"
+                  y1="318"
+                  x2="-63.5"
+                  y2="25.5001"
+                  gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.0224164" stop-color="#F9A217" />
-                    <stop offset="0.0833333" stop-color="#E64E19" />
-                    <stop offset="0.120928" stop-color="#DB1A1A" />
-                    <stop offset="0.921875" stop-color="#500808" />
+                  <stop offset="0.0224164" stop-color="#F9A217" />
+                  <stop offset="0.0833333" stop-color="#E64E19" />
+                  <stop offset="0.120928" stop-color="#DB1A1A" />
+                  <stop offset="0.921875" stop-color="#500808" />
                 </linearGradient>
-                </defs>
+              </defs>
             </svg>
             <div class="mensaje">
-                <div>
+              <div>
+                <h1 class="font_banner">VIALE VS SAMID</h1>
+                <h3>
+                  Reviví el historico momento de la television argentina jugando
+                  a nuestro 4 en linea y descubre quien ganaria en la actualidad
+                </h3>
+              </div>
+              <button class="boton violeta font_boton">JUEGA YA!</button>
+            </div>
+          </div>
+          <img
+            src="assets/images/portadas/vialevssamid.png"
+            alt="Juego 4 en linea"
+          />
+        </div>
+        <div class="bannerCompu">
+          <div class="informacion">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="589"
+              height="530"
+              viewBox="0 0 589 530"
+              fill="none"
+            >
+              <path d="M0 0H445L589 252L445 530.5H0V0Z" fill="#921111" />
+            </svg>
+            <svg
+              class="degrade"
+              xmlns="http://www.w3.org/2000/svg"
+              width="578"
+              height="530"
+              viewBox="0 0 578 530"
+              fill="none"
+            >
+              <path
+                d="M0 0H434L578 250L432.5 530.5H0V0Z"
+                fill="url(#paint0_linear_50_190)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_50_190"
+                  x1="822.999"
+                  y1="318"
+                  x2="-63.5"
+                  y2="25.5001"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.0224164" stop-color="#F9A217" />
+                  <stop offset="0.0833333" stop-color="#E64E19" />
+                  <stop offset="0.120928" stop-color="#DB1A1A" />
+                  <stop offset="0.921875" stop-color="#500808" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="mensaje">
+              <div>
                 <h1 class="font_banner">¿ESTÁS LISTO?</h1>
-                <h2 class="h3">
-                    Ayuda al teniente Karl Fairburne a liberar a sus compatiotras en está aventura única en Italia
-                </h2>
-                </div>
-                <button class="boton violeta">CONSEGUILO HOY</button>
+                <h3>
+                  Ayuda al teniente Karl Fairburne a liberar a sus compatiotras
+                  en está aventura única en Italia
+                </h3>
+              </div>
+              <button class="boton violeta font_boton">CONSEGUILO HOY</button>
             </div>
-            </div>
-            <img src="assets/images/portadas/Sniper.png" alt="Juego Sniper" />
+          </div>
+          <img src="assets/images/portadas/Sniper.png" alt="Juego Sniper" />
         </div>
-        <div class="banner">
-            <div class="informacion">
+        <div class="bannerCompu">
+          <div class="informacion">
             <svg
-                
-                xmlns="http://www.w3.org/2000/svg"
-                width="589"
-                height="530"
-                viewBox="0 0 589 530"
-                fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              width="589"
+              height="530"
+              viewBox="0 0 589 530"
+              fill="none"
             >
-                <path d="M0 0H445L589 252L445 530.5H0V0Z" fill="#921111" />
+              <path d="M0 0H445L589 252L445 530.5H0V0Z" fill="#921111" />
             </svg>
             <svg
-            class="degrade"
-                xmlns="http://www.w3.org/2000/svg"
-                width="578"
-                height="530"
-                viewBox="0 0 578 530"
-                fill="none"
+              class="degrade"
+              xmlns="http://www.w3.org/2000/svg"
+              width="578"
+              height="530"
+              viewBox="0 0 578 530"
+              fill="none"
             >
-                <path
+              <path
                 d="M0 0H434L578 250L432.5 530.5H0V0Z"
                 fill="url(#paint0_linear_50_190)"
-                />
-                <defs>
+              />
+              <defs>
                 <linearGradient
-                    id="paint0_linear_50_190"
-                    x1="822.999"
-                    y1="318"
-                    x2="-63.5"
-                    y2="25.5001"
-                    gradientUnits="userSpaceOnUse"
+                  id="paint0_linear_50_190"
+                  x1="822.999"
+                  y1="318"
+                  x2="-63.5"
+                  y2="25.5001"
+                  gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.0224164" stop-color="#F9A217" />
-                    <stop offset="0.0833333" stop-color="#E64E19" />
-                    <stop offset="0.120928" stop-color="#DB1A1A" />
-                    <stop offset="0.921875" stop-color="#500808" />
+                  <stop offset="0.0224164" stop-color="#F9A217" />
+                  <stop offset="0.0833333" stop-color="#E64E19" />
+                  <stop offset="0.120928" stop-color="#DB1A1A" />
+                  <stop offset="0.921875" stop-color="#500808" />
                 </linearGradient>
-                </defs>
+              </defs>
             </svg>
             <div class="mensaje">
-                <div>
+              <div>
                 <h1 class="font_banner">¡LLEGÓ EL UNO!</h1>
-                <h2 class="h3">
-                    El juego mas divertido de cartas ya se encuentra disponible únicamente en nuestra web, juega con tus amigos de manera gratuita.
-                </h2>
-                </div>
-                <button class="boton violeta">JUEGA YA!</button>
+                <h3>
+                  El juego mas divertido de cartas ya se encuentra disponible
+                  únicamente en nuestra web, juega con tus amigos de manera
+                  gratuita.
+                </h3>
+              </div>
+              <button class="boton violeta font_boton">JUEGA YA!</button>
             </div>
-            </div>
-            <img src="assets/images/portadas/uno.png" alt="UNO online" />
+          </div>
+          <img src="assets/images/portadas/uno.png" alt="UNO online" />
         </div>
+      </section>
+      <section class="pelotitas_banners">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="15"
+          viewBox="0 0 16 15"
+          fill="none"
+        >
+          <circle cx="8" cy="7.5" r="7.5" fill="#919191" fill-opacity="0.5" />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="15"
+          viewBox="0 0 16 15"
+          fill="none"
+        >
+          <circle cx="8" cy="7.5" r="7.5" fill="#919191" fill-opacity="0.5" />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="15"
+          viewBox="0 0 16 15"
+          fill="none"
+        >
+          <circle cx="8" cy="7.5" r="7.5" fill="#919191" fill-opacity="0.5" />
+        </svg>
+      </section>
+      <section class="contenedor_categorias">
+        <div class="categoria_popular">
+          <div class="icono_categoria">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="38"
+              viewBox="0 0 32 38"
+              fill="none"
+            >
+              <path
+                d="M28.2721 0H3.44783C2.53341 0 1.65645 0.363252 1.00986 1.00984C0.363264 1.65644 1.25534e-05 2.5334 1.25534e-05 3.44782V11.152C-0.00121394 11.6049 0.0874443 12.0536 0.260852 12.472C0.434259 12.8904 0.688968 13.2703 1.01022 13.5896L2.75827 15.3428V33.7887C2.75827 34.7031 3.12152 35.58 3.76811 36.2266C4.41471 36.8732 5.29167 37.2365 6.20609 37.2365H25.5139C26.4283 37.2365 27.3053 36.8732 27.9519 36.2266C28.5985 35.58 28.9617 34.7031 28.9617 33.7887V15.3428L30.7098 13.5948C31.0316 13.2749 31.2867 12.8942 31.4601 12.4748C31.6336 12.0554 31.7219 11.6058 31.72 11.152V3.44782C31.72 2.5334 31.3567 1.65644 30.7101 1.00984C30.0635 0.363252 29.1866 0 28.2721 0ZM17.9287 33.0991H13.7913V22.7556C13.7913 22.207 14.0092 21.6808 14.3972 21.2928C14.7852 20.9049 15.3113 20.6869 15.86 20.6869C16.4086 20.6869 16.9348 20.9049 17.3228 21.2928C17.7107 21.6808 17.9287 22.207 17.9287 22.7556V33.0991ZM27.5826 10.8606L25.8345 12.6139C25.5133 12.9331 25.2586 13.313 25.0852 13.7314C24.9118 14.1499 24.8231 14.5985 24.8243 15.0515V33.0991H22.0661V22.7556C22.0661 21.1097 21.4122 19.5311 20.2484 18.3673C19.0845 17.2034 17.5059 16.5495 15.86 16.5495C14.214 16.5495 12.6355 17.2034 11.4716 18.3673C10.3078 19.5311 9.65391 21.1097 9.65391 22.7556V33.0991H6.89566V15.0515C6.89688 14.5985 6.80822 14.1499 6.63482 13.7314C6.46141 13.313 6.2067 12.9331 5.88544 12.6139L4.1374 10.8606V4.13739H8.96435V8.27477C8.96435 8.82342 9.1823 9.3496 9.57025 9.73756C9.95821 10.1255 10.4844 10.3435 11.033 10.3435C11.5817 10.3435 12.1079 10.1255 12.4958 9.73756C12.8838 9.3496 13.1017 8.82342 13.1017 8.27477V4.13739H18.6182V8.27477C18.6182 8.82342 18.8362 9.3496 19.2242 9.73756C19.6121 10.1255 20.1383 10.3435 20.6869 10.3435C21.2356 10.3435 21.7618 10.1255 22.1497 9.73756C22.5377 9.3496 22.7556 8.82342 22.7556 8.27477V4.13739H27.5826V10.8606Z"
+                fill="#DB1A1A"
+              />
+            </svg>
+          </div>
+          <label for="">AVENTURA</label>
         </div>
-        <div class="contenedor_categorias">
-            <div class="categoria_popular">
-                <div class="icono_categoria">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="38" viewBox="0 0 32 38" fill="none">
-                        <path d="M28.2721 0H3.44783C2.53341 0 1.65645 0.363252 1.00986 1.00984C0.363264 1.65644 1.25534e-05 2.5334 1.25534e-05 3.44782V11.152C-0.00121394 11.6049 0.0874443 12.0536 0.260852 12.472C0.434259 12.8904 0.688968 13.2703 1.01022 13.5896L2.75827 15.3428V33.7887C2.75827 34.7031 3.12152 35.58 3.76811 36.2266C4.41471 36.8732 5.29167 37.2365 6.20609 37.2365H25.5139C26.4283 37.2365 27.3053 36.8732 27.9519 36.2266C28.5985 35.58 28.9617 34.7031 28.9617 33.7887V15.3428L30.7098 13.5948C31.0316 13.2749 31.2867 12.8942 31.4601 12.4748C31.6336 12.0554 31.7219 11.6058 31.72 11.152V3.44782C31.72 2.5334 31.3567 1.65644 30.7101 1.00984C30.0635 0.363252 29.1866 0 28.2721 0ZM17.9287 33.0991H13.7913V22.7556C13.7913 22.207 14.0092 21.6808 14.3972 21.2928C14.7852 20.9049 15.3113 20.6869 15.86 20.6869C16.4086 20.6869 16.9348 20.9049 17.3228 21.2928C17.7107 21.6808 17.9287 22.207 17.9287 22.7556V33.0991ZM27.5826 10.8606L25.8345 12.6139C25.5133 12.9331 25.2586 13.313 25.0852 13.7314C24.9118 14.1499 24.8231 14.5985 24.8243 15.0515V33.0991H22.0661V22.7556C22.0661 21.1097 21.4122 19.5311 20.2484 18.3673C19.0845 17.2034 17.5059 16.5495 15.86 16.5495C14.214 16.5495 12.6355 17.2034 11.4716 18.3673C10.3078 19.5311 9.65391 21.1097 9.65391 22.7556V33.0991H6.89566V15.0515C6.89688 14.5985 6.80822 14.1499 6.63482 13.7314C6.46141 13.313 6.2067 12.9331 5.88544 12.6139L4.1374 10.8606V4.13739H8.96435V8.27477C8.96435 8.82342 9.1823 9.3496 9.57025 9.73756C9.95821 10.1255 10.4844 10.3435 11.033 10.3435C11.5817 10.3435 12.1079 10.1255 12.4958 9.73756C12.8838 9.3496 13.1017 8.82342 13.1017 8.27477V4.13739H18.6182V8.27477C18.6182 8.82342 18.8362 9.3496 19.2242 9.73756C19.6121 10.1255 20.1383 10.3435 20.6869 10.3435C21.2356 10.3435 21.7618 10.1255 22.1497 9.73756C22.5377 9.3496 22.7556 8.82342 22.7556 8.27477V4.13739H27.5826V10.8606Z" fill="#DB1A1A"/>
-                    </svg>
-                </div>
-                <label for="">AVENTURA</label>
-            </div>
-            <div class="categoria_popular">
-                <div class="icono_categoria">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
-                        <path d="M33.3889 6.76079e-09H22.2603C22.0473 -2.09944e-05 21.8371 0.0488854 21.6459 0.142948C21.4548 0.23701 21.2878 0.373715 21.1579 0.54252L10.0293 15.0115L8.34952 13.3352C8.09114 13.0765 7.7843 12.8713 7.44655 12.7313C7.1088 12.5913 6.74677 12.5192 6.38115 12.5192C6.01553 12.5192 5.6535 12.5913 5.31575 12.7313C4.978 12.8713 4.67116 13.0765 4.41277 13.3352L2.20618 15.5436C1.94776 15.8019 1.74277 16.1086 1.60292 16.4462C1.46306 16.7838 1.39108 17.1456 1.39108 17.5111C1.39108 17.8765 1.46306 18.2383 1.60292 18.5759C1.74277 18.9135 1.94776 19.2202 2.20618 19.4786L5.68387 22.9563L0.815099 27.825C0.556685 28.0834 0.351696 28.3901 0.21184 28.7277C0.0719836 29.0653 0 29.4271 0 29.7925C0 30.1579 0.0719836 30.5198 0.21184 30.8574C0.351696 31.195 0.556685 31.5017 0.815099 31.76L3.0217 33.9649C3.5434 34.4863 4.25077 34.7791 4.98833 34.7791C5.72589 34.7791 6.43326 34.4863 6.95497 33.9649L11.8237 29.0961L15.3014 32.5738C15.5598 32.8325 15.8667 33.0377 16.2044 33.1777C16.5422 33.3177 16.9042 33.3898 17.2698 33.3898C17.6354 33.3898 17.9975 33.3177 18.3352 33.1777C18.673 33.0377 18.9798 32.8325 19.2382 32.5738L21.4448 30.3655C21.7032 30.1071 21.9082 29.8004 22.048 29.4628C22.1879 29.1252 22.2599 28.7634 22.2599 28.398C22.2599 28.0326 22.1879 27.6707 22.048 27.3331C21.9082 26.9956 21.7032 26.6888 21.4448 26.4305L19.7685 24.7542L34.2375 13.6256C34.4067 13.4953 34.5437 13.3278 34.6378 13.136C34.7319 12.9442 34.7805 12.7333 34.78 12.5197V1.39108C34.78 1.02214 34.6334 0.668315 34.3726 0.407437C34.1117 0.14656 33.7579 6.76079e-09 33.3889 6.76079e-09ZM4.99181 31.9948L2.78521 29.7899L7.65398 24.9212L9.85884 27.126L4.99181 31.9948ZM17.2698 30.6037L4.17629 17.5119L6.38463 15.3019L19.4781 28.3971L17.2698 30.6037ZM31.9978 11.8346L17.7845 22.7685L15.8822 20.8662L24.6356 12.1128C24.8964 11.8518 25.0428 11.4979 25.0426 11.1289C25.0424 10.7599 24.8957 10.4061 24.6347 10.1453C24.3737 9.88451 24.0197 9.73809 23.6508 9.73825C23.2818 9.73842 22.928 9.88515 22.6672 10.1462L13.9138 18.8978L12.0133 16.9955L22.9454 2.78216H31.9978V11.8346Z" fill="#DB1A1A"/>
-                    </svg>
-                </div>
-                <label for="">ACCION</label>
-            </div>
-            <div class="categoria_popular">
-                <div class="icono_categoria">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37" fill="none">
-                        <path d="M37.085 20.7977C37.085 23.9807 34.734 26.6211 31.6595 27.0551V32.553C31.6595 33.5123 31.2784 34.4323 30.6001 35.1106C29.9218 35.7889 29.0018 36.17 28.0425 36.17H21.1702V35.6274C21.1702 34.3324 20.6557 33.0904 19.74 32.1747C18.8243 31.2589 17.5823 30.7445 16.2873 30.7445C13.5745 30.7445 11.4043 32.9328 11.4043 35.6274V36.17H4.532C3.57271 36.17 2.65271 35.7889 1.9744 35.1106C1.29608 34.4323 0.915001 33.5123 0.915001 32.553V25.6807H1.45755C4.15222 25.6807 6.3405 23.5105 6.3405 20.7977C6.3405 18.085 4.15222 15.9148 1.45755 15.9148H0.915001V9.04247C0.915001 8.08318 1.29608 7.16318 1.9744 6.48486C2.65271 5.80654 3.57271 5.42547 4.532 5.42547H10.0298C10.4639 2.35102 13.1043 -3.05176e-05 16.2873 -3.05176e-05C19.4702 -3.05176e-05 22.1106 2.35102 22.5447 5.42547H28.0425C29.0018 5.42547 29.9218 5.80654 30.6001 6.48486C31.2784 7.16318 31.6595 8.08318 31.6595 9.04247V14.5403C34.734 14.9743 37.085 17.6148 37.085 20.7977ZM28.0425 23.5105H30.7552C31.4747 23.5105 32.1647 23.2247 32.6735 22.7159C33.1822 22.2072 33.468 21.5172 33.468 20.7977C33.468 20.0783 33.1822 19.3883 32.6735 18.8795C32.1647 18.3708 31.4747 18.085 30.7552 18.085H28.0425V9.04247H19V6.32972C19 5.61025 18.7142 4.92025 18.2055 4.41152C17.6967 3.90278 17.0067 3.61697 16.2873 3.61697C15.5678 3.61697 14.8778 3.90278 14.369 4.41152C13.8603 4.92025 13.5745 5.61025 13.5745 6.32972V9.04247H4.532V12.8765C7.71496 14.1063 9.9575 17.1807 9.9575 20.7977C9.9575 24.4147 7.69688 27.4892 4.532 28.7189V32.553H8.36602C8.98573 30.9556 10.0737 29.5829 11.4872 28.6147C12.9008 27.6465 14.5739 27.1281 16.2873 27.1275C19.9043 27.1275 22.9787 29.3881 24.2085 32.553H28.0425V23.5105Z" fill="#DB1A1A"/>
-                    </svg>
-                </div>
-                <label for="">PUZZLE</label>
-            </div>
-            <div class="categoria_popular">
-                <div class="icono_categoria">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="30" viewBox="0 0 42 30" fill="none">
-                        <path d="M10.68 -2L13.8 3.23077H7.56L6.12 11.0769H2.28L3.72 3.23077H-0.12L-3 18.9231H4.68L3.72 24.1538H10.44L5.4 32H11.04L15.72 24.1538H26.28L30.96 32H36.6L31.56 24.1538H38.28L37.32 18.9231H45L42.12 3.23077H38.28L39.72 11.0769H35.88L34.44 3.23077H28.2L31.32 -2H27.24L23.88 3.23077H18.12L14.76 -2H10.68ZM11.16 8.46154H15V13.6923H11.16V8.46154ZM27.01 8.46154H30.85V13.6923H27.01V8.46154Z" fill="#DB1A1A"/>
-                    </svg>
-                </div>
-                <label for="">RETRO</label>
-            </div>
-            <div class="categoria_popular">
-                <div class="icono_categoria">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="41" viewBox="0 0 33 41" fill="none">
-                        <path d="M9.94925 13.4559L9.94561 13.4577L9.94015 13.4613L9.94925 13.4559ZM28.0601 13.1156C27.9335 12.9935 27.7931 12.8866 27.6416 12.7972C27.4272 12.671 27.1892 12.5901 26.9423 12.5595C26.6953 12.5289 26.4448 12.5492 26.206 12.6193C25.9673 12.6894 25.7455 12.8077 25.5543 12.9669C25.363 13.1262 25.2065 13.3229 25.0944 13.545C24.4678 14.7803 23.6033 15.8796 22.5508 16.78C22.7122 15.8731 22.7938 14.9538 22.7946 14.0326C22.7981 11.2309 22.059 8.47832 20.6528 6.05509C19.2465 3.63187 17.2233 1.62455 14.789 0.237524C14.5207 0.0851057 14.2181 0.00340578 13.9096 0.000104201C13.6011 -0.00319738 13.2968 0.0720078 13.0254 0.21865C12.7539 0.365292 12.5242 0.578555 12.3579 0.83839C12.1915 1.09822 12.0939 1.3961 12.0744 1.704C11.9725 3.42903 11.5215 5.11542 10.7487 6.66101C9.97592 8.20661 8.8974 9.57924 7.5785 10.6957L7.16003 11.036C5.78018 11.9643 4.55885 13.1089 3.54295 14.4256C1.96417 16.4145 0.87052 18.7439 0.34875 21.229C-0.17302 23.7141 -0.108559 26.2867 0.537021 28.7426C1.1826 31.1985 2.39154 33.4701 4.06795 35.3774C5.74437 37.2847 7.84213 38.7752 10.1949 39.7306C10.4711 39.843 10.7707 39.8858 11.0674 39.8552C11.3641 39.8247 11.6486 39.7216 11.8961 39.5552C12.1436 39.3888 12.3464 39.1641 12.4866 38.9009C12.6268 38.6376 12.7002 38.344 12.7003 38.0458C12.6987 37.853 12.6681 37.6616 12.6093 37.4781C12.2022 35.948 12.085 34.3553 12.2636 32.7821C13.9857 36.029 16.7495 38.6026 20.1109 40.089C20.521 40.2724 20.9846 40.297 21.4118 40.1582C24.0673 39.3009 26.4594 37.779 28.361 35.7369C30.2627 33.6948 31.6106 31.2005 32.2768 28.4908C32.9429 25.7811 32.9052 22.946 32.1672 20.255C31.4292 17.564 30.0154 15.1064 28.0601 13.1156ZM20.9551 36.461C19.3691 35.6574 17.9699 34.5289 16.8487 33.149C15.7274 31.7691 14.9091 30.1687 14.4469 28.4518C14.3056 27.8736 14.1963 27.2881 14.1194 26.6978C14.0677 26.322 13.8997 25.9717 13.639 25.6961C13.3784 25.4204 13.0381 25.2331 12.6657 25.1604C12.5512 25.1382 12.4348 25.1272 12.3182 25.1276C11.9985 25.1273 11.6844 25.2113 11.4074 25.371C11.1305 25.5307 10.9006 25.7605 10.7407 26.0374C9.23138 28.6415 8.47253 31.6126 8.54827 34.6216C7.22035 33.5894 6.11052 32.3039 5.28311 30.8396C4.45569 29.3753 3.92715 27.7614 3.72812 26.0913C3.5291 24.4212 3.66354 22.7283 4.12367 21.1106C4.58379 19.4928 5.36044 17.9825 6.40859 16.6672C7.20445 15.6334 8.16454 14.7373 9.25058 14.0144C9.2981 13.9839 9.34368 13.9505 9.38704 13.9144C9.38704 13.9144 9.9256 13.4686 9.94379 13.4595C12.5369 11.2671 14.3814 8.32039 15.2202 5.02996C17.2024 6.86282 18.5239 9.29887 18.9796 11.9598C19.4352 14.6208 18.9995 17.3578 17.7402 19.7457C17.5735 20.0644 17.505 20.4254 17.5434 20.783C17.5818 21.1406 17.7253 21.4789 17.9559 21.755C18.1864 22.031 18.4936 22.2326 18.8386 22.3342C19.1836 22.4358 19.551 22.4328 19.8944 22.3257C22.6813 21.4517 25.1336 19.7449 26.9211 17.435C27.9959 19.022 28.6986 20.8311 28.9769 22.7274C29.2551 24.6238 29.1018 26.5585 28.5284 28.3874C27.9549 30.2162 26.976 31.8921 25.6648 33.29C24.3535 34.6879 22.7436 35.7719 20.9551 36.461Z" fill="#DB1A1A"/>
-                    </svg>
-                </div>
-                <label for="">TRENDING</label>
-            </div>
+        <div class="categoria_popular">
+          <div class="icono_categoria">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="35"
+              height="35"
+              viewBox="0 0 35 35"
+              fill="none"
+            >
+              <path
+                d="M33.3889 6.76079e-09H22.2603C22.0473 -2.09944e-05 21.8371 0.0488854 21.6459 0.142948C21.4548 0.23701 21.2878 0.373715 21.1579 0.54252L10.0293 15.0115L8.34952 13.3352C8.09114 13.0765 7.7843 12.8713 7.44655 12.7313C7.1088 12.5913 6.74677 12.5192 6.38115 12.5192C6.01553 12.5192 5.6535 12.5913 5.31575 12.7313C4.978 12.8713 4.67116 13.0765 4.41277 13.3352L2.20618 15.5436C1.94776 15.8019 1.74277 16.1086 1.60292 16.4462C1.46306 16.7838 1.39108 17.1456 1.39108 17.5111C1.39108 17.8765 1.46306 18.2383 1.60292 18.5759C1.74277 18.9135 1.94776 19.2202 2.20618 19.4786L5.68387 22.9563L0.815099 27.825C0.556685 28.0834 0.351696 28.3901 0.21184 28.7277C0.0719836 29.0653 0 29.4271 0 29.7925C0 30.1579 0.0719836 30.5198 0.21184 30.8574C0.351696 31.195 0.556685 31.5017 0.815099 31.76L3.0217 33.9649C3.5434 34.4863 4.25077 34.7791 4.98833 34.7791C5.72589 34.7791 6.43326 34.4863 6.95497 33.9649L11.8237 29.0961L15.3014 32.5738C15.5598 32.8325 15.8667 33.0377 16.2044 33.1777C16.5422 33.3177 16.9042 33.3898 17.2698 33.3898C17.6354 33.3898 17.9975 33.3177 18.3352 33.1777C18.673 33.0377 18.9798 32.8325 19.2382 32.5738L21.4448 30.3655C21.7032 30.1071 21.9082 29.8004 22.048 29.4628C22.1879 29.1252 22.2599 28.7634 22.2599 28.398C22.2599 28.0326 22.1879 27.6707 22.048 27.3331C21.9082 26.9956 21.7032 26.6888 21.4448 26.4305L19.7685 24.7542L34.2375 13.6256C34.4067 13.4953 34.5437 13.3278 34.6378 13.136C34.7319 12.9442 34.7805 12.7333 34.78 12.5197V1.39108C34.78 1.02214 34.6334 0.668315 34.3726 0.407437C34.1117 0.14656 33.7579 6.76079e-09 33.3889 6.76079e-09ZM4.99181 31.9948L2.78521 29.7899L7.65398 24.9212L9.85884 27.126L4.99181 31.9948ZM17.2698 30.6037L4.17629 17.5119L6.38463 15.3019L19.4781 28.3971L17.2698 30.6037ZM31.9978 11.8346L17.7845 22.7685L15.8822 20.8662L24.6356 12.1128C24.8964 11.8518 25.0428 11.4979 25.0426 11.1289C25.0424 10.7599 24.8957 10.4061 24.6347 10.1453C24.3737 9.88451 24.0197 9.73809 23.6508 9.73825C23.2818 9.73842 22.928 9.88515 22.6672 10.1462L13.9138 18.8978L12.0133 16.9955L22.9454 2.78216H31.9978V11.8346Z"
+                fill="#DB1A1A"
+              />
+            </svg>
+          </div>
+          <label for="">ACCION</label>
         </div>
-        <h2 class="titulo_carrusel">Acción</h2>
-        <section class="contenedor_carrusel">
-            <div class="flecha_izquierda">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <rect y="32" width="32" height="32" rx="16" transform="rotate(-90 0 32)" fill="#F8F8F8"/>
-                    <path d="M21.414 28.728C21.7889 28.353 21.9995 27.8444 21.9995 27.314C21.9995 26.7837 21.7889 26.2751 21.414 25.9L11.514 16L21.414 6.10003C21.7783 5.72282 21.9799 5.21762 21.9753 4.69322C21.9708 4.16883 21.7604 3.6672 21.3896 3.29639C21.0188 2.92557 20.5172 2.71523 19.9928 2.71068C19.4684 2.70612 18.9632 2.90771 18.586 3.27203L7.27197 14.586C6.89703 14.9611 6.6864 15.4697 6.6864 16C6.6864 16.5304 6.89703 17.039 7.27197 17.414L18.586 28.728C18.961 29.103 19.4696 29.3136 20 29.3136C20.5303 29.3136 21.0389 29.103 21.414 28.728Z" fill="#2F2F2F"/>
-                </svg>
-            </div>
-            <div class="carrusel">
-                
-                <div class="card_juego">
-                    <img
-                        src="assets/images/portadas/Portada-candy.png"
-                        alt="Portada del candy crush"
-                    />
-                    <div>
-                        <h3>Candy Crush Saga</h3>
-                        <h4>$5000</h4>
-                        <div class="boton violeta">
-                        <span class="font_boton">Añadir al carrito</span>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="15"
-                            height="16"
-                            viewBox="0 0 15 16"
-                            fill="none"
-                        >
-                            <g clip-path="url(#clip0_534_3)">
-                            <path
-                                d="M0.300003 1.20312C0.300003 0.813477 0.567503 0.5 0.900003 0.5H2.0375C2.5875 0.5 3.075 0.875 3.3025 1.4375H13.5775C14.235 1.4375 14.715 2.16992 14.5425 2.91406L13.5175 7.37598C13.305 8.2959 12.5925 8.9375 11.78 8.9375H4.5675L4.7025 9.77246C4.7575 10.1035 5.005 10.3438 5.2925 10.3438H12.5C12.8325 10.3438 13.1 10.6572 13.1 11.0469C13.1 11.4365 12.8325 11.75 12.5 11.75H5.2925C4.4275 11.75 3.685 11.0293 3.525 10.0361L2.235 2.09668C2.2175 1.98535 2.135 1.90625 2.0375 1.90625H0.900003C0.567503 1.90625 0.300003 1.59277 0.300003 1.20312ZM3.5 14.0938C3.5 13.9091 3.53104 13.7262 3.59135 13.5556C3.65165 13.385 3.74004 13.23 3.85148 13.0994C3.96291 12.9688 4.09519 12.8652 4.24078 12.7945C4.38637 12.7239 4.54242 12.6875 4.7 12.6875C4.85759 12.6875 5.01363 12.7239 5.15922 12.7945C5.30481 12.8652 5.4371 12.9688 5.54853 13.0994C5.65996 13.23 5.74835 13.385 5.80866 13.5556C5.86896 13.7262 5.9 13.9091 5.9 14.0938C5.9 14.2784 5.86896 14.4613 5.80866 14.6319C5.74835 14.8025 5.65996 14.9575 5.54853 15.0881C5.4371 15.2187 5.30481 15.3223 5.15922 15.393C5.01363 15.4636 4.85759 15.5 4.7 15.5C4.54242 15.5 4.38637 15.4636 4.24078 15.393C4.09519 15.3223 3.96291 15.2187 3.85148 15.0881C3.74004 14.9575 3.65165 14.8025 3.59135 14.6319C3.53104 14.4613 3.5 14.2784 3.5 14.0938ZM11.9 12.6875C12.2183 12.6875 12.5235 12.8357 12.7485 13.0994C12.9736 13.3631 13.1 13.7208 13.1 14.0938C13.1 14.4667 12.9736 14.8244 12.7485 15.0881C12.5235 15.3518 12.2183 15.5 11.9 15.5C11.5817 15.5 11.2765 15.3518 11.0515 15.0881C10.8264 14.8244 10.7 14.4667 10.7 14.0938C10.7 13.7208 10.8264 13.3631 11.0515 13.0994C11.2765 12.8357 11.5817 12.6875 11.9 12.6875Z"
-                                fill="#F8F8F8"
-                            />
-                            </g>
-                            <defs>
-                            <clipPath id="clip0_534_3">
-                                <rect
-                                width="14.4"
-                                height="15"
-                                fill="white"
-                                transform="translate(0.300003 0.5)"
-                                />
-                            </clipPath>
-                            </defs>
-                        </svg>
-                        </div>
-                    </div>
-                </div>
-                <div class="card_juego añadido">
-                    <img
-                        src="assets/images/portadas/Portada-candy.png"
-                        alt="Portada del candy crush"
-                    />
-                    <div>
-                        <h3>Candy Crush Saga</h3>
-                        <h4>$5000</h4>
-                        <div class="boton verde">
-                        <span class="font_boton">Añadido al carrito</span>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="15"
-                            height="16"
-                            viewBox="0 0 15 16"
-                            fill="none"
-                        >
-                            <g clip-path="url(#clip0_534_3)">
-                            <path
-                                d="M0.300003 1.20312C0.300003 0.813477 0.567503 0.5 0.900003 0.5H2.0375C2.5875 0.5 3.075 0.875 3.3025 1.4375H13.5775C14.235 1.4375 14.715 2.16992 14.5425 2.91406L13.5175 7.37598C13.305 8.2959 12.5925 8.9375 11.78 8.9375H4.5675L4.7025 9.77246C4.7575 10.1035 5.005 10.3438 5.2925 10.3438H12.5C12.8325 10.3438 13.1 10.6572 13.1 11.0469C13.1 11.4365 12.8325 11.75 12.5 11.75H5.2925C4.4275 11.75 3.685 11.0293 3.525 10.0361L2.235 2.09668C2.2175 1.98535 2.135 1.90625 2.0375 1.90625H0.900003C0.567503 1.90625 0.300003 1.59277 0.300003 1.20312ZM3.5 14.0938C3.5 13.9091 3.53104 13.7262 3.59135 13.5556C3.65165 13.385 3.74004 13.23 3.85148 13.0994C3.96291 12.9688 4.09519 12.8652 4.24078 12.7945C4.38637 12.7239 4.54242 12.6875 4.7 12.6875C4.85759 12.6875 5.01363 12.7239 5.15922 12.7945C5.30481 12.8652 5.4371 12.9688 5.54853 13.0994C5.65996 13.23 5.74835 13.385 5.80866 13.5556C5.86896 13.7262 5.9 13.9091 5.9 14.0938C5.9 14.2784 5.86896 14.4613 5.80866 14.6319C5.74835 14.8025 5.65996 14.9575 5.54853 15.0881C5.4371 15.2187 5.30481 15.3223 5.15922 15.393C5.01363 15.4636 4.85759 15.5 4.7 15.5C4.54242 15.5 4.38637 15.4636 4.24078 15.393C4.09519 15.3223 3.96291 15.2187 3.85148 15.0881C3.74004 14.9575 3.65165 14.8025 3.59135 14.6319C3.53104 14.4613 3.5 14.2784 3.5 14.0938ZM11.9 12.6875C12.2183 12.6875 12.5235 12.8357 12.7485 13.0994C12.9736 13.3631 13.1 13.7208 13.1 14.0938C13.1 14.4667 12.9736 14.8244 12.7485 15.0881C12.5235 15.3518 12.2183 15.5 11.9 15.5C11.5817 15.5 11.2765 15.3518 11.0515 15.0881C10.8264 14.8244 10.7 14.4667 10.7 14.0938C10.7 13.7208 10.8264 13.3631 11.0515 13.0994C11.2765 12.8357 11.5817 12.6875 11.9 12.6875Z"
-                                fill="#F8F8F8"
-                            />
-                            </g>
-                            <defs>
-                            <clipPath id="clip0_534_3">
-                                <rect
-                                width="14.4"
-                                height="15"
-                                fill="white"
-                                transform="translate(0.300003 0.5)"
-                                />
-                            </clipPath>
-                            </defs>
-                        </svg>
-                        </div>
-                    </div>
-                </div>
-                <div class="card_juego comprado">
-                    <img
-                        src="assets/images/portadas/Portada-candy.png"
-                        alt="Portada del candy crush"
-                    />
-                        <div>
-                            <h3>Candy Crush Saga</h3>
-                            <h4>$5000</h4>
-                            <div class="boton rojo">
-                            <span class="font_boton">Jugar</span>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="21"
-                                height="12"
-                                viewBox="0 0 21 12"
-                                fill="none"
-                            >
-                                <path
-                                d="M6.5 0.375C3.1875 0.375 0.5 2.89453 0.5 6C0.5 9.10547 3.1875 11.625 6.5 11.625H14.5C17.8125 11.625 20.5 9.10547 20.5 6C20.5 2.89453 17.8125 0.375 14.5 0.375H6.5ZM16 3.42188C16.3315 3.42188 16.6495 3.54534 16.8839 3.76511C17.1183 3.98488 17.25 4.28295 17.25 4.59375C17.25 4.90455 17.1183 5.20262 16.8839 5.42239C16.6495 5.64216 16.3315 5.76562 16 5.76562C15.6685 5.76562 15.3505 5.64216 15.1161 5.42239C14.8817 5.20262 14.75 4.90455 14.75 4.59375C14.75 4.28295 14.8817 3.98488 15.1161 3.76511C15.3505 3.54534 15.6685 3.42188 16 3.42188ZM12.75 7.40625C12.75 7.09545 12.8817 6.79738 13.1161 6.57761C13.3505 6.35784 13.6685 6.23438 14 6.23438C14.3315 6.23438 14.6495 6.35784 14.8839 6.57761C15.1183 6.79738 15.25 7.09545 15.25 7.40625C15.25 7.71705 15.1183 8.01512 14.8839 8.23489C14.6495 8.45466 14.3315 8.57812 14 8.57812C13.6685 8.57812 13.3505 8.45466 13.1161 8.23489C12.8817 8.01512 12.75 7.71705 12.75 7.40625ZM5.75 4.35938C5.75 3.96973 6.08437 3.65625 6.5 3.65625C6.91563 3.65625 7.25 3.96973 7.25 4.35938V5.29688H8.25C8.66562 5.29688 9 5.61035 9 6C9 6.38965 8.66562 6.70312 8.25 6.70312H7.25V7.64062C7.25 8.03027 6.91563 8.34375 6.5 8.34375C6.08437 8.34375 5.75 8.03027 5.75 7.64062V6.70312H4.75C4.33437 6.70312 4 6.38965 4 6C4 5.61035 4.33437 5.29688 4.75 5.29688H5.75V4.35938Z"
-                                fill="#F8F8F8"
-                                />
-                            </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card_juego gratuito">
-                        <img
-                        src="assets/images/portadas/Portada-candy.png"
-                        alt="Portada del candy crush"
-                        />
-                        <div>
-                        <h3>Candy Crush Sagaaaaaaaaaa</h3>
-                        <h4>GRATIS</h4>
-                        <div class="boton rojo">
-                            <span class="font_boton">Jugar</span>
-                            <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="21"
-                            height="12"
-                            viewBox="0 0 21 12"
-                            fill="none"
-                            >
-                            <path
-                                d="M6.5 0.375C3.1875 0.375 0.5 2.89453 0.5 6C0.5 9.10547 3.1875 11.625 6.5 11.625H14.5C17.8125 11.625 20.5 9.10547 20.5 6C20.5 2.89453 17.8125 0.375 14.5 0.375H6.5ZM16 3.42188C16.3315 3.42188 16.6495 3.54534 16.8839 3.76511C17.1183 3.98488 17.25 4.28295 17.25 4.59375C17.25 4.90455 17.1183 5.20262 16.8839 5.42239C16.6495 5.64216 16.3315 5.76562 16 5.76562C15.6685 5.76562 15.3505 5.64216 15.1161 5.42239C14.8817 5.20262 14.75 4.90455 14.75 4.59375C14.75 4.28295 14.8817 3.98488 15.1161 3.76511C15.3505 3.54534 15.6685 3.42188 16 3.42188ZM12.75 7.40625C12.75 7.09545 12.8817 6.79738 13.1161 6.57761C13.3505 6.35784 13.6685 6.23438 14 6.23438C14.3315 6.23438 14.6495 6.35784 14.8839 6.57761C15.1183 6.79738 15.25 7.09545 15.25 7.40625C15.25 7.71705 15.1183 8.01512 14.8839 8.23489C14.6495 8.45466 14.3315 8.57812 14 8.57812C13.6685 8.57812 13.3505 8.45466 13.1161 8.23489C12.8817 8.01512 12.75 7.71705 12.75 7.40625ZM5.75 4.35938C5.75 3.96973 6.08437 3.65625 6.5 3.65625C6.91563 3.65625 7.25 3.96973 7.25 4.35938V5.29688H8.25C8.66562 5.29688 9 5.61035 9 6C9 6.38965 8.66562 6.70312 8.25 6.70312H7.25V7.64062C7.25 8.03027 6.91563 8.34375 6.5 8.34375C6.08437 8.34375 5.75 8.03027 5.75 7.64062V6.70312H4.75C4.33437 6.70312 4 6.38965 4 6C4 5.61035 4.33437 5.29688 4.75 5.29688H5.75V4.35938Z"
-                                fill="#F8F8F8"
-                            />
-                            </svg>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="card_juego añadido">
-                        <img
-                            src="assets/images/portadas/Portada-candy.png"
-                            alt="Portada del candy crush"
-                        />
-                        <div>
-                            <h3>Candy Crush Saga</h3>
-                            <h4>$5000</h4>
-                            <div class="boton verde">
-                            <span class="font_boton">Añadido al carrito</span>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="15"
-                                height="16"
-                                viewBox="0 0 15 16"
-                                fill="none"
-                            >
-                                <g clip-path="url(#clip0_534_3)">
-                                <path
-                                    d="M0.300003 1.20312C0.300003 0.813477 0.567503 0.5 0.900003 0.5H2.0375C2.5875 0.5 3.075 0.875 3.3025 1.4375H13.5775C14.235 1.4375 14.715 2.16992 14.5425 2.91406L13.5175 7.37598C13.305 8.2959 12.5925 8.9375 11.78 8.9375H4.5675L4.7025 9.77246C4.7575 10.1035 5.005 10.3438 5.2925 10.3438H12.5C12.8325 10.3438 13.1 10.6572 13.1 11.0469C13.1 11.4365 12.8325 11.75 12.5 11.75H5.2925C4.4275 11.75 3.685 11.0293 3.525 10.0361L2.235 2.09668C2.2175 1.98535 2.135 1.90625 2.0375 1.90625H0.900003C0.567503 1.90625 0.300003 1.59277 0.300003 1.20312ZM3.5 14.0938C3.5 13.9091 3.53104 13.7262 3.59135 13.5556C3.65165 13.385 3.74004 13.23 3.85148 13.0994C3.96291 12.9688 4.09519 12.8652 4.24078 12.7945C4.38637 12.7239 4.54242 12.6875 4.7 12.6875C4.85759 12.6875 5.01363 12.7239 5.15922 12.7945C5.30481 12.8652 5.4371 12.9688 5.54853 13.0994C5.65996 13.23 5.74835 13.385 5.80866 13.5556C5.86896 13.7262 5.9 13.9091 5.9 14.0938C5.9 14.2784 5.86896 14.4613 5.80866 14.6319C5.74835 14.8025 5.65996 14.9575 5.54853 15.0881C5.4371 15.2187 5.30481 15.3223 5.15922 15.393C5.01363 15.4636 4.85759 15.5 4.7 15.5C4.54242 15.5 4.38637 15.4636 4.24078 15.393C4.09519 15.3223 3.96291 15.2187 3.85148 15.0881C3.74004 14.9575 3.65165 14.8025 3.59135 14.6319C3.53104 14.4613 3.5 14.2784 3.5 14.0938ZM11.9 12.6875C12.2183 12.6875 12.5235 12.8357 12.7485 13.0994C12.9736 13.3631 13.1 13.7208 13.1 14.0938C13.1 14.4667 12.9736 14.8244 12.7485 15.0881C12.5235 15.3518 12.2183 15.5 11.9 15.5C11.5817 15.5 11.2765 15.3518 11.0515 15.0881C10.8264 14.8244 10.7 14.4667 10.7 14.0938C10.7 13.7208 10.8264 13.3631 11.0515 13.0994C11.2765 12.8357 11.5817 12.6875 11.9 12.6875Z"
-                                    fill="#F8F8F8"
-                                />
-                                </g>
-                                <defs>
-                                <clipPath id="clip0_534_3">
-                                    <rect
-                                    width="14.4"
-                                    height="15"
-                                    fill="white"
-                                    transform="translate(0.300003 0.5)"
-                                    />
-                                </clipPath>
-                                </defs>
-                            </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card_juego añadido">
-                        <img
-                            src="assets/images/portadas/Portada-candy.png"
-                            alt="Portada del candy crush"
-                        />
-                        <div>
-                            <h3>Candy Crush Saga</h3>
-                            <h4>$5000</h4>
-                            <div class="boton verde">
-                            <span class="font_boton">Añadido al carrito</span>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="15"
-                                height="16"
-                                viewBox="0 0 15 16"
-                                fill="none"
-                            >
-                                <g clip-path="url(#clip0_534_3)">
-                                <path
-                                    d="M0.300003 1.20312C0.300003 0.813477 0.567503 0.5 0.900003 0.5H2.0375C2.5875 0.5 3.075 0.875 3.3025 1.4375H13.5775C14.235 1.4375 14.715 2.16992 14.5425 2.91406L13.5175 7.37598C13.305 8.2959 12.5925 8.9375 11.78 8.9375H4.5675L4.7025 9.77246C4.7575 10.1035 5.005 10.3438 5.2925 10.3438H12.5C12.8325 10.3438 13.1 10.6572 13.1 11.0469C13.1 11.4365 12.8325 11.75 12.5 11.75H5.2925C4.4275 11.75 3.685 11.0293 3.525 10.0361L2.235 2.09668C2.2175 1.98535 2.135 1.90625 2.0375 1.90625H0.900003C0.567503 1.90625 0.300003 1.59277 0.300003 1.20312ZM3.5 14.0938C3.5 13.9091 3.53104 13.7262 3.59135 13.5556C3.65165 13.385 3.74004 13.23 3.85148 13.0994C3.96291 12.9688 4.09519 12.8652 4.24078 12.7945C4.38637 12.7239 4.54242 12.6875 4.7 12.6875C4.85759 12.6875 5.01363 12.7239 5.15922 12.7945C5.30481 12.8652 5.4371 12.9688 5.54853 13.0994C5.65996 13.23 5.74835 13.385 5.80866 13.5556C5.86896 13.7262 5.9 13.9091 5.9 14.0938C5.9 14.2784 5.86896 14.4613 5.80866 14.6319C5.74835 14.8025 5.65996 14.9575 5.54853 15.0881C5.4371 15.2187 5.30481 15.3223 5.15922 15.393C5.01363 15.4636 4.85759 15.5 4.7 15.5C4.54242 15.5 4.38637 15.4636 4.24078 15.393C4.09519 15.3223 3.96291 15.2187 3.85148 15.0881C3.74004 14.9575 3.65165 14.8025 3.59135 14.6319C3.53104 14.4613 3.5 14.2784 3.5 14.0938ZM11.9 12.6875C12.2183 12.6875 12.5235 12.8357 12.7485 13.0994C12.9736 13.3631 13.1 13.7208 13.1 14.0938C13.1 14.4667 12.9736 14.8244 12.7485 15.0881C12.5235 15.3518 12.2183 15.5 11.9 15.5C11.5817 15.5 11.2765 15.3518 11.0515 15.0881C10.8264 14.8244 10.7 14.4667 10.7 14.0938C10.7 13.7208 10.8264 13.3631 11.0515 13.0994C11.2765 12.8357 11.5817 12.6875 11.9 12.6875Z"
-                                    fill="#F8F8F8"
-                                />
-                                </g>
-                                <defs>
-                                <clipPath id="clip0_534_3">
-                                    <rect
-                                    width="14.4"
-                                    height="15"
-                                    fill="white"
-                                    transform="translate(0.300003 0.5)"
-                                    />
-                                </clipPath>
-                                </defs>
-                            </svg>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            <div class="flecha_derecha">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <rect x="32" width="32" height="32" rx="16" transform="rotate(90 32 0)" fill="#F8F8F8"/>
-                    <path d="M10.5859 3.27197C10.211 3.64703 10.0003 4.15565 10.0003 4.68597C10.0003 5.2163 10.211 5.72492 10.5859 6.09997L20.4859 16L10.5859 25.9C10.2216 26.2772 10.02 26.7824 10.0246 27.3068C10.0291 27.8312 10.2395 28.3328 10.6103 28.7036C10.9811 29.0744 11.4827 29.2848 12.0071 29.2893C12.5315 29.2939 13.0367 29.0923 13.4139 28.728L24.7279 17.414C25.1028 17.0389 25.3135 16.5303 25.3135 16C25.3135 15.4696 25.1028 14.961 24.7279 14.586L13.4139 3.27197C13.0388 2.89703 12.5302 2.6864 11.9999 2.6864C11.4696 2.6864 10.961 2.89703 10.5859 3.27197Z" fill="#2F2F2F"/>
-                </svg>
-            </div>
-        </section>
-        <h2 class="titulo_carrusel">Aventuras</h2>
-        <section class="contenedor_carrusel">
-            <div class="flecha_izquierda">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <rect y="32" width="32" height="32" rx="16" transform="rotate(-90 0 32)" fill="#F8F8F8"/>
-                    <path d="M21.414 28.728C21.7889 28.353 21.9995 27.8444 21.9995 27.314C21.9995 26.7837 21.7889 26.2751 21.414 25.9L11.514 16L21.414 6.10003C21.7783 5.72282 21.9799 5.21762 21.9753 4.69322C21.9708 4.16883 21.7604 3.6672 21.3896 3.29639C21.0188 2.92557 20.5172 2.71523 19.9928 2.71068C19.4684 2.70612 18.9632 2.90771 18.586 3.27203L7.27197 14.586C6.89703 14.9611 6.6864 15.4697 6.6864 16C6.6864 16.5304 6.89703 17.039 7.27197 17.414L18.586 28.728C18.961 29.103 19.4696 29.3136 20 29.3136C20.5303 29.3136 21.0389 29.103 21.414 28.728Z" fill="#2F2F2F"/>
-                </svg>
-            </div>
-            <div class="carrusel">
-                
-                <div class="card_juego">
-                    <img
-                        src="assets/images/portadas/Portada-candy.png"
-                        alt="Portada del candy crush"
-                    />
-                    <div>
-                        <h3>Candy Crush Saga</h3>
-                        <h4>$5000</h4>
-                        <div class="boton violeta">
-                        <span class="font_boton">Añadir al carrito</span>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="15"
-                            height="16"
-                            viewBox="0 0 15 16"
-                            fill="none"
-                        >
-                            <g clip-path="url(#clip0_534_3)">
-                            <path
-                                d="M0.300003 1.20312C0.300003 0.813477 0.567503 0.5 0.900003 0.5H2.0375C2.5875 0.5 3.075 0.875 3.3025 1.4375H13.5775C14.235 1.4375 14.715 2.16992 14.5425 2.91406L13.5175 7.37598C13.305 8.2959 12.5925 8.9375 11.78 8.9375H4.5675L4.7025 9.77246C4.7575 10.1035 5.005 10.3438 5.2925 10.3438H12.5C12.8325 10.3438 13.1 10.6572 13.1 11.0469C13.1 11.4365 12.8325 11.75 12.5 11.75H5.2925C4.4275 11.75 3.685 11.0293 3.525 10.0361L2.235 2.09668C2.2175 1.98535 2.135 1.90625 2.0375 1.90625H0.900003C0.567503 1.90625 0.300003 1.59277 0.300003 1.20312ZM3.5 14.0938C3.5 13.9091 3.53104 13.7262 3.59135 13.5556C3.65165 13.385 3.74004 13.23 3.85148 13.0994C3.96291 12.9688 4.09519 12.8652 4.24078 12.7945C4.38637 12.7239 4.54242 12.6875 4.7 12.6875C4.85759 12.6875 5.01363 12.7239 5.15922 12.7945C5.30481 12.8652 5.4371 12.9688 5.54853 13.0994C5.65996 13.23 5.74835 13.385 5.80866 13.5556C5.86896 13.7262 5.9 13.9091 5.9 14.0938C5.9 14.2784 5.86896 14.4613 5.80866 14.6319C5.74835 14.8025 5.65996 14.9575 5.54853 15.0881C5.4371 15.2187 5.30481 15.3223 5.15922 15.393C5.01363 15.4636 4.85759 15.5 4.7 15.5C4.54242 15.5 4.38637 15.4636 4.24078 15.393C4.09519 15.3223 3.96291 15.2187 3.85148 15.0881C3.74004 14.9575 3.65165 14.8025 3.59135 14.6319C3.53104 14.4613 3.5 14.2784 3.5 14.0938ZM11.9 12.6875C12.2183 12.6875 12.5235 12.8357 12.7485 13.0994C12.9736 13.3631 13.1 13.7208 13.1 14.0938C13.1 14.4667 12.9736 14.8244 12.7485 15.0881C12.5235 15.3518 12.2183 15.5 11.9 15.5C11.5817 15.5 11.2765 15.3518 11.0515 15.0881C10.8264 14.8244 10.7 14.4667 10.7 14.0938C10.7 13.7208 10.8264 13.3631 11.0515 13.0994C11.2765 12.8357 11.5817 12.6875 11.9 12.6875Z"
-                                fill="#F8F8F8"
-                            />
-                            </g>
-                            <defs>
-                            <clipPath id="clip0_534_3">
-                                <rect
-                                width="14.4"
-                                height="15"
-                                fill="white"
-                                transform="translate(0.300003 0.5)"
-                                />
-                            </clipPath>
-                            </defs>
-                        </svg>
-                        </div>
-                    </div>
-                </div>
-                <div class="card_juego añadido">
-                    <img
-                        src="assets/images/portadas/Portada-candy.png"
-                        alt="Portada del candy crush"
-                    />
-                    <div>
-                        <h3>Candy Crush Saga</h3>
-                        <h4>$5000</h4>
-                        <div class="boton verde">
-                        <span class="font_boton">Añadido al carrito</span>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="15"
-                            height="16"
-                            viewBox="0 0 15 16"
-                            fill="none"
-                        >
-                            <g clip-path="url(#clip0_534_3)">
-                            <path
-                                d="M0.300003 1.20312C0.300003 0.813477 0.567503 0.5 0.900003 0.5H2.0375C2.5875 0.5 3.075 0.875 3.3025 1.4375H13.5775C14.235 1.4375 14.715 2.16992 14.5425 2.91406L13.5175 7.37598C13.305 8.2959 12.5925 8.9375 11.78 8.9375H4.5675L4.7025 9.77246C4.7575 10.1035 5.005 10.3438 5.2925 10.3438H12.5C12.8325 10.3438 13.1 10.6572 13.1 11.0469C13.1 11.4365 12.8325 11.75 12.5 11.75H5.2925C4.4275 11.75 3.685 11.0293 3.525 10.0361L2.235 2.09668C2.2175 1.98535 2.135 1.90625 2.0375 1.90625H0.900003C0.567503 1.90625 0.300003 1.59277 0.300003 1.20312ZM3.5 14.0938C3.5 13.9091 3.53104 13.7262 3.59135 13.5556C3.65165 13.385 3.74004 13.23 3.85148 13.0994C3.96291 12.9688 4.09519 12.8652 4.24078 12.7945C4.38637 12.7239 4.54242 12.6875 4.7 12.6875C4.85759 12.6875 5.01363 12.7239 5.15922 12.7945C5.30481 12.8652 5.4371 12.9688 5.54853 13.0994C5.65996 13.23 5.74835 13.385 5.80866 13.5556C5.86896 13.7262 5.9 13.9091 5.9 14.0938C5.9 14.2784 5.86896 14.4613 5.80866 14.6319C5.74835 14.8025 5.65996 14.9575 5.54853 15.0881C5.4371 15.2187 5.30481 15.3223 5.15922 15.393C5.01363 15.4636 4.85759 15.5 4.7 15.5C4.54242 15.5 4.38637 15.4636 4.24078 15.393C4.09519 15.3223 3.96291 15.2187 3.85148 15.0881C3.74004 14.9575 3.65165 14.8025 3.59135 14.6319C3.53104 14.4613 3.5 14.2784 3.5 14.0938ZM11.9 12.6875C12.2183 12.6875 12.5235 12.8357 12.7485 13.0994C12.9736 13.3631 13.1 13.7208 13.1 14.0938C13.1 14.4667 12.9736 14.8244 12.7485 15.0881C12.5235 15.3518 12.2183 15.5 11.9 15.5C11.5817 15.5 11.2765 15.3518 11.0515 15.0881C10.8264 14.8244 10.7 14.4667 10.7 14.0938C10.7 13.7208 10.8264 13.3631 11.0515 13.0994C11.2765 12.8357 11.5817 12.6875 11.9 12.6875Z"
-                                fill="#F8F8F8"
-                            />
-                            </g>
-                            <defs>
-                            <clipPath id="clip0_534_3">
-                                <rect
-                                width="14.4"
-                                height="15"
-                                fill="white"
-                                transform="translate(0.300003 0.5)"
-                                />
-                            </clipPath>
-                            </defs>
-                        </svg>
-                        </div>
-                    </div>
-                </div>
-                <div class="card_juego comprado">
-                    <img
-                        src="assets/images/portadas/Portada-candy.png"
-                        alt="Portada del candy crush"
-                    />
-                        <div>
-                            <h3>Candy Crush Saga</h3>
-                            <h4>$5000</h4>
-                            <div class="boton rojo">
-                            <span class="font_boton">Jugar</span>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="21"
-                                height="12"
-                                viewBox="0 0 21 12"
-                                fill="none"
-                            >
-                                <path
-                                d="M6.5 0.375C3.1875 0.375 0.5 2.89453 0.5 6C0.5 9.10547 3.1875 11.625 6.5 11.625H14.5C17.8125 11.625 20.5 9.10547 20.5 6C20.5 2.89453 17.8125 0.375 14.5 0.375H6.5ZM16 3.42188C16.3315 3.42188 16.6495 3.54534 16.8839 3.76511C17.1183 3.98488 17.25 4.28295 17.25 4.59375C17.25 4.90455 17.1183 5.20262 16.8839 5.42239C16.6495 5.64216 16.3315 5.76562 16 5.76562C15.6685 5.76562 15.3505 5.64216 15.1161 5.42239C14.8817 5.20262 14.75 4.90455 14.75 4.59375C14.75 4.28295 14.8817 3.98488 15.1161 3.76511C15.3505 3.54534 15.6685 3.42188 16 3.42188ZM12.75 7.40625C12.75 7.09545 12.8817 6.79738 13.1161 6.57761C13.3505 6.35784 13.6685 6.23438 14 6.23438C14.3315 6.23438 14.6495 6.35784 14.8839 6.57761C15.1183 6.79738 15.25 7.09545 15.25 7.40625C15.25 7.71705 15.1183 8.01512 14.8839 8.23489C14.6495 8.45466 14.3315 8.57812 14 8.57812C13.6685 8.57812 13.3505 8.45466 13.1161 8.23489C12.8817 8.01512 12.75 7.71705 12.75 7.40625ZM5.75 4.35938C5.75 3.96973 6.08437 3.65625 6.5 3.65625C6.91563 3.65625 7.25 3.96973 7.25 4.35938V5.29688H8.25C8.66562 5.29688 9 5.61035 9 6C9 6.38965 8.66562 6.70312 8.25 6.70312H7.25V7.64062C7.25 8.03027 6.91563 8.34375 6.5 8.34375C6.08437 8.34375 5.75 8.03027 5.75 7.64062V6.70312H4.75C4.33437 6.70312 4 6.38965 4 6C4 5.61035 4.33437 5.29688 4.75 5.29688H5.75V4.35938Z"
-                                fill="#F8F8F8"
-                                />
-                            </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card_juego gratuito">
-                        <img
-                        src="assets/images/portadas/Portada-candy.png"
-                        alt="Portada del candy crush"
-                        />
-                        <div>
-                        <h3>Candy Crush Saga</h3>
-                        <h4>GRATIS</h4>
-                        <div class="boton rojo">
-                            <span class="font_boton">Jugar</span>
-                            <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="21"
-                            height="12"
-                            viewBox="0 0 21 12"
-                            fill="none"
-                            >
-                            <path
-                                d="M6.5 0.375C3.1875 0.375 0.5 2.89453 0.5 6C0.5 9.10547 3.1875 11.625 6.5 11.625H14.5C17.8125 11.625 20.5 9.10547 20.5 6C20.5 2.89453 17.8125 0.375 14.5 0.375H6.5ZM16 3.42188C16.3315 3.42188 16.6495 3.54534 16.8839 3.76511C17.1183 3.98488 17.25 4.28295 17.25 4.59375C17.25 4.90455 17.1183 5.20262 16.8839 5.42239C16.6495 5.64216 16.3315 5.76562 16 5.76562C15.6685 5.76562 15.3505 5.64216 15.1161 5.42239C14.8817 5.20262 14.75 4.90455 14.75 4.59375C14.75 4.28295 14.8817 3.98488 15.1161 3.76511C15.3505 3.54534 15.6685 3.42188 16 3.42188ZM12.75 7.40625C12.75 7.09545 12.8817 6.79738 13.1161 6.57761C13.3505 6.35784 13.6685 6.23438 14 6.23438C14.3315 6.23438 14.6495 6.35784 14.8839 6.57761C15.1183 6.79738 15.25 7.09545 15.25 7.40625C15.25 7.71705 15.1183 8.01512 14.8839 8.23489C14.6495 8.45466 14.3315 8.57812 14 8.57812C13.6685 8.57812 13.3505 8.45466 13.1161 8.23489C12.8817 8.01512 12.75 7.71705 12.75 7.40625ZM5.75 4.35938C5.75 3.96973 6.08437 3.65625 6.5 3.65625C6.91563 3.65625 7.25 3.96973 7.25 4.35938V5.29688H8.25C8.66562 5.29688 9 5.61035 9 6C9 6.38965 8.66562 6.70312 8.25 6.70312H7.25V7.64062C7.25 8.03027 6.91563 8.34375 6.5 8.34375C6.08437 8.34375 5.75 8.03027 5.75 7.64062V6.70312H4.75C4.33437 6.70312 4 6.38965 4 6C4 5.61035 4.33437 5.29688 4.75 5.29688H5.75V4.35938Z"
-                                fill="#F8F8F8"
-                            />
-                            </svg>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="card_juego añadido">
-                        <img
-                            src="assets/images/portadas/Portada-candy.png"
-                            alt="Portada del candy crush"
-                        />
-                        <div>
-                            <h3>Candy Crush Saga</h3>
-                            <h4>$5000</h4>
-                            <div class="boton verde">
-                            <span class="font_boton">Añadido al carrito</span>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="15"
-                                height="16"
-                                viewBox="0 0 15 16"
-                                fill="none"
-                            >
-                                <g clip-path="url(#clip0_534_3)">
-                                <path
-                                    d="M0.300003 1.20312C0.300003 0.813477 0.567503 0.5 0.900003 0.5H2.0375C2.5875 0.5 3.075 0.875 3.3025 1.4375H13.5775C14.235 1.4375 14.715 2.16992 14.5425 2.91406L13.5175 7.37598C13.305 8.2959 12.5925 8.9375 11.78 8.9375H4.5675L4.7025 9.77246C4.7575 10.1035 5.005 10.3438 5.2925 10.3438H12.5C12.8325 10.3438 13.1 10.6572 13.1 11.0469C13.1 11.4365 12.8325 11.75 12.5 11.75H5.2925C4.4275 11.75 3.685 11.0293 3.525 10.0361L2.235 2.09668C2.2175 1.98535 2.135 1.90625 2.0375 1.90625H0.900003C0.567503 1.90625 0.300003 1.59277 0.300003 1.20312ZM3.5 14.0938C3.5 13.9091 3.53104 13.7262 3.59135 13.5556C3.65165 13.385 3.74004 13.23 3.85148 13.0994C3.96291 12.9688 4.09519 12.8652 4.24078 12.7945C4.38637 12.7239 4.54242 12.6875 4.7 12.6875C4.85759 12.6875 5.01363 12.7239 5.15922 12.7945C5.30481 12.8652 5.4371 12.9688 5.54853 13.0994C5.65996 13.23 5.74835 13.385 5.80866 13.5556C5.86896 13.7262 5.9 13.9091 5.9 14.0938C5.9 14.2784 5.86896 14.4613 5.80866 14.6319C5.74835 14.8025 5.65996 14.9575 5.54853 15.0881C5.4371 15.2187 5.30481 15.3223 5.15922 15.393C5.01363 15.4636 4.85759 15.5 4.7 15.5C4.54242 15.5 4.38637 15.4636 4.24078 15.393C4.09519 15.3223 3.96291 15.2187 3.85148 15.0881C3.74004 14.9575 3.65165 14.8025 3.59135 14.6319C3.53104 14.4613 3.5 14.2784 3.5 14.0938ZM11.9 12.6875C12.2183 12.6875 12.5235 12.8357 12.7485 13.0994C12.9736 13.3631 13.1 13.7208 13.1 14.0938C13.1 14.4667 12.9736 14.8244 12.7485 15.0881C12.5235 15.3518 12.2183 15.5 11.9 15.5C11.5817 15.5 11.2765 15.3518 11.0515 15.0881C10.8264 14.8244 10.7 14.4667 10.7 14.0938C10.7 13.7208 10.8264 13.3631 11.0515 13.0994C11.2765 12.8357 11.5817 12.6875 11.9 12.6875Z"
-                                    fill="#F8F8F8"
-                                />
-                                </g>
-                                <defs>
-                                <clipPath id="clip0_534_3">
-                                    <rect
-                                    width="14.4"
-                                    height="15"
-                                    fill="white"
-                                    transform="translate(0.300003 0.5)"
-                                    />
-                                </clipPath>
-                                </defs>
-                            </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card_juego añadido">
-                        <img
-                            src="assets/images/portadas/Portada-candy.png"
-                            alt="Portada del candy crush"
-                        />
-                        <div>
-                            <h3>Candy Crush Saga</h3>
-                            <h4>$5000</h4>
-                            <div class="boton verde">
-                            <span class="font_boton">Añadido al carrito</span>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="15"
-                                height="16"
-                                viewBox="0 0 15 16"
-                                fill="none"
-                            >
-                                <g clip-path="url(#clip0_534_3)">
-                                <path
-                                    d="M0.300003 1.20312C0.300003 0.813477 0.567503 0.5 0.900003 0.5H2.0375C2.5875 0.5 3.075 0.875 3.3025 1.4375H13.5775C14.235 1.4375 14.715 2.16992 14.5425 2.91406L13.5175 7.37598C13.305 8.2959 12.5925 8.9375 11.78 8.9375H4.5675L4.7025 9.77246C4.7575 10.1035 5.005 10.3438 5.2925 10.3438H12.5C12.8325 10.3438 13.1 10.6572 13.1 11.0469C13.1 11.4365 12.8325 11.75 12.5 11.75H5.2925C4.4275 11.75 3.685 11.0293 3.525 10.0361L2.235 2.09668C2.2175 1.98535 2.135 1.90625 2.0375 1.90625H0.900003C0.567503 1.90625 0.300003 1.59277 0.300003 1.20312ZM3.5 14.0938C3.5 13.9091 3.53104 13.7262 3.59135 13.5556C3.65165 13.385 3.74004 13.23 3.85148 13.0994C3.96291 12.9688 4.09519 12.8652 4.24078 12.7945C4.38637 12.7239 4.54242 12.6875 4.7 12.6875C4.85759 12.6875 5.01363 12.7239 5.15922 12.7945C5.30481 12.8652 5.4371 12.9688 5.54853 13.0994C5.65996 13.23 5.74835 13.385 5.80866 13.5556C5.86896 13.7262 5.9 13.9091 5.9 14.0938C5.9 14.2784 5.86896 14.4613 5.80866 14.6319C5.74835 14.8025 5.65996 14.9575 5.54853 15.0881C5.4371 15.2187 5.30481 15.3223 5.15922 15.393C5.01363 15.4636 4.85759 15.5 4.7 15.5C4.54242 15.5 4.38637 15.4636 4.24078 15.393C4.09519 15.3223 3.96291 15.2187 3.85148 15.0881C3.74004 14.9575 3.65165 14.8025 3.59135 14.6319C3.53104 14.4613 3.5 14.2784 3.5 14.0938ZM11.9 12.6875C12.2183 12.6875 12.5235 12.8357 12.7485 13.0994C12.9736 13.3631 13.1 13.7208 13.1 14.0938C13.1 14.4667 12.9736 14.8244 12.7485 15.0881C12.5235 15.3518 12.2183 15.5 11.9 15.5C11.5817 15.5 11.2765 15.3518 11.0515 15.0881C10.8264 14.8244 10.7 14.4667 10.7 14.0938C10.7 13.7208 10.8264 13.3631 11.0515 13.0994C11.2765 12.8357 11.5817 12.6875 11.9 12.6875Z"
-                                    fill="#F8F8F8"
-                                />
-                                </g>
-                                <defs>
-                                <clipPath id="clip0_534_3">
-                                    <rect
-                                    width="14.4"
-                                    height="15"
-                                    fill="white"
-                                    transform="translate(0.300003 0.5)"
-                                    />
-                                </clipPath>
-                                </defs>
-                            </svg>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            <div class="flecha_derecha">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <rect x="32" width="32" height="32" rx="16" transform="rotate(90 32 0)" fill="#F8F8F8"/>
-                    <path d="M10.5859 3.27197C10.211 3.64703 10.0003 4.15565 10.0003 4.68597C10.0003 5.2163 10.211 5.72492 10.5859 6.09997L20.4859 16L10.5859 25.9C10.2216 26.2772 10.02 26.7824 10.0246 27.3068C10.0291 27.8312 10.2395 28.3328 10.6103 28.7036C10.9811 29.0744 11.4827 29.2848 12.0071 29.2893C12.5315 29.2939 13.0367 29.0923 13.4139 28.728L24.7279 17.414C25.1028 17.0389 25.3135 16.5303 25.3135 16C25.3135 15.4696 25.1028 14.961 24.7279 14.586L13.4139 3.27197C13.0388 2.89703 12.5302 2.6864 11.9999 2.6864C11.4696 2.6864 10.961 2.89703 10.5859 3.27197Z" fill="#2F2F2F"/>
-                </svg>
-            </div>
-        </section>
-        <h2 class="titulo_carrusel">Puzzle</h2>
-        <section class="contenedor_carrusel">
-            <div class="flecha_izquierda">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <rect y="32" width="32" height="32" rx="16" transform="rotate(-90 0 32)" fill="#F8F8F8"/>
-                    <path d="M21.414 28.728C21.7889 28.353 21.9995 27.8444 21.9995 27.314C21.9995 26.7837 21.7889 26.2751 21.414 25.9L11.514 16L21.414 6.10003C21.7783 5.72282 21.9799 5.21762 21.9753 4.69322C21.9708 4.16883 21.7604 3.6672 21.3896 3.29639C21.0188 2.92557 20.5172 2.71523 19.9928 2.71068C19.4684 2.70612 18.9632 2.90771 18.586 3.27203L7.27197 14.586C6.89703 14.9611 6.6864 15.4697 6.6864 16C6.6864 16.5304 6.89703 17.039 7.27197 17.414L18.586 28.728C18.961 29.103 19.4696 29.3136 20 29.3136C20.5303 29.3136 21.0389 29.103 21.414 28.728Z" fill="#2F2F2F"/>
-                </svg>
-            </div>
-            <div class="carrusel">
-                
-                <div class="card_juego">
-                    <img
-                        src="assets/images/portadas/Portada-candy.png"
-                        alt="Portada del candy crush"
-                    />
-                    <div>
-                        <h3>Candy Crush Saga</h3>
-                        <h4>$5000</h4>
-                        <div class="boton violeta">
-                        <span class="font_boton">Añadir al carrito</span>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="15"
-                            height="16"
-                            viewBox="0 0 15 16"
-                            fill="none"
-                        >
-                            <g clip-path="url(#clip0_534_3)">
-                            <path
-                                d="M0.300003 1.20312C0.300003 0.813477 0.567503 0.5 0.900003 0.5H2.0375C2.5875 0.5 3.075 0.875 3.3025 1.4375H13.5775C14.235 1.4375 14.715 2.16992 14.5425 2.91406L13.5175 7.37598C13.305 8.2959 12.5925 8.9375 11.78 8.9375H4.5675L4.7025 9.77246C4.7575 10.1035 5.005 10.3438 5.2925 10.3438H12.5C12.8325 10.3438 13.1 10.6572 13.1 11.0469C13.1 11.4365 12.8325 11.75 12.5 11.75H5.2925C4.4275 11.75 3.685 11.0293 3.525 10.0361L2.235 2.09668C2.2175 1.98535 2.135 1.90625 2.0375 1.90625H0.900003C0.567503 1.90625 0.300003 1.59277 0.300003 1.20312ZM3.5 14.0938C3.5 13.9091 3.53104 13.7262 3.59135 13.5556C3.65165 13.385 3.74004 13.23 3.85148 13.0994C3.96291 12.9688 4.09519 12.8652 4.24078 12.7945C4.38637 12.7239 4.54242 12.6875 4.7 12.6875C4.85759 12.6875 5.01363 12.7239 5.15922 12.7945C5.30481 12.8652 5.4371 12.9688 5.54853 13.0994C5.65996 13.23 5.74835 13.385 5.80866 13.5556C5.86896 13.7262 5.9 13.9091 5.9 14.0938C5.9 14.2784 5.86896 14.4613 5.80866 14.6319C5.74835 14.8025 5.65996 14.9575 5.54853 15.0881C5.4371 15.2187 5.30481 15.3223 5.15922 15.393C5.01363 15.4636 4.85759 15.5 4.7 15.5C4.54242 15.5 4.38637 15.4636 4.24078 15.393C4.09519 15.3223 3.96291 15.2187 3.85148 15.0881C3.74004 14.9575 3.65165 14.8025 3.59135 14.6319C3.53104 14.4613 3.5 14.2784 3.5 14.0938ZM11.9 12.6875C12.2183 12.6875 12.5235 12.8357 12.7485 13.0994C12.9736 13.3631 13.1 13.7208 13.1 14.0938C13.1 14.4667 12.9736 14.8244 12.7485 15.0881C12.5235 15.3518 12.2183 15.5 11.9 15.5C11.5817 15.5 11.2765 15.3518 11.0515 15.0881C10.8264 14.8244 10.7 14.4667 10.7 14.0938C10.7 13.7208 10.8264 13.3631 11.0515 13.0994C11.2765 12.8357 11.5817 12.6875 11.9 12.6875Z"
-                                fill="#F8F8F8"
-                            />
-                            </g>
-                            <defs>
-                            <clipPath id="clip0_534_3">
-                                <rect
-                                width="14.4"
-                                height="15"
-                                fill="white"
-                                transform="translate(0.300003 0.5)"
-                                />
-                            </clipPath>
-                            </defs>
-                        </svg>
-                        </div>
-                    </div>
-                </div>
-                <div class="card_juego añadido">
-                    <img
-                        src="assets/images/portadas/Portada-candy.png"
-                        alt="Portada del candy crush"
-                    />
-                    <div>
-                        <h3>Candy Crush Saga</h3>
-                        <h4>$5000</h4>
-                        <div class="boton verde">
-                        <span class="font_boton">Añadido al carrito</span>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="15"
-                            height="16"
-                            viewBox="0 0 15 16"
-                            fill="none"
-                        >
-                            <g clip-path="url(#clip0_534_3)">
-                            <path
-                                d="M0.300003 1.20312C0.300003 0.813477 0.567503 0.5 0.900003 0.5H2.0375C2.5875 0.5 3.075 0.875 3.3025 1.4375H13.5775C14.235 1.4375 14.715 2.16992 14.5425 2.91406L13.5175 7.37598C13.305 8.2959 12.5925 8.9375 11.78 8.9375H4.5675L4.7025 9.77246C4.7575 10.1035 5.005 10.3438 5.2925 10.3438H12.5C12.8325 10.3438 13.1 10.6572 13.1 11.0469C13.1 11.4365 12.8325 11.75 12.5 11.75H5.2925C4.4275 11.75 3.685 11.0293 3.525 10.0361L2.235 2.09668C2.2175 1.98535 2.135 1.90625 2.0375 1.90625H0.900003C0.567503 1.90625 0.300003 1.59277 0.300003 1.20312ZM3.5 14.0938C3.5 13.9091 3.53104 13.7262 3.59135 13.5556C3.65165 13.385 3.74004 13.23 3.85148 13.0994C3.96291 12.9688 4.09519 12.8652 4.24078 12.7945C4.38637 12.7239 4.54242 12.6875 4.7 12.6875C4.85759 12.6875 5.01363 12.7239 5.15922 12.7945C5.30481 12.8652 5.4371 12.9688 5.54853 13.0994C5.65996 13.23 5.74835 13.385 5.80866 13.5556C5.86896 13.7262 5.9 13.9091 5.9 14.0938C5.9 14.2784 5.86896 14.4613 5.80866 14.6319C5.74835 14.8025 5.65996 14.9575 5.54853 15.0881C5.4371 15.2187 5.30481 15.3223 5.15922 15.393C5.01363 15.4636 4.85759 15.5 4.7 15.5C4.54242 15.5 4.38637 15.4636 4.24078 15.393C4.09519 15.3223 3.96291 15.2187 3.85148 15.0881C3.74004 14.9575 3.65165 14.8025 3.59135 14.6319C3.53104 14.4613 3.5 14.2784 3.5 14.0938ZM11.9 12.6875C12.2183 12.6875 12.5235 12.8357 12.7485 13.0994C12.9736 13.3631 13.1 13.7208 13.1 14.0938C13.1 14.4667 12.9736 14.8244 12.7485 15.0881C12.5235 15.3518 12.2183 15.5 11.9 15.5C11.5817 15.5 11.2765 15.3518 11.0515 15.0881C10.8264 14.8244 10.7 14.4667 10.7 14.0938C10.7 13.7208 10.8264 13.3631 11.0515 13.0994C11.2765 12.8357 11.5817 12.6875 11.9 12.6875Z"
-                                fill="#F8F8F8"
-                            />
-                            </g>
-                            <defs>
-                            <clipPath id="clip0_534_3">
-                                <rect
-                                width="14.4"
-                                height="15"
-                                fill="white"
-                                transform="translate(0.300003 0.5)"
-                                />
-                            </clipPath>
-                            </defs>
-                        </svg>
-                        </div>
-                    </div>
-                </div>
-                <div class="card_juego comprado">
-                    <img
-                        src="assets/images/portadas/Portada-candy.png"
-                        alt="Portada del candy crush"
-                    />
-                        <div>
-                            <h3>Candy Crush Saga</h3>
-                            <h4>$5000</h4>
-                            <div class="boton rojo">
-                            <span class="font_boton">Jugar</span>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="21"
-                                height="12"
-                                viewBox="0 0 21 12"
-                                fill="none"
-                            >
-                                <path
-                                d="M6.5 0.375C3.1875 0.375 0.5 2.89453 0.5 6C0.5 9.10547 3.1875 11.625 6.5 11.625H14.5C17.8125 11.625 20.5 9.10547 20.5 6C20.5 2.89453 17.8125 0.375 14.5 0.375H6.5ZM16 3.42188C16.3315 3.42188 16.6495 3.54534 16.8839 3.76511C17.1183 3.98488 17.25 4.28295 17.25 4.59375C17.25 4.90455 17.1183 5.20262 16.8839 5.42239C16.6495 5.64216 16.3315 5.76562 16 5.76562C15.6685 5.76562 15.3505 5.64216 15.1161 5.42239C14.8817 5.20262 14.75 4.90455 14.75 4.59375C14.75 4.28295 14.8817 3.98488 15.1161 3.76511C15.3505 3.54534 15.6685 3.42188 16 3.42188ZM12.75 7.40625C12.75 7.09545 12.8817 6.79738 13.1161 6.57761C13.3505 6.35784 13.6685 6.23438 14 6.23438C14.3315 6.23438 14.6495 6.35784 14.8839 6.57761C15.1183 6.79738 15.25 7.09545 15.25 7.40625C15.25 7.71705 15.1183 8.01512 14.8839 8.23489C14.6495 8.45466 14.3315 8.57812 14 8.57812C13.6685 8.57812 13.3505 8.45466 13.1161 8.23489C12.8817 8.01512 12.75 7.71705 12.75 7.40625ZM5.75 4.35938C5.75 3.96973 6.08437 3.65625 6.5 3.65625C6.91563 3.65625 7.25 3.96973 7.25 4.35938V5.29688H8.25C8.66562 5.29688 9 5.61035 9 6C9 6.38965 8.66562 6.70312 8.25 6.70312H7.25V7.64062C7.25 8.03027 6.91563 8.34375 6.5 8.34375C6.08437 8.34375 5.75 8.03027 5.75 7.64062V6.70312H4.75C4.33437 6.70312 4 6.38965 4 6C4 5.61035 4.33437 5.29688 4.75 5.29688H5.75V4.35938Z"
-                                fill="#F8F8F8"
-                                />
-                            </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card_juego gratuito">
-                        <img
-                        src="assets/images/portadas/Portada-candy.png"
-                        alt="Portada del candy crush"
-                        />
-                        <div>
-                        <h3>Candy Crush Saga</h3>
-                        <h4>GRATIS</h4>
-                        <div class="boton rojo">
-                            <span class="font_boton">Jugar</span>
-                            <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="21"
-                            height="12"
-                            viewBox="0 0 21 12"
-                            fill="none"
-                            >
-                            <path
-                                d="M6.5 0.375C3.1875 0.375 0.5 2.89453 0.5 6C0.5 9.10547 3.1875 11.625 6.5 11.625H14.5C17.8125 11.625 20.5 9.10547 20.5 6C20.5 2.89453 17.8125 0.375 14.5 0.375H6.5ZM16 3.42188C16.3315 3.42188 16.6495 3.54534 16.8839 3.76511C17.1183 3.98488 17.25 4.28295 17.25 4.59375C17.25 4.90455 17.1183 5.20262 16.8839 5.42239C16.6495 5.64216 16.3315 5.76562 16 5.76562C15.6685 5.76562 15.3505 5.64216 15.1161 5.42239C14.8817 5.20262 14.75 4.90455 14.75 4.59375C14.75 4.28295 14.8817 3.98488 15.1161 3.76511C15.3505 3.54534 15.6685 3.42188 16 3.42188ZM12.75 7.40625C12.75 7.09545 12.8817 6.79738 13.1161 6.57761C13.3505 6.35784 13.6685 6.23438 14 6.23438C14.3315 6.23438 14.6495 6.35784 14.8839 6.57761C15.1183 6.79738 15.25 7.09545 15.25 7.40625C15.25 7.71705 15.1183 8.01512 14.8839 8.23489C14.6495 8.45466 14.3315 8.57812 14 8.57812C13.6685 8.57812 13.3505 8.45466 13.1161 8.23489C12.8817 8.01512 12.75 7.71705 12.75 7.40625ZM5.75 4.35938C5.75 3.96973 6.08437 3.65625 6.5 3.65625C6.91563 3.65625 7.25 3.96973 7.25 4.35938V5.29688H8.25C8.66562 5.29688 9 5.61035 9 6C9 6.38965 8.66562 6.70312 8.25 6.70312H7.25V7.64062C7.25 8.03027 6.91563 8.34375 6.5 8.34375C6.08437 8.34375 5.75 8.03027 5.75 7.64062V6.70312H4.75C4.33437 6.70312 4 6.38965 4 6C4 5.61035 4.33437 5.29688 4.75 5.29688H5.75V4.35938Z"
-                                fill="#F8F8F8"
-                            />
-                            </svg>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="card_juego añadido">
-                        <img
-                            src="assets/images/portadas/Portada-candy.png"
-                            alt="Portada del candy crush"
-                        />
-                        <div>
-                            <h3>Candy Crush Saga</h3>
-                            <h4>$5000</h4>
-                            <div class="boton verde">
-                            <span class="font_boton">Añadido al carrito</span>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="15"
-                                height="16"
-                                viewBox="0 0 15 16"
-                                fill="none"
-                            >
-                                <g clip-path="url(#clip0_534_3)">
-                                <path
-                                    d="M0.300003 1.20312C0.300003 0.813477 0.567503 0.5 0.900003 0.5H2.0375C2.5875 0.5 3.075 0.875 3.3025 1.4375H13.5775C14.235 1.4375 14.715 2.16992 14.5425 2.91406L13.5175 7.37598C13.305 8.2959 12.5925 8.9375 11.78 8.9375H4.5675L4.7025 9.77246C4.7575 10.1035 5.005 10.3438 5.2925 10.3438H12.5C12.8325 10.3438 13.1 10.6572 13.1 11.0469C13.1 11.4365 12.8325 11.75 12.5 11.75H5.2925C4.4275 11.75 3.685 11.0293 3.525 10.0361L2.235 2.09668C2.2175 1.98535 2.135 1.90625 2.0375 1.90625H0.900003C0.567503 1.90625 0.300003 1.59277 0.300003 1.20312ZM3.5 14.0938C3.5 13.9091 3.53104 13.7262 3.59135 13.5556C3.65165 13.385 3.74004 13.23 3.85148 13.0994C3.96291 12.9688 4.09519 12.8652 4.24078 12.7945C4.38637 12.7239 4.54242 12.6875 4.7 12.6875C4.85759 12.6875 5.01363 12.7239 5.15922 12.7945C5.30481 12.8652 5.4371 12.9688 5.54853 13.0994C5.65996 13.23 5.74835 13.385 5.80866 13.5556C5.86896 13.7262 5.9 13.9091 5.9 14.0938C5.9 14.2784 5.86896 14.4613 5.80866 14.6319C5.74835 14.8025 5.65996 14.9575 5.54853 15.0881C5.4371 15.2187 5.30481 15.3223 5.15922 15.393C5.01363 15.4636 4.85759 15.5 4.7 15.5C4.54242 15.5 4.38637 15.4636 4.24078 15.393C4.09519 15.3223 3.96291 15.2187 3.85148 15.0881C3.74004 14.9575 3.65165 14.8025 3.59135 14.6319C3.53104 14.4613 3.5 14.2784 3.5 14.0938ZM11.9 12.6875C12.2183 12.6875 12.5235 12.8357 12.7485 13.0994C12.9736 13.3631 13.1 13.7208 13.1 14.0938C13.1 14.4667 12.9736 14.8244 12.7485 15.0881C12.5235 15.3518 12.2183 15.5 11.9 15.5C11.5817 15.5 11.2765 15.3518 11.0515 15.0881C10.8264 14.8244 10.7 14.4667 10.7 14.0938C10.7 13.7208 10.8264 13.3631 11.0515 13.0994C11.2765 12.8357 11.5817 12.6875 11.9 12.6875Z"
-                                    fill="#F8F8F8"
-                                />
-                                </g>
-                                <defs>
-                                <clipPath id="clip0_534_3">
-                                    <rect
-                                    width="14.4"
-                                    height="15"
-                                    fill="white"
-                                    transform="translate(0.300003 0.5)"
-                                    />
-                                </clipPath>
-                                </defs>
-                            </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card_juego añadido">
-                        <img
-                            src="assets/images/portadas/Portada-candy.png"
-                            alt="Portada del candy crush"
-                        />
-                        <div>
-                            <h3>Candy Crush Saga</h3>
-                            <h4>$5000</h4>
-                            <div class="boton verde">
-                            <span class="font_boton">Añadido al carrito</span>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="15"
-                                height="16"
-                                viewBox="0 0 15 16"
-                                fill="none"
-                            >
-                                <g clip-path="url(#clip0_534_3)">
-                                <path
-                                    d="M0.300003 1.20312C0.300003 0.813477 0.567503 0.5 0.900003 0.5H2.0375C2.5875 0.5 3.075 0.875 3.3025 1.4375H13.5775C14.235 1.4375 14.715 2.16992 14.5425 2.91406L13.5175 7.37598C13.305 8.2959 12.5925 8.9375 11.78 8.9375H4.5675L4.7025 9.77246C4.7575 10.1035 5.005 10.3438 5.2925 10.3438H12.5C12.8325 10.3438 13.1 10.6572 13.1 11.0469C13.1 11.4365 12.8325 11.75 12.5 11.75H5.2925C4.4275 11.75 3.685 11.0293 3.525 10.0361L2.235 2.09668C2.2175 1.98535 2.135 1.90625 2.0375 1.90625H0.900003C0.567503 1.90625 0.300003 1.59277 0.300003 1.20312ZM3.5 14.0938C3.5 13.9091 3.53104 13.7262 3.59135 13.5556C3.65165 13.385 3.74004 13.23 3.85148 13.0994C3.96291 12.9688 4.09519 12.8652 4.24078 12.7945C4.38637 12.7239 4.54242 12.6875 4.7 12.6875C4.85759 12.6875 5.01363 12.7239 5.15922 12.7945C5.30481 12.8652 5.4371 12.9688 5.54853 13.0994C5.65996 13.23 5.74835 13.385 5.80866 13.5556C5.86896 13.7262 5.9 13.9091 5.9 14.0938C5.9 14.2784 5.86896 14.4613 5.80866 14.6319C5.74835 14.8025 5.65996 14.9575 5.54853 15.0881C5.4371 15.2187 5.30481 15.3223 5.15922 15.393C5.01363 15.4636 4.85759 15.5 4.7 15.5C4.54242 15.5 4.38637 15.4636 4.24078 15.393C4.09519 15.3223 3.96291 15.2187 3.85148 15.0881C3.74004 14.9575 3.65165 14.8025 3.59135 14.6319C3.53104 14.4613 3.5 14.2784 3.5 14.0938ZM11.9 12.6875C12.2183 12.6875 12.5235 12.8357 12.7485 13.0994C12.9736 13.3631 13.1 13.7208 13.1 14.0938C13.1 14.4667 12.9736 14.8244 12.7485 15.0881C12.5235 15.3518 12.2183 15.5 11.9 15.5C11.5817 15.5 11.2765 15.3518 11.0515 15.0881C10.8264 14.8244 10.7 14.4667 10.7 14.0938C10.7 13.7208 10.8264 13.3631 11.0515 13.0994C11.2765 12.8357 11.5817 12.6875 11.9 12.6875Z"
-                                    fill="#F8F8F8"
-                                />
-                                </g>
-                                <defs>
-                                <clipPath id="clip0_534_3">
-                                    <rect
-                                    width="14.4"
-                                    height="15"
-                                    fill="white"
-                                    transform="translate(0.300003 0.5)"
-                                    />
-                                </clipPath>
-                                </defs>
-                            </svg>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            <div class="flecha_derecha">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <rect x="32" width="32" height="32" rx="16" transform="rotate(90 32 0)" fill="#F8F8F8"/>
-                    <path d="M10.5859 3.27197C10.211 3.64703 10.0003 4.15565 10.0003 4.68597C10.0003 5.2163 10.211 5.72492 10.5859 6.09997L20.4859 16L10.5859 25.9C10.2216 26.2772 10.02 26.7824 10.0246 27.3068C10.0291 27.8312 10.2395 28.3328 10.6103 28.7036C10.9811 29.0744 11.4827 29.2848 12.0071 29.2893C12.5315 29.2939 13.0367 29.0923 13.4139 28.728L24.7279 17.414C25.1028 17.0389 25.3135 16.5303 25.3135 16C25.3135 15.4696 25.1028 14.961 24.7279 14.586L13.4139 3.27197C13.0388 2.89703 12.5302 2.6864 11.9999 2.6864C11.4696 2.6864 10.961 2.89703 10.5859 3.27197Z" fill="#2F2F2F"/>
-                </svg>
-            </div>
-        </section>
+        <div class="categoria_popular">
+          <div class="icono_categoria">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="38"
+              height="37"
+              viewBox="0 0 38 37"
+              fill="none"
+            >
+              <path
+                d="M37.085 20.7977C37.085 23.9807 34.734 26.6211 31.6595 27.0551V32.553C31.6595 33.5123 31.2784 34.4323 30.6001 35.1106C29.9218 35.7889 29.0018 36.17 28.0425 36.17H21.1702V35.6274C21.1702 34.3324 20.6557 33.0904 19.74 32.1747C18.8243 31.2589 17.5823 30.7445 16.2873 30.7445C13.5745 30.7445 11.4043 32.9328 11.4043 35.6274V36.17H4.532C3.57271 36.17 2.65271 35.7889 1.9744 35.1106C1.29608 34.4323 0.915001 33.5123 0.915001 32.553V25.6807H1.45755C4.15222 25.6807 6.3405 23.5105 6.3405 20.7977C6.3405 18.085 4.15222 15.9148 1.45755 15.9148H0.915001V9.04247C0.915001 8.08318 1.29608 7.16318 1.9744 6.48486C2.65271 5.80654 3.57271 5.42547 4.532 5.42547H10.0298C10.4639 2.35102 13.1043 -3.05176e-05 16.2873 -3.05176e-05C19.4702 -3.05176e-05 22.1106 2.35102 22.5447 5.42547H28.0425C29.0018 5.42547 29.9218 5.80654 30.6001 6.48486C31.2784 7.16318 31.6595 8.08318 31.6595 9.04247V14.5403C34.734 14.9743 37.085 17.6148 37.085 20.7977ZM28.0425 23.5105H30.7552C31.4747 23.5105 32.1647 23.2247 32.6735 22.7159C33.1822 22.2072 33.468 21.5172 33.468 20.7977C33.468 20.0783 33.1822 19.3883 32.6735 18.8795C32.1647 18.3708 31.4747 18.085 30.7552 18.085H28.0425V9.04247H19V6.32972C19 5.61025 18.7142 4.92025 18.2055 4.41152C17.6967 3.90278 17.0067 3.61697 16.2873 3.61697C15.5678 3.61697 14.8778 3.90278 14.369 4.41152C13.8603 4.92025 13.5745 5.61025 13.5745 6.32972V9.04247H4.532V12.8765C7.71496 14.1063 9.9575 17.1807 9.9575 20.7977C9.9575 24.4147 7.69688 27.4892 4.532 28.7189V32.553H8.36602C8.98573 30.9556 10.0737 29.5829 11.4872 28.6147C12.9008 27.6465 14.5739 27.1281 16.2873 27.1275C19.9043 27.1275 22.9787 29.3881 24.2085 32.553H28.0425V23.5105Z"
+                fill="#DB1A1A"
+              />
+            </svg>
+          </div>
+          <label for="">PUZZLE</label>
+        </div>
+        <div class="categoria_popular">
+          <div class="icono_categoria">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="42"
+              height="30"
+              viewBox="0 0 42 30"
+              fill="none"
+            >
+              <path
+                d="M10.68 -2L13.8 3.23077H7.56L6.12 11.0769H2.28L3.72 3.23077H-0.12L-3 18.9231H4.68L3.72 24.1538H10.44L5.4 32H11.04L15.72 24.1538H26.28L30.96 32H36.6L31.56 24.1538H38.28L37.32 18.9231H45L42.12 3.23077H38.28L39.72 11.0769H35.88L34.44 3.23077H28.2L31.32 -2H27.24L23.88 3.23077H18.12L14.76 -2H10.68ZM11.16 8.46154H15V13.6923H11.16V8.46154ZM27.01 8.46154H30.85V13.6923H27.01V8.46154Z"
+                fill="#DB1A1A"
+              />
+            </svg>
+          </div>
+          <label for="">RETRO</label>
+        </div>
+        <div class="categoria_popular">
+          <div class="icono_categoria">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="33"
+              height="41"
+              viewBox="0 0 33 41"
+              fill="none"
+            >
+              <path
+                d="M9.94925 13.4559L9.94561 13.4577L9.94015 13.4613L9.94925 13.4559ZM28.0601 13.1156C27.9335 12.9935 27.7931 12.8866 27.6416 12.7972C27.4272 12.671 27.1892 12.5901 26.9423 12.5595C26.6953 12.5289 26.4448 12.5492 26.206 12.6193C25.9673 12.6894 25.7455 12.8077 25.5543 12.9669C25.363 13.1262 25.2065 13.3229 25.0944 13.545C24.4678 14.7803 23.6033 15.8796 22.5508 16.78C22.7122 15.8731 22.7938 14.9538 22.7946 14.0326C22.7981 11.2309 22.059 8.47832 20.6528 6.05509C19.2465 3.63187 17.2233 1.62455 14.789 0.237524C14.5207 0.0851057 14.2181 0.00340578 13.9096 0.000104201C13.6011 -0.00319738 13.2968 0.0720078 13.0254 0.21865C12.7539 0.365292 12.5242 0.578555 12.3579 0.83839C12.1915 1.09822 12.0939 1.3961 12.0744 1.704C11.9725 3.42903 11.5215 5.11542 10.7487 6.66101C9.97592 8.20661 8.8974 9.57924 7.5785 10.6957L7.16003 11.036C5.78018 11.9643 4.55885 13.1089 3.54295 14.4256C1.96417 16.4145 0.87052 18.7439 0.34875 21.229C-0.17302 23.7141 -0.108559 26.2867 0.537021 28.7426C1.1826 31.1985 2.39154 33.4701 4.06795 35.3774C5.74437 37.2847 7.84213 38.7752 10.1949 39.7306C10.4711 39.843 10.7707 39.8858 11.0674 39.8552C11.3641 39.8247 11.6486 39.7216 11.8961 39.5552C12.1436 39.3888 12.3464 39.1641 12.4866 38.9009C12.6268 38.6376 12.7002 38.344 12.7003 38.0458C12.6987 37.853 12.6681 37.6616 12.6093 37.4781C12.2022 35.948 12.085 34.3553 12.2636 32.7821C13.9857 36.029 16.7495 38.6026 20.1109 40.089C20.521 40.2724 20.9846 40.297 21.4118 40.1582C24.0673 39.3009 26.4594 37.779 28.361 35.7369C30.2627 33.6948 31.6106 31.2005 32.2768 28.4908C32.9429 25.7811 32.9052 22.946 32.1672 20.255C31.4292 17.564 30.0154 15.1064 28.0601 13.1156ZM20.9551 36.461C19.3691 35.6574 17.9699 34.5289 16.8487 33.149C15.7274 31.7691 14.9091 30.1687 14.4469 28.4518C14.3056 27.8736 14.1963 27.2881 14.1194 26.6978C14.0677 26.322 13.8997 25.9717 13.639 25.6961C13.3784 25.4204 13.0381 25.2331 12.6657 25.1604C12.5512 25.1382 12.4348 25.1272 12.3182 25.1276C11.9985 25.1273 11.6844 25.2113 11.4074 25.371C11.1305 25.5307 10.9006 25.7605 10.7407 26.0374C9.23138 28.6415 8.47253 31.6126 8.54827 34.6216C7.22035 33.5894 6.11052 32.3039 5.28311 30.8396C4.45569 29.3753 3.92715 27.7614 3.72812 26.0913C3.5291 24.4212 3.66354 22.7283 4.12367 21.1106C4.58379 19.4928 5.36044 17.9825 6.40859 16.6672C7.20445 15.6334 8.16454 14.7373 9.25058 14.0144C9.2981 13.9839 9.34368 13.9505 9.38704 13.9144C9.38704 13.9144 9.9256 13.4686 9.94379 13.4595C12.5369 11.2671 14.3814 8.32039 15.2202 5.02996C17.2024 6.86282 18.5239 9.29887 18.9796 11.9598C19.4352 14.6208 18.9995 17.3578 17.7402 19.7457C17.5735 20.0644 17.505 20.4254 17.5434 20.783C17.5818 21.1406 17.7253 21.4789 17.9559 21.755C18.1864 22.031 18.4936 22.2326 18.8386 22.3342C19.1836 22.4358 19.551 22.4328 19.8944 22.3257C22.6813 21.4517 25.1336 19.7449 26.9211 17.435C27.9959 19.022 28.6986 20.8311 28.9769 22.7274C29.2551 24.6238 29.1018 26.5585 28.5284 28.3874C27.9549 30.2162 26.976 31.8921 25.6648 33.29C24.3535 34.6879 22.7436 35.7719 20.9551 36.461Z"
+                fill="#DB1A1A"
+              />
+            </svg>
+          </div>
+          <label for="">TRENDING</label>
+        </div>
+      </section>
     </div>
 
     <footer>
@@ -1110,10 +819,19 @@
         </section>
       </div>
       <div class="bot">
-        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
-            <path d="M7.5 1.90625C6.29477 1.90625 5.11661 2.26364 4.1145 2.93323C3.11238 3.60282 2.33133 4.55454 1.87011 5.66802C1.40889 6.78151 1.28821 8.00676 1.52334 9.18883C1.75847 10.3709 2.33884 11.4567 3.19107 12.3089C4.0433 13.1612 5.1291 13.7415 6.31117 13.9767C7.49324 14.2118 8.71849 14.0911 9.83198 13.6299C10.9455 13.1687 11.8972 12.3876 12.5668 11.3855C13.2364 10.3834 13.5938 9.20523 13.5938 8C13.592 6.38436 12.9495 4.83538 11.807 3.69295C10.6646 2.55052 9.11564 1.90796 7.5 1.90625ZM7.5 13.1562C6.48019 13.1562 5.48328 12.8538 4.63534 12.2873C3.7874 11.7207 3.12651 10.9154 2.73625 9.97321C2.34598 9.03103 2.24387 7.99428 2.44283 6.99407C2.64178 5.99385 3.13287 5.0751 3.85398 4.35398C4.5751 3.63287 5.49385 3.14178 6.49407 2.94283C7.49428 2.74387 8.53103 2.84598 9.47321 3.23625C10.4154 3.62651 11.2207 4.2874 11.7873 5.13534C12.3538 5.98328 12.6563 6.98019 12.6563 8C12.6547 9.36705 12.111 10.6777 11.1443 11.6443C10.1777 12.611 8.86705 13.1547 7.5 13.1562ZM5.625 8C5.625 8.39353 5.74882 8.77708 5.97892 9.09633C6.20902 9.41558 6.53374 9.65434 6.90708 9.77878C7.28041 9.90323 7.68344 9.90705 8.05907 9.78971C8.4347 9.67238 8.76389 9.43982 9 9.125C9.07467 9.02554 9.18579 8.95982 9.30892 8.9423C9.43204 8.92477 9.55709 8.95687 9.65655 9.03154C9.756 9.10621 9.82172 9.21733 9.83925 9.34046C9.85678 9.46358 9.82467 9.58863 9.75 9.68809C9.39574 10.1602 8.90193 10.5089 8.33851 10.6847C7.77509 10.8606 7.17062 10.8548 6.6107 10.6681C6.05079 10.4813 5.5638 10.1232 5.21872 9.64435C4.87363 9.16551 4.68794 8.59023 4.68794 8C4.68794 7.40977 4.87363 6.83449 5.21872 6.35565C5.5638 5.87681 6.05079 5.51866 6.6107 5.33194C7.17062 5.14522 7.77509 5.13939 8.33851 5.31527C8.90193 5.49115 9.39574 5.83982 9.75 6.31191C9.78697 6.36116 9.81389 6.41721 9.8292 6.47685C9.84451 6.5365 9.84793 6.59858 9.83925 6.65954C9.83057 6.72051 9.80997 6.77917 9.77862 6.83217C9.74727 6.88517 9.70579 6.93148 9.65655 6.96846C9.6073 7.00543 9.55125 7.03234 9.49161 7.04765C9.43196 7.06297 9.36988 7.06638 9.30892 7.0577C9.24795 7.04902 9.18929 7.02842 9.13629 6.99708C9.08329 6.96573 9.03698 6.92425 9 6.875C8.76389 6.56018 8.4347 6.32762 8.05907 6.21029C7.68344 6.09295 7.28041 6.09677 6.90708 6.22122C6.53374 6.34566 6.20902 6.58442 5.97892 6.90367C5.74882 7.22292 5.625 7.60647 5.625 8Z" fill="#F8F8F8"/>
-          </svg>
-          <p>Todos los derechos reservados</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="15"
+          height="16"
+          viewBox="0 0 15 16"
+          fill="none"
+        >
+          <path
+            d="M7.5 1.90625C6.29477 1.90625 5.11661 2.26364 4.1145 2.93323C3.11238 3.60282 2.33133 4.55454 1.87011 5.66802C1.40889 6.78151 1.28821 8.00676 1.52334 9.18883C1.75847 10.3709 2.33884 11.4567 3.19107 12.3089C4.0433 13.1612 5.1291 13.7415 6.31117 13.9767C7.49324 14.2118 8.71849 14.0911 9.83198 13.6299C10.9455 13.1687 11.8972 12.3876 12.5668 11.3855C13.2364 10.3834 13.5938 9.20523 13.5938 8C13.592 6.38436 12.9495 4.83538 11.807 3.69295C10.6646 2.55052 9.11564 1.90796 7.5 1.90625ZM7.5 13.1562C6.48019 13.1562 5.48328 12.8538 4.63534 12.2873C3.7874 11.7207 3.12651 10.9154 2.73625 9.97321C2.34598 9.03103 2.24387 7.99428 2.44283 6.99407C2.64178 5.99385 3.13287 5.0751 3.85398 4.35398C4.5751 3.63287 5.49385 3.14178 6.49407 2.94283C7.49428 2.74387 8.53103 2.84598 9.47321 3.23625C10.4154 3.62651 11.2207 4.2874 11.7873 5.13534C12.3538 5.98328 12.6563 6.98019 12.6563 8C12.6547 9.36705 12.111 10.6777 11.1443 11.6443C10.1777 12.611 8.86705 13.1547 7.5 13.1562ZM5.625 8C5.625 8.39353 5.74882 8.77708 5.97892 9.09633C6.20902 9.41558 6.53374 9.65434 6.90708 9.77878C7.28041 9.90323 7.68344 9.90705 8.05907 9.78971C8.4347 9.67238 8.76389 9.43982 9 9.125C9.07467 9.02554 9.18579 8.95982 9.30892 8.9423C9.43204 8.92477 9.55709 8.95687 9.65655 9.03154C9.756 9.10621 9.82172 9.21733 9.83925 9.34046C9.85678 9.46358 9.82467 9.58863 9.75 9.68809C9.39574 10.1602 8.90193 10.5089 8.33851 10.6847C7.77509 10.8606 7.17062 10.8548 6.6107 10.6681C6.05079 10.4813 5.5638 10.1232 5.21872 9.64435C4.87363 9.16551 4.68794 8.59023 4.68794 8C4.68794 7.40977 4.87363 6.83449 5.21872 6.35565C5.5638 5.87681 6.05079 5.51866 6.6107 5.33194C7.17062 5.14522 7.77509 5.13939 8.33851 5.31527C8.90193 5.49115 9.39574 5.83982 9.75 6.31191C9.78697 6.36116 9.81389 6.41721 9.8292 6.47685C9.84451 6.5365 9.84793 6.59858 9.83925 6.65954C9.83057 6.72051 9.80997 6.77917 9.77862 6.83217C9.74727 6.88517 9.70579 6.93148 9.65655 6.96846C9.6073 7.00543 9.55125 7.03234 9.49161 7.04765C9.43196 7.06297 9.36988 7.06638 9.30892 7.0577C9.24795 7.04902 9.18929 7.02842 9.13629 6.99708C9.08329 6.96573 9.03698 6.92425 9 6.875C8.76389 6.56018 8.4347 6.32762 8.05907 6.21029C7.68344 6.09295 7.28041 6.09677 6.90708 6.22122C6.53374 6.34566 6.20902 6.58442 5.97892 6.90367C5.74882 7.22292 5.625 7.60647 5.625 8Z"
+            fill="#F8F8F8"
+          />
+        </svg>
+        <p class="font_body">Todos los derechos reservados</p>
       </div>
     </footer>
   </body>
