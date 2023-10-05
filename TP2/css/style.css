@@ -110,6 +110,7 @@ h4{
   border-radius: 7px;
   border: none;
   cursor: pointer;
+  position: relative;
 }
 .boton.primario{
   background-color: var(--Primario);
@@ -122,9 +123,19 @@ h4{
 }
 .boton.rojo {
   background-color: var(--Secundario);
+  min-width: 125px;
 }
-
-
+.boton div{
+  position: relative;
+}
+.boton div svg{
+  position: absolute;
+}
+.boton .tilde{
+  position: absolute;
+  right: 9px;
+  bottom: calc(50% + 9px / 2);
+}
 body {
   display: flex;
   flex-direction: column;
@@ -149,13 +160,16 @@ header > div a img {
 }
 .contenedor_general {
   max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* BANNERS */
 
 .carrusel_banner {
   display: flex;
-  overflow-x: scroll;
+  overflow-x: hidden;
   width: 100vw;
   align-self: center;
   max-width: 430px;
@@ -190,11 +204,132 @@ header > div a img {
   display: none;
 }
 .contenedor_general .pelotitas_banners {
-  display: none;
+  display: flex;
+  align-items: flex-end;
+  gap: 35px;
+  margin-top: 20px;
 }
 .contenedor_general .contenedor_categorias {
   display: none;
 }
+
+
+ /* CARD JUEGO */
+ .card_juego {
+  display: flex;
+  min-width: 265px;
+  max-width: 265px;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  border-radius: 7px;
+  background: var(--Blanco);
+  box-shadow: var(--SombraCards);
+  overflow: hidden;
+}
+.card_juego img {
+  width: 374px;
+  height: 220px;
+}
+.card_juego > div {
+  display: flex;
+  padding: 0px 14px 14px 14px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  align-self: stretch;
+  overflow:hidden;
+}
+.card_juego > div h3 {
+  width: calc(265px - 28px);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: var(--Negro);
+}
+.card_juego > div h4 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: var(--PrimarioS1);
+}
+.card_juego.conCinta{
+  position: relative;
+  overflow: visible;
+}
+.card_juego img{
+  object-fit: cover;
+}
+.card_juego .contenedorImagen{
+  padding: 0;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+}
+.card_juego .contenedor_cinta{
+  position: absolute;
+  top: -28px;
+  left: -17px;
+  padding: 0;
+  
+}
+.cinta{
+  position: relative;
+  height: 108px;
+  width: 122px;
+}
+.cinta svg{
+  position: absolute;
+  box-shadow: var(--SombraCards);
+}
+.cinta svg.izquierda{
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  box-shadow: var(--SombraCards);
+}
+.cinta svg.derecha{
+  right: 0;
+  top: 5px;
+  position: absolute;
+  box-shadow: none;
+}
+.cinta p{
+  position: absolute;
+  color: var(--Blanco);
+  rotate: -39deg;
+  top: calc(108px / 2 - 33px / 2);
+  left: calc(122px / 2 - 67px / 2);
+}
+.cinta.carrito p{
+  rotate: -35.5deg;
+  top: calc(108px / 2 - 33px / 2);
+  left: calc(122px / 2 - 80px / 2);
+}
+  /* CARRUSELES JUEGOS */
+        .carrusel_juegos{
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          
+        }
+        .carrusel_juegos h2{
+          margin-left: 12px;
+          font-size: 30px;
+        }
+        .carrusel_juegos > div{
+          display: flex;
+          align-items: center;
+        }
+        .carrusel_juegos > div svg{
+          display: none;
+        }
+        .carrusel_juegos > div .contenedor_juegos{
+          display: flex;
+          overflow-x: scroll;
+          width: calc(100vw - 30px);
+          max-width: 1440px;
+          gap: 20px;
+          padding: 30px 10px;
+        }
+
 /* FOOTER */
 footer {
   width: 100%;
@@ -337,12 +472,7 @@ footer .bot {
     align-items: flex-start;
     gap: 10px;
   }
-  .contenedor_general .pelotitas_banners {
-    display: flex;
-    align-items: flex-end;
-    gap: 35px;
-    margin-top: 20px;
-  }
+  
 
   /*categorias populares*/
   .contenedor_general .contenedor_categorias {
@@ -383,6 +513,18 @@ footer .bot {
     width: 31.72px;
     height: 37.236px;
     fill: var(--SecundarioL1);
+  }
+  /* carruseles juego */
+  .carrusel_juegos h2{
+    margin-left: 42px;
+    font-size: var(--h2-font-size);
+  }
+  .carrusel_juegos > div svg{
+    display: inline;
+  }
+  .carrusel_juegos > div .contenedor_juegos{
+    width: calc(100vw - 90px);
+    overflow: hidden;
   }
 
   /*footer*/

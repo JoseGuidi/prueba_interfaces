@@ -5,275 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inicio - UP</title>
     <link rel="stylesheet" href="css/style.css" />
-    <style>
-      body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      header {
-        width: 100%;
-        display: flex;
-        height: 100px;
-        padding: 0px 10px;
-        justify-content: space-between;
-        align-items: center;
-        background-color: var(--Primario);
-      }
-      header > div {
-        display: flex;
-        align-items: center;
-        gap: 11px;
-      }
-      header > div a img {
-        width: 200px;
-      }
-      .contenedor_general {
-        max-width: 600px;
-      }
-
-      /* BANNERS */
-
-      .carrusel_banner {
-        display: flex;
-        overflow-x: scroll;
-        width: 100vw;
-        align-self: center;
-        max-width: 430px;
-      }
-      .bannerCelu {
-        display: flex;
-        flex-direction: column;
-      }
-      .bannerCelu > img {
-        width: 430px;
-        height: 235px;
-      }
-      .bannerCelu .texto {
-        background: var(--DegradeRojoNaranja);
-        display: flex;
-        width: 430px;
-        padding: 15px 0px;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 11px;
-        min-height: 120px;
-      }
-      .bannerCelu .texto h1 {
-        font-size: 40px;
-      }
-      .bannerCelu .texto button,
-      .bannerCompu .informacion button {
-        font-size: 30px;
-      }
-      .bannerCompu {
-        display: none;
-      }
-      .contenedor_general .pelotitas_banners {
-        display: none;
-      }
-      .contenedor_general .contenedor_categorias {
-        display: none;
-      }
-      /* FOOTER */
-      footer {
-        width: 100%;
-      }
-      .info_footer {
-        display: flex;
-        padding: 92px 57px 93px 58px;
-        justify-content: center;
-        align-items: center;
-        background-color: var(--Primario);
-      }
-      .info_footer_categorias {
-        display: inline-flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        gap: 30px;
-      }
-      .secciones_footer {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .secciones_footer ul li:first-child {
-        font-family: var(--font-family-Roboto);
-        font-size: var(--body_bold_boton-font-size);
-        font-style: normal;
-        font-weight: var(--bodyBold-weight);
-        letter-spacing: var(--body-letter-spacing);
-        opacity: 1;
-      }
-      .secciones_footer ul li:last-child {
-        margin-bottom: 0;
-      }
-      .secciones_footer li {
-        display: flex;
-        align-items: center;
-        list-style: none;
-        margin-bottom: 10px;
-        color: var(--Blanco);
-        font-family: var(--font-family-Roboto);
-        font-size: var(--body-font-size);
-        font-style: normal;
-        font-weight: var(--body-font-weight);
-        letter-spacing: var(--body-letter-spacing);
-        opacity: var(--footer-font-opacity);
-      }
-      .secciones_footer li svg {
-        margin-right: 5px;
-      }
-      .redes_footer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .iconos_redes {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 15px;
-        align-self: stretch;
-      }
-      .linea_separadora_icono {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        width: 283px;
-        height: 1px;
-        background-color: var(--Blanco);
-      }
-      .contenedor_icono {
-        display: flex;
-        align-items: flex-end;
-        gap: 12px;
-      }
-      .logo_footer {
-        width: 279px;
-        height: 79px;
-      }
-      footer .bot {
-        display: flex;
-        height: 52px;
-        justify-content: center;
-        align-items: center;
-        background: var(--PrimarioS2);
-      }
-
-      @media only screen and (min-width: 1024px) {
-        header {
-          padding: 0 30px;
-        }
-        header > div a img {
-          width: 283px;
-        }
-        .contenedor_general {
-          max-width: none;
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-        /* BANNERS */
-        .carrusel_banner {
-          width: 100%;
-          max-width: 1440px;
-        }
-        .bannerCelu {
-          display: none;
-        }
-        .bannerCompu {
-          width: 1440px;
-          height: 530px;
-          position: relative;
-          display: flex;
-          justify-content: space-between;
-        }
-        .bannerCompu img {
-          width: 1014px;
-        }
-        .bannerCompu .informacion {
-          position: relative;
-          display: flex;
-          align-items: center;
-          width: 455px;
-        }
-        .bannerCompu .informacion svg {
-          position: absolute;
-        }
-
-        .bannerCompu .informacion .mensaje {
-          z-index: 10;
-          display: inline-flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 45px;
-          transform: translateX(60px);
-        }
-        .bannerCompu .informacion .mensaje > div {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 10px;
-        }
-        .contenedor_general .pelotitas_banners {
-          display: flex;
-          align-items: flex-end;
-          gap: 35px;
-          margin-top: 20px;
-        }
-
-        /*categorias populares*/
-        .contenedor_general .contenedor_categorias {
-          display: flex;
-          padding: 22px 10px;
-          justify-content: center;
-          align-items: center;
-          gap: 35px;
-          align-self: stretch;
-        }
-        .categoria_popular {
-          display: flex;
-          width: 110px;
-          height: 110px;
-          padding: 22px 13px 25px 14px;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          gap: 6.764px;
-          border-radius: 1540px;
-          background-color: var(--Blanco);
-          box-shadow: var(--SombraHeader);
-          cursor: pointer;
-        }
-        .categoria_popular label {
-          color: var(--SecundarioL1);
-          font-size: var(--body-font-size);
-          font-weight: var(--bodyBold-weight);
-          letter-spacing: var(--body-letter-spacing);
-        }
-        .icono_categoria {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-        .icono_categoria svg {
-          width: 31.72px;
-          height: 37.236px;
-          fill: var(--SecundarioL1);
-        }
-
-        /*footer*/
-        .info_footer_categorias{
-            max-width: 1440px;
-            justify-content: space-between;
-            gap: 144px;
-        }
-      }
-    </style>
+    <style></style>
   </head>
   <body>
     <header>
@@ -626,6 +358,179 @@
           <label for="">TRENDING</label>
         </div>
       </section>
+      <section class="carrusel_juegos">
+        <h2>Juegos en tendencia</h2>
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            id="flecha_izquierda"
+          >
+            <rect
+              y="32"
+              width="32"
+              height="32"
+              rx="16"
+              transform="rotate(-90 0 32)"
+            />
+            <path
+              d="M21.414 28.728C21.7889 28.353 21.9995 27.8444 21.9995 27.314C21.9995 26.7837 21.7889 26.2751 21.414 25.9L11.514 16L21.414 6.10003C21.7783 5.72282 21.9799 5.21762 21.9753 4.69322C21.9708 4.16883 21.7604 3.6672 21.3896 3.29639C21.0188 2.92557 20.5172 2.71523 19.9928 2.71068C19.4684 2.70612 18.9632 2.90771 18.586 3.27203L7.27197 14.586C6.89703 14.9611 6.6864 15.4697 6.6864 16C6.6864 16.5304 6.89703 17.039 7.27197 17.414L18.586 28.728C18.961 29.103 19.4696 29.3136 20 29.3136C20.5303 29.3136 21.0389 29.103 21.414 28.728Z"
+              fill="#2F2F2F"
+            />
+          </svg>
+
+          <div class="contenedor_juegos">
+            <div class="card_juego conCinta">
+              <div class="contenedor_cinta">
+                <div class="cinta carrito">
+                  <svg class="izquierda" xmlns="http://www.w3.org/2000/svg" width="17" height="27" viewBox="0 0 17 27" fill="none">
+                    <path d="M0.975688 0.335024L16.5913 12.3517L16.2155 23.8456L0.834436 26.4191L0.975688 0.335024Z" fill="#2B6123"/>
+                  </svg>
+                  <svg class="derecha" xmlns="http://www.w3.org/2000/svg" width="23" height="25" viewBox="0 0 23 25" fill="none">
+                    <path d="M22.1582 23.4023L0.671758 24.1651L1.94552 0.579427L22.2193 9.2606L22.1582 23.4023Z" fill="#2B6123"/>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="122" height="108" viewBox="0 0 122 108" fill="none">
+                    <path d="M0.330414 70.0813L92.8558 0.273893L121.695 15.0184L0.329386 107.176L0.330414 70.0813Z" fill="#317028"/>
+                  </svg>
+                  
+                  <p class="font_body">En carrito</p>
+                </div>
+              </div>
+              <div class="contenedorImagen">
+                <img
+                src="assets/images/portadas/Portada-candy.png"
+                alt="Portada del candy crush"
+              />
+              </div>
+              <div>
+                <h3>Candy Crush Saga</h3>
+                <h4>$5000</h4>
+                <button class="boton rojo">
+                  <span class="font_boton">Agregado al carrito</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
+                    <path d="M0.362518 1.20313C0.362518 0.813477 0.630018 0.5 0.962518 0.5H3.56252C3.91399 0.796875 4.76502 7 4.76502 7H11.8425L13.58 0.5C14.2375 0.5 14.7775 2.16992 14.605 2.91406L13.58 7.37598C13.3675 8.2959 12.655 8.9375 11.8425 8.9375H4.63002L4.76502 9.77246C4.82002 10.1035 5.06752 10.3438 5.35502 10.3438H12.5625C12.895 10.3438 13.1625 10.6572 13.1625 11.0469C13.1625 11.4365 12.895 11.75 12.5625 11.75H5.35502C4.49002 11.75 3.74752 11.0293 3.58752 10.0361L2.29752 2.09668C2.28002 1.98535 2.19752 1.90625 2.10002 1.90625H0.962518C0.630018 1.90625 0.362518 1.59277 0.362518 1.20313ZM3.56252 14.0938C3.56252 13.9091 3.59356 13.7262 3.65386 13.5556C3.71417 13.385 3.80256 13.23 3.91399 13.0994C4.02542 12.9688 4.15771 12.8652 4.3033 12.7945C4.44889 12.7239 4.60493 12.6875 4.76252 12.6875C4.9201 12.6875 5.07615 12.7239 5.22174 12.7945C5.36733 12.8652 5.49962 12.9688 5.61105 13.0994C5.72248 13.23 5.81087 13.385 5.87117 13.5556C5.93148 13.7262 5.96252 13.9091 5.96252 14.0938C5.96252 14.2784 5.93148 14.4613 5.87117 14.6319C5.81087 14.8025 5.72248 14.9575 5.61105 15.0881C5.49962 15.2187 5.36733 15.3223 5.22174 15.393C5.07615 15.4636 4.9201 15.5 4.76252 15.5C4.60493 15.5 4.44889 15.4636 4.3033 15.393C4.15771 15.3223 4.02542 15.2187 3.91399 15.0881C3.80256 14.9575 3.71417 14.8025 3.65386 14.6319C3.59356 14.4613 3.56252 14.2784 3.56252 14.0938ZM11.9625 12.6875C12.2808 12.6875 12.586 12.8357 12.811 13.0994C13.0361 13.3631 13.1625 13.7208 13.1625 14.0938C13.1625 14.4667 13.0361 14.8244 12.811 15.0881C12.586 15.3518 12.2808 15.5 11.9625 15.5C11.6443 15.5 11.339 15.3518 11.114 15.0881C10.8889 14.8244 10.7625 14.4667 10.7625 14.0938C10.7625 13.7208 10.8889 13.3631 11.114 13.0994C11.339 12.8357 11.6443 12.6875 11.9625 12.6875Z" fill="#F8F8F8"/>
+                  </svg>
+                  <svg class="tilde" xmlns="http://www.w3.org/2000/svg" width="12" height="9" viewBox="0 0 12 9" fill="none">
+                    <path d="M11.2698 0.263631C11.5767 0.615138 11.5767 1.18599 11.2698 1.53749L4.98482 8.73637C4.67794 9.08788 4.17956 9.08788 3.87267 8.73637L0.730164 5.13693C0.423279 4.78542 0.423279 4.21458 0.730164 3.86307C1.03705 3.51156 1.53543 3.51156 1.84232 3.86307L4.42997 6.82417L10.1601 0.263631C10.467 -0.0878769 10.9654 -0.0878769 11.2723 0.263631H11.2698Z" fill="#F8F8F8"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="card_juego">
+              <img
+                src="assets/images/portadas/Portada-candy.png"
+                alt="Portada del candy crush"
+              />
+              <div>
+                <h3>Candy Crush Saga</h3>
+                <h4>$5000</h4>
+                <button class="boton violeta">
+                  <span class="font_boton">Añadir al carrito</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="15"
+                    height="16"
+                    viewBox="0 0 15 16"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_534_3)">
+                      <path
+                        d="M0.300003 1.20312C0.300003 0.813477 0.567503 0.5 0.900003 0.5H2.0375C2.5875 0.5 3.075 0.875 3.3025 1.4375H13.5775C14.235 1.4375 14.715 2.16992 14.5425 2.91406L13.5175 7.37598C13.305 8.2959 12.5925 8.9375 11.78 8.9375H4.5675L4.7025 9.77246C4.7575 10.1035 5.005 10.3438 5.2925 10.3438H12.5C12.8325 10.3438 13.1 10.6572 13.1 11.0469C13.1 11.4365 12.8325 11.75 12.5 11.75H5.2925C4.4275 11.75 3.685 11.0293 3.525 10.0361L2.235 2.09668C2.2175 1.98535 2.135 1.90625 2.0375 1.90625H0.900003C0.567503 1.90625 0.300003 1.59277 0.300003 1.20312ZM3.5 14.0938C3.5 13.9091 3.53104 13.7262 3.59135 13.5556C3.65165 13.385 3.74004 13.23 3.85148 13.0994C3.96291 12.9688 4.09519 12.8652 4.24078 12.7945C4.38637 12.7239 4.54242 12.6875 4.7 12.6875C4.85759 12.6875 5.01363 12.7239 5.15922 12.7945C5.30481 12.8652 5.4371 12.9688 5.54853 13.0994C5.65996 13.23 5.74835 13.385 5.80866 13.5556C5.86896 13.7262 5.9 13.9091 5.9 14.0938C5.9 14.2784 5.86896 14.4613 5.80866 14.6319C5.74835 14.8025 5.65996 14.9575 5.54853 15.0881C5.4371 15.2187 5.30481 15.3223 5.15922 15.393C5.01363 15.4636 4.85759 15.5 4.7 15.5C4.54242 15.5 4.38637 15.4636 4.24078 15.393C4.09519 15.3223 3.96291 15.2187 3.85148 15.0881C3.74004 14.9575 3.65165 14.8025 3.59135 14.6319C3.53104 14.4613 3.5 14.2784 3.5 14.0938ZM11.9 12.6875C12.2183 12.6875 12.5235 12.8357 12.7485 13.0994C12.9736 13.3631 13.1 13.7208 13.1 14.0938C13.1 14.4667 12.9736 14.8244 12.7485 15.0881C12.5235 15.3518 12.2183 15.5 11.9 15.5C11.5817 15.5 11.2765 15.3518 11.0515 15.0881C10.8264 14.8244 10.7 14.4667 10.7 14.0938C10.7 13.7208 10.8264 13.3631 11.0515 13.0994C11.2765 12.8357 11.5817 12.6875 11.9 12.6875Z"
+                        fill="#F8F8F8"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_534_3">
+                        <rect
+                          width="14.4"
+                          height="15"
+                          fill="white"
+                          transform="translate(0.300003 0.5)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="card_juego conCinta">
+              <div class="contenedor_cinta">
+                <div class="cinta">
+                  <svg class="izquierda" xmlns="http://www.w3.org/2000/svg" width="17" height="27" viewBox="0 0 17 27" fill="none">
+                    <path d="M0.975688 0.335024L16.5913 12.3517L16.2155 23.8456L0.834436 26.4191L0.975688 0.335024Z" fill="#2B6123"/>
+                  </svg>
+                  <svg class="derecha" xmlns="http://www.w3.org/2000/svg" width="23" height="25" viewBox="0 0 23 25" fill="none">
+                    <path d="M22.1582 23.4023L0.671758 24.1651L1.94552 0.579427L22.2193 9.2606L22.1582 23.4023Z" fill="#2B6123"/>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="122" height="108" viewBox="0 0 122 108" fill="none">
+                    <path d="M0.330414 70.0813L92.8558 0.273893L121.695 15.0184L0.329386 107.176L0.330414 70.0813Z" fill="#317028"/>
+                  </svg>
+                  
+                  <p class="font_body">Gratuito</p>
+                </div>
+              </div>
+              <div class="contenedorImagen">
+                <img
+                src="assets/images/portadas/Portada-candy.png"
+                alt="Portada del candy crush"
+              />
+              </div>
+              <div>
+                <h3>Candy Crush Saga</h3>
+                <h4>Gratuito</h4>
+                <button class="boton rojo">
+                  <span class="font_boton">Jugar</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="12" viewBox="0 0 21 12" fill="none">
+                    <path d="M6.5 0.375C3.1875 0.375 0.5 2.89453 0.5 6C0.5 9.10547 3.1875 11.625 6.5 11.625H14.5C17.8125 11.625 20.5 9.10547 20.5 6C20.5 2.89453 17.8125 0.375 14.5 0.375H6.5ZM16 3.42188C16.3315 3.42188 16.6495 3.54534 16.8839 3.76511C17.1183 3.98488 17.25 4.28295 17.25 4.59375C17.25 4.90455 17.1183 5.20262 16.8839 5.42239C16.6495 5.64216 16.3315 5.76562 16 5.76562C15.6685 5.76562 15.3505 5.64216 15.1161 5.42239C14.8817 5.20262 14.75 4.90455 14.75 4.59375C14.75 4.28295 14.8817 3.98488 15.1161 3.76511C15.3505 3.54534 15.6685 3.42188 16 3.42188ZM12.75 7.40625C12.75 7.09545 12.8817 6.79738 13.1161 6.57761C13.3505 6.35784 13.6685 6.23438 14 6.23438C14.3315 6.23438 14.6495 6.35784 14.8839 6.57761C15.1183 6.79738 15.25 7.09545 15.25 7.40625C15.25 7.71705 15.1183 8.01512 14.8839 8.23489C14.6495 8.45466 14.3315 8.57812 14 8.57812C13.6685 8.57812 13.3505 8.45466 13.1161 8.23489C12.8817 8.01512 12.75 7.71705 12.75 7.40625ZM5.75 4.35938C5.75 3.96973 6.08437 3.65625 6.5 3.65625C6.91563 3.65625 7.25 3.96973 7.25 4.35938V5.29688H8.25C8.66562 5.29688 9 5.61035 9 6C9 6.38965 8.66562 6.70312 8.25 6.70312H7.25V7.64062C7.25 8.03027 6.91563 8.34375 6.5 8.34375C6.08437 8.34375 5.75 8.03027 5.75 7.64062V6.70312H4.75C4.33437 6.70312 4 6.38965 4 6C4 5.61035 4.33437 5.29688 4.75 5.29688H5.75V4.35938Z" fill="#F8F8F8"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="card_juego">
+              <img
+                src="assets/images/portadas/Portada-candy.png"
+                alt="Portada del candy crush"
+              />
+              <div>
+                <h3>Candy Crush Saga</h3>
+                <h4>En biblioteca</h4>
+                <button class="boton rojo">
+                  <span class="font_boton">Jugar</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="12" viewBox="0 0 21 12" fill="none">
+                    <path d="M6.5 0.375C3.1875 0.375 0.5 2.89453 0.5 6C0.5 9.10547 3.1875 11.625 6.5 11.625H14.5C17.8125 11.625 20.5 9.10547 20.5 6C20.5 2.89453 17.8125 0.375 14.5 0.375H6.5ZM16 3.42188C16.3315 3.42188 16.6495 3.54534 16.8839 3.76511C17.1183 3.98488 17.25 4.28295 17.25 4.59375C17.25 4.90455 17.1183 5.20262 16.8839 5.42239C16.6495 5.64216 16.3315 5.76562 16 5.76562C15.6685 5.76562 15.3505 5.64216 15.1161 5.42239C14.8817 5.20262 14.75 4.90455 14.75 4.59375C14.75 4.28295 14.8817 3.98488 15.1161 3.76511C15.3505 3.54534 15.6685 3.42188 16 3.42188ZM12.75 7.40625C12.75 7.09545 12.8817 6.79738 13.1161 6.57761C13.3505 6.35784 13.6685 6.23438 14 6.23438C14.3315 6.23438 14.6495 6.35784 14.8839 6.57761C15.1183 6.79738 15.25 7.09545 15.25 7.40625C15.25 7.71705 15.1183 8.01512 14.8839 8.23489C14.6495 8.45466 14.3315 8.57812 14 8.57812C13.6685 8.57812 13.3505 8.45466 13.1161 8.23489C12.8817 8.01512 12.75 7.71705 12.75 7.40625ZM5.75 4.35938C5.75 3.96973 6.08437 3.65625 6.5 3.65625C6.91563 3.65625 7.25 3.96973 7.25 4.35938V5.29688H8.25C8.66562 5.29688 9 5.61035 9 6C9 6.38965 8.66562 6.70312 8.25 6.70312H7.25V7.64062C7.25 8.03027 6.91563 8.34375 6.5 8.34375C6.08437 8.34375 5.75 8.03027 5.75 7.64062V6.70312H4.75C4.33437 6.70312 4 6.38965 4 6C4 5.61035 4.33437 5.29688 4.75 5.29688H5.75V4.35938Z" fill="#F8F8F8"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            
+          </div>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            id="flecha_derecha"
+          >
+            <rect
+              x="32"
+              width="32"
+              height="32"
+              rx="16"
+              transform="rotate(90 32 0)"
+            />
+            <path
+              d="M10.586 3.27197C10.2111 3.64703 10.0005 4.15565 10.0005 4.68597C10.0005 5.2163 10.2111 5.72492 10.586 6.09997L20.486 16L10.586 25.9C10.2217 26.2772 10.0201 26.7824 10.0247 27.3068C10.0292 27.8312 10.2396 28.3328 10.6104 28.7036C10.9812 29.0744 11.4828 29.2848 12.0072 29.2893C12.5316 29.2939 13.0368 29.0923 13.414 28.728L24.728 17.414C25.103 17.0389 25.3136 16.5303 25.3136 16C25.3136 15.4696 25.103 14.961 24.728 14.586L13.414 3.27197C13.039 2.89703 12.5304 2.6864 12 2.6864C11.4697 2.6864 10.9611 2.89703 10.586 3.27197Z"
+              fill="#2F2F2F"
+            />
+          </svg>
+        </div>
+      </section>
+
     </div>
 
     <footer>
@@ -834,5 +739,6 @@
         <p class="font_body">Todos los derechos reservados</p>
       </div>
     </footer>
+    <script src="js/carrusel.js"></script>
   </body>
 </html>
