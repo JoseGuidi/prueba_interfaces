@@ -208,6 +208,12 @@ header > div a img {
 .bannerCompu {
   display: none;
 }
+.pelotitas_banners{
+  cursor: pointer;
+}
+.pelotita.active{
+  fill: var(--SecundarioL1);
+}
 .contenedor_general .pelotitas_banners {
   display: flex;
   align-items: flex-end;
@@ -458,6 +464,7 @@ footer .bot {
     display: flex;
     justify-content: space-between;
   }
+  
   .bannerCompu img {
     width: 1014px;
   }
