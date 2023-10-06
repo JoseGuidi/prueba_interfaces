@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inicio - UP</title>
     <link rel="stylesheet" href="css/style.css" />
-    <style></style>
   </head>
   <body>
+    
     <header>
       <div>
         <svg
@@ -16,6 +16,7 @@
           height="32"
           viewBox="0 0 32 32"
           fill="none"
+          id="btnBurger"
         >
           <path
             d="M5.33333 24H26.6667C27.4 24 28 23.4 28 22.6667C28 21.9333 27.4 21.3333 26.6667 21.3333H5.33333C4.6 21.3333 4 21.9333 4 22.6667C4 23.4 4.6 24 5.33333 24ZM5.33333 17.3333H26.6667C27.4 17.3333 28 16.7333 28 16C28 15.2667 27.4 14.6667 26.6667 14.6667H5.33333C4.6 14.6667 4 15.2667 4 16C4 16.7333 4.6 17.3333 5.33333 17.3333ZM4 9.33333C4 10.0667 4.6 10.6667 5.33333 10.6667H26.6667C27.4 10.6667 28 10.0667 28 9.33333C28 8.6 27.4 8 26.6667 8H5.33333C4.6 8 4 8.6 4 9.33333Z"
@@ -28,6 +29,7 @@
       </div>
       <div>
         <svg
+          id="btnCarrito"
           xmlns="http://www.w3.org/2000/svg"
           width="32"
           height="34"
@@ -46,7 +48,7 @@
             </clipPath>
           </defs>
         </svg>
-        <img src="assets/images/foto-perfil.png" alt="Foto de perfil" />
+        <img src="assets/images/foto-perfil.png" alt="Foto de perfil" id="btnPerfil" />
       </div>
     </header>
     <div class="contenedor_general">
@@ -711,8 +713,8 @@
               <div>
                 <h3>Go Go Gummo</h3>
                 <h4>$1800</h4>
-                <button class="boton rojo">
-                  <span class="font_boton">Pagar</span>
+                <button class="boton verde">
+                  <span class="font_boton">Comprar</span>
                   
                 </button>
               </div>
@@ -799,8 +801,8 @@
               <div>
                 <h3>Snakes And Ladders Multiplayer</h3>
                 <h4>$740</h4>
-                <button class="boton rojo">
-                  <span class="font_boton">Pagar</span>
+                <button class="boton verde">
+                  <span class="font_boton">Comprar</span>
                   
                 </button>
               </div>
@@ -1001,7 +1003,87 @@
         </div>
       </section>
     </div>
-
+    <aside class="categorias oculto">
+      <ul>
+        <li ><a href="#accion" class="font_body" > Accion</a></li>
+        <li ><a href="#aventura" class="font_body" >Aventura</a></li>
+        <li  class="font_body" >Carreras</li>
+        <li  class="font_body" >Cartas</li>
+        <li ><a href="#retro" class="font_body" >Clasicos</a></li>
+        <li  class="font_body" >Cocina</li>
+        <li  class="font_body" >Estrategia</li>
+        <li  class="font_body" >Guerra</li>
+        <li  class="font_body" >Moda</li>
+      </ul>
+    </aside>
+    <aside class="contenedor_perfil oculto">
+      <img src="assets/images/foto-perfil.png" alt="Foto de perfil">
+      <div>
+        <span class="font_body bold">IronGamer</span>
+        <ul>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+              <path d="M8.05005 0.5C9.11092 0.5 10.1283 0.921427 10.8785 1.67157C11.6286 2.42172 12.05 3.43913 12.05 4.5C12.05 5.56087 11.6286 6.57828 10.8785 7.32843C10.1283 8.07857 9.11092 8.5 8.05005 8.5C6.98918 8.5 5.97177 8.07857 5.22162 7.32843C4.47148 6.57828 4.05005 5.56087 4.05005 4.5C4.05005 3.43913 4.47148 2.42172 5.22162 1.67157C5.97177 0.921427 6.98918 0.5 8.05005 0.5ZM8.05005 10.5C12.47 10.5 16.05 12.29 16.05 14.5V16.5H0.0500488V14.5C0.0500488 12.29 3.63005 10.5 8.05005 10.5Z" fill="#F8F8F8"/>
+            </svg>
+            <span class="font_body">Mi perfil</span>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+              <path d="M8 18C8 19.1 7.1 20 6 20C4.9 20 4 19.1 4 18C4 16.9 4.9 16 6 16C7.1 16 8 16.9 8 18ZM16 16C14.9 16 14 16.9 14 18C14 19.1 14.9 20 16 20C17.1 20 18 19.1 18 18C18 16.9 17.1 16 16 16ZM6.2 12.8V12.7L7.1 11H14.5C15.2 11 15.9 10.6 16.2 10L20.1 3L18.4 2L14.5 9H7.5L3.3 0H0V2H2L5.6 9.6L4.2 12C4.1 12.3 4 12.6 4 13C4 14.1 4.9 15 6 15H18V13H6.4C6.3 13 6.2 12.9 6.2 12.8ZM11 7.3L10.4 6.8C8.4 4.9 7 3.7 7 2.2C7 1 8 0 9.2 0C9.9 0 10.6 0.3 11 0.8C11.4 0.3 12.1 0 12.8 0C14 0 15 0.9 15 2.2C15 3.7 13.6 4.9 11.6 6.8L11 7.3Z" fill="#F8F8F8"/>
+            </svg>
+            <span class="font_body">Mis Compras</span>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+              <path d="M1.59172 12.875C1.20213 12.875 0.868508 12.7362 0.590842 12.4585C0.313175 12.1808 0.174578 11.8474 0.17505 11.4583V1.54167C0.17505 1.15208 0.313883 0.818459 0.59155 0.540793C0.869217 0.263126 1.20261 0.124529 1.59172 0.125001H6.55005V1.54167H1.59172V11.4583H6.55005V12.875H1.59172ZM9.38338 10.0417L8.40942 9.01458L10.2157 7.20833H4.42505V5.79167H10.2157L8.40942 3.98542L9.38338 2.95833L12.925 6.5L9.38338 10.0417Z" fill="#F8F8F8"/>
+            </svg>
+            <span class="font_body">Cerrar cesion</span>
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <aside class="contenedor_carrito oculto">
+      <div>
+        <h3>Mi Carrito</h3>
+        <ul>
+          <li>
+            <img src="assets/images/portadas/minecraft.png" alt="Portada de juego" class="juego">
+            <div>
+              <span class="font_body">Minecraft</span>
+              <span class="font_body bold">$4599 ARS</span>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M20.37 8.91L19.37 10.64L7.24 3.64L8.24 1.91L11.28 3.66L12.64 3.29L16.97 5.79L17.34 7.16L20.37 8.91ZM6 19V7H11.07L18 11V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H8C7.46957 21 6.96086 20.7893 6.58579 20.4142C6.21071 20.0391 6 19.5304 6 19Z" fill="#919191"/>
+            </svg>
+          </li>
+          <li>
+            <img src="assets/images/portadas/goovernor.png" alt="Portada de juego" class="juego">
+            <div>
+              <span class="font_body">Governor of Poker 3</span>
+              <span class="font_body bold">$1500 ARS</span>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M20.37 8.91L19.37 10.64L7.24 3.64L8.24 1.91L11.28 3.66L12.64 3.29L16.97 5.79L17.34 7.16L20.37 8.91ZM6 19V7H11.07L18 11V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H8C7.46957 21 6.96086 20.7893 6.58579 20.4142C6.21071 20.0391 6 19.5304 6 19Z" fill="#919191"/>
+            </svg>
+          </li>
+          <li>
+            <img src="assets/images/portadas/happywheels.png" alt="Portada de juego" class="juego">
+            <div>
+              <span class="font_body">Happy Wheels</span>
+              <span class="font_body bold">$700 ARS</span>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M20.37 8.91L19.37 10.64L7.24 3.64L8.24 1.91L11.28 3.66L12.64 3.29L16.97 5.79L17.34 7.16L20.37 8.91ZM6 19V7H11.07L18 11V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H8C7.46957 21 6.96086 20.7893 6.58579 20.4142C6.21071 20.0391 6 19.5304 6 19Z" fill="#919191"/>
+            </svg>
+          </li>
+        </ul>
+        <h4>Subtotal: $6799 ARS</h4>
+      </div>
+      
+      <button class="boton violeta font_boton">
+        Finalizar compra
+      </button>
+    </aside>
     <footer>
       <div class="info_footer">
         <section class="info_footer_categorias">
@@ -1208,7 +1290,11 @@
         <p class="font_body">Todos los derechos reservados</p>
       </div>
     </footer>
+    <div id="fondoOpacidad" class="ocultar"></div>
     <script src="js/banner.js"></script>
     <script src="js/carrusel.js"></script>
+    <script src="js/asidecategorias.js"></script>
+    <script src="js/asideperfil.js"></script>
+    <script src="js/asidecarrito.js"></script>
   </body>
 </html>
