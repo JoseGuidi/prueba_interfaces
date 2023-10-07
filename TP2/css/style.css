@@ -175,6 +175,173 @@ header > div a img {
 header svg{
   cursor: pointer;
 }
+/* LOGIN Y REGISTRO */
+
+.fondo_ingreso {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../assets/images/fondo-login.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fondo_ingreso main {
+  display: flex;
+  width: 617px;
+  padding: 30px;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  background-color: var(--Blanco);
+  border-radius: 7px;
+}
+.fondo_ingreso section.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 50px;
+}
+.fondo_ingreso section.formulario div.cabecera {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.fondo_ingreso section.formulario h3 {
+  color: var(--Negro);
+}
+.fondo_ingreso section.formulario h4 {
+  color: var(--Negro);
+}
+.fondo_ingreso section.formulario h4 a {
+  color: var(--Acento);
+}
+
+
+.fondo_ingreso section.formulario form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.fondo_ingreso section.formulario form section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.fondo_ingreso section.formulario form section > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+}
+
+
+.fondo_ingreso section.formulario form section div label {
+  font: var(--body_bold_boton-font-size) var(--body-letter-spacing)
+    var(--body-font-weight);
+  color: var(--PrimarioL1);
+}
+.fondo_ingreso .contenedor_input {
+  position: relative;
+}
+.fondo_ingreso .contenedor_input input {
+  width: 350px;
+  height: 40px;
+  border-radius: 7px;
+  border: 1px solid var(--PrimarioL1);
+  background-color: var(--Blanco);
+  padding: 0 12px;
+}
+.fondo_ingreso .contenedor_input input::-webkit-calendar-picker-indicator {
+  background: none;
+}
+.fondo_ingreso .contenedor_input svg,
+.fondo_ingreso .contenedor_input img {
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  right: 12px;
+  top: 7px;
+}
+.fondo_ingreso .contenedor_input img {
+  width: 22px;
+  height: 22px;
+}
+.fondo_ingreso form button {
+  display: flex;
+  width: 155px;
+  height: 36px;
+  padding: 9px 37px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 7px;
+  background: var(--Acento);
+  color: var(--Blanco);
+  font: var(--body_bold_boton-font-size) var(--boton-font-weight)
+    var(--boton-letter-spacing);
+  border: none;
+  cursor: pointer;
+}
+.fondo_ingreso form button:hover {
+  transition: 300ms ease-out;
+  background-color: #952583;
+}
+.fondo_ingreso .linea_divisora {
+  width: 557px;
+  height: 0.75px;
+  position: relative;
+  background-color: var(--PrimarioL2);
+}
+.fondo_ingreso .linea_divisora span {
+  padding: 0 10px;
+  position: absolute;
+  left: calc(50% - 29px / 2);
+  top: -9px;
+  background-color: var(--Blanco);
+}
+.fondo_ingreso .redes {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+
+.fondo_ingreso .redes button {
+  display: flex;
+  width: 353px;
+  height: 40px;
+  padding: 10px 0px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 30px;
+  border: 0.5px solid var(--PrimarioL1);
+  background: var(--Blanco);
+  box-shadow: var(--SombraChicaInputs);
+  cursor: pointer;
+}
+.fondo_ingreso .redes button:hover {
+  background: var(--BlancoS1);
+  transition: 100ms ease-out;
+}
+.fondo_ingreso .redes button label {
+  font: var(--body_bold_boton-font-size) var(--boton-font-weight)
+    var(--boton-letter-spacing);
+  color: var(--Negro);
+}
+
+
+
 
 /* BANNERS */
 
@@ -873,8 +1040,6 @@ section.breadcrumb ul li svg {
   align-items: flex-start;
   gap: 10px;
   padding: 20px 0 ;
-  border-top: 1px solid var(--PrimarioL2);
-  border-bottom: 1px solid var(--PrimarioL2);
 }
 .formulario form {
   display: flex;
@@ -886,9 +1051,7 @@ section.breadcrumb ul li svg {
   display: flex;
   width: 498px;
   height: 65px;
-  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
   gap: 10px;
   border: none;
   border-radius: 15px;
