@@ -720,6 +720,266 @@ footer .bot {
   }
 }
 
+/* PAGINA DEL JUEGO */
+
+
+
+/* POPUP COMPARTIR */
+.contenedor_juego {
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px 0;
+}
+section.breadcrumb {
+  padding: 12px 14px;
+  border-radius: 5px;
+  background: var(--Primario);
+  width: fit-content;
+}
+section.breadcrumb ul li h4{
+  color: var(--Blanco);
+}
+section.breadcrumb ul {
+  display: flex;
+  gap: 7px;
+  list-style: none;
+  align-items: center;
+}
+section.breadcrumb ul li a {
+  text-decoration: none;
+  color: var(--Blanco);
+}
+section.breadcrumb ul li svg {
+  transform: translateY(1.5px);
+}
+.contenedor_juego main {
+  display: flex;
+  box-shadow: var(--SombraEsparcida);
+}
+.ficha {
+  width: 52px;
+  height: 52px;
+}
+.juego .top,
+.juego .top > div,
+.juego .top .turno > div,
+.juego .top .turno > div div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.juego .top {
+  padding: 10px;
+  background: #2061b2;
+}
+.juego .top > div {
+  gap: 10px;
+}
+.juego .top .turno {
+  flex-direction: column;
+  gap: 5px;
+}
+.juego .top .turno > div {
+  gap: 30px;
+}
+.juego .top .turno > div div {
+  gap: 8px;
+}
+.juego .tablero {
+  height: 679px;
+}
+.juego .bot {
+  background-color: var(--PrimarioS2);
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 10px;
+}
+.juego .bot > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.juego .bot .botonera {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+.contenedor_juego main .informacion {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+  gap: 50px;
+  background-color: var(--PrimarioS1);
+  width: 397px;
+}
+.contenedor_juego main .informacion .item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  color: var(--Blanco);
+}
+.contenedor_juego main .informacion .item #btnVerMas{
+  cursor: pointer;
+}
+.contenedor_juego main .informacion .item ul li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  list-style: none;
+  margin-bottom: 5px;
+}
+.contenedor_juego .comentarios{
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+.contenedor_juego .comentarios .subtitulo {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+.contenedor_juego .comentarios .subtitulo h3,
+.contenedor_juego .comentarios .subtitulo h4 {
+  color: var(--Negro);
+}
+.formulario {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 20px 0 ;
+  border-top: 1px solid var(--PrimarioL2);
+  border-bottom: 1px solid var(--PrimarioL2);
+}
+.formulario form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+.formulario input {
+  display: flex;
+  width: 498px;
+  height: 65px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  border: none;
+  border-radius: 15px;
+  background: var(--Blanco);
+  box-shadow: var(--SombraChicaInputs);
+  color: var(--Negro);
+  padding: 10px;
+  font-size: var(--body_bold_boton-font-size);
+}
+.formulario input:focus {
+  color: var(--Negro);
+  padding: 0 15px;
+}
+.formulario form button{
+  color: var(--Blanco);
+  font-size: var(--body_bold_boton-font-size);
+}
+.subtitulo > div{
+  position: relative;
+  height: 24px;
+}
+.subtitulo > div svg.reloj{
+  position: absolute;
+left: 7px;
+top: 5px;
+}
+.comentario{
+  display: flex;
+  width: 617px;
+  padding: 20px 10px;
+  align-items: flex-start;
+  gap: 10px;
+  border-top: 0.7px solid var(--Primario-L2, #D9D9D9);
+}
+.comentario > div{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  flex: 1 0 0;
+  color: var(--Negro);
+}
+.comentario .mensaje{
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  align-self: stretch;
+  border-radius: 0px 10px 10px 10px;
+  border: 0.3px solid var(--PrimarioL1);
+  background: var(--PrimarioL2);
+}
+
+
+.compartirRedes.ocultar{
+  display: none;
+}
+.compartirRedes.desaparecerConAnimacion{
+  animation: desaparecerCompartir 300ms;
+}
+.compartirRedes{
+  width: 482px;
+  height: 223px;
+  border-radius: 10px;
+  background: var(--PrimarioS2);
+  box-shadow: var(--SombraCards);
+  position: fixed;
+  display: block;
+  top: calc(50% - 223px / 2);
+  animation: aparecerCompartir 300ms;
+  z-index: 70;
+}
+.compartirRedes > div{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 10px;
+}
+.compartirRedes > div .cruz,.informacion_extra > div .cruzExtra{
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+}
+.compartirRedes > div > div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.compartirRedes > div > div > div{
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.compartirRedes > div > div > div.redes{
+  border-bottom: 1px solid var(--Blanco);
+  padding-bottom: 10px;
+}
+.compartirRedes > div > div > div.redes svg.discord{
+  width: 34px;
+  height: 34px;
+  border-radius: 50px;
+}
+
+
 /* fondo opacidad */
 .ocultarConAnimacion{
   animation: desaparecerFondoOpacidad 300ms;
@@ -799,5 +1059,37 @@ footer .bot {
   }
   100%{
     right:  -348px;
+  }
+}
+@keyframes aparecerCompartir {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes desaparecerCompartir {
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+@keyframes aparecerInfoExtra {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes desaparecerInfoExtra {
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
   }
 }
