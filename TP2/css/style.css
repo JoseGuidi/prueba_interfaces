@@ -720,16 +720,18 @@ footer {
 .info_footer {
   display: flex;
   padding: 92px 57px 93px 58px;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   background-color: var(--Primario);
+  
 }
 .info_footer_categorias {
+  justify-content: center;
   display: inline-flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  gap: 30px;
+  gap: 70px;
 }
 .secciones_footer {
   display: flex;
@@ -921,8 +923,7 @@ footer .bot {
   /*footer*/
   .info_footer_categorias {
     max-width: 1440px;
-    justify-content: space-between;
-    gap: 144px;
+    
   }
 }
 
