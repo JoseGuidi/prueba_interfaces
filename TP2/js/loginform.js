@@ -1,13 +1,14 @@
 "use strict";
 document.querySelector('#btnLogin').addEventListener('click',realizarLogin);
 let cargando = false;
+let porcentajeCarga = document.querySelector(".porcentaje");
 function realizarLogin(e){
     e.preventDefault();
     let email = document.querySelector("#email");
     let pass = document.querySelector('#password');
     let errorEmail = document.querySelector("#email_erroneo")
     let errorPass = document.querySelector("#pass_erroneo")
-    if(!validarEmail(email.value) && pass.value === ""){
+    if(!validarEmail(email.value) || pass.value === ""){
         if(validarEmail(email.value)){
             
             errorEmail.classList.add('ocultar');
@@ -35,9 +36,7 @@ function realizarLogin(e){
         },5000)
     }
 }
-function empezarCargar(){
-    document.querySelector(".loader").classList.remove('ocultar')
-}
+
 
 function validarEmail(email) {
     // Expresión regular para validar un correo electrónico
@@ -47,3 +46,23 @@ function validarEmail(email) {
     return regex.test(email);
   }
 
+
+  function empezarCargar() {
+    document.querySelector(".loader").classList.remove("ocultar");
+    let contador = 0;
+    let intervalo = setInterval(() => {
+      contador++;
+      porcentajeCarga.innerHTML = contador + "%";
+      if (contador > 70) {
+        clearInterval(intervalo);
+      }
+    }, 25);
+    let intervalo2 = setInterval(() => {
+      contador++;
+      porcentajeCarga.innerHTML = contador + "%";
+      if (contador > 99) {
+        clearInterval(intervalo2);
+      }
+    }, 75);
+  }
+  
