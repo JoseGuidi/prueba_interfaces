@@ -275,6 +275,22 @@ header svg{
   width: 22px;
   height: 22px;
 }
+.input_erroneo.ocultar{
+  display: none;
+}
+.input_erroneo{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  animation: aparecerFondoOpacidad 0.2s;
+}
+.input_erroneo svg path{
+  fill: var(--Error);
+}
+.input_erroneo span.font_body{
+  color: var(--Error);
+  
+}
 .fondo_ingreso form button {
   display: flex;
   width: 155px;
