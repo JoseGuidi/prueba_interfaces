@@ -13,13 +13,16 @@ let porcentajeCarga = document.querySelector(".porcentaje");
 function registrar(e) {
   e.preventDefault();
   if (inputsValidos()) {
-    cargando = true;
-    empezarCargar();
-    setTimeout(() => {
-      cargando = false;
-      document.querySelector(".loader").classList.add("ocultar");
-      window.location.href = "index.html";
-    }, 5000);
+    document.querySelector('.contenedor_tilde').classList.remove('ocultar')
+    setTimeout(()=>{
+      cargando = true;
+      empezarCargar();
+      setTimeout(() => {
+        cargando = false;
+        document.querySelector(".loader").classList.add("ocultar");
+        window.location.href = "index.html";
+      }, 5000);
+    },2000)
   }else{
 
   }

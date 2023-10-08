@@ -355,6 +355,53 @@ header svg{
     var(--boton-letter-spacing);
   color: var(--Negro);
 }
+.contenedor_tilde{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 350px;
+  position: relative;
+  background-color: #bedeba;
+  padding: 15px 20px;
+  box-shadow: var(--SombraChicaInputs);
+  border-radius: 7px;
+  animation: aparecerFondoOpacidad 200ms;
+}
+.contenedor_tilde .font_body{
+  color: var(--Negro);
+  width: 90%;
+  text-align: center;
+
+}
+.checkmark {
+  display: block;
+  
+  -ms-transform: rotate(45deg); /* IE 9 */
+  -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+  transform: rotate(45deg);
+  position: absolute;
+  left: 26px;
+  top: 5px;
+}
+
+.checkmark_stem{
+  width: 10px;
+  height: 54px;
+  background-color: var(--Exito);
+  animation: aparecerFondoOpacidad 200ms;
+}
+
+.checkmark_kick {
+  animation: aparecerFondoOpacidad 200ms;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: var(--Exito);
+  left: -9px;
+  top: 44px;
+  
+}
+
 
 /* LOADER */
 
@@ -688,6 +735,8 @@ aside.contenedor_perfil > div ul li{
   gap: 3px;
   list-style: none;
 }
+
+
 /* CARRITO */ 
 aside.contenedor_carrito.ocultoConAnimacion{
   animation: desaparecerCarrito 300ms;
