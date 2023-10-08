@@ -44,7 +44,7 @@ function inputsValidos() {
     aparecerMensaje("email_error", "Campo requerido");
     todos = false;
   } else if (!validarEmail(iEmail.value)) {
-    aparecerMensaje("email_error", "Ingrese correo electronico valido");
+    aparecerMensaje("email_error", "Correo invalido");
     todos = false;
   } else {
     ocultarError("email_error");

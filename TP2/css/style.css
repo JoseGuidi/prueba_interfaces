@@ -465,6 +465,14 @@ span.loader {
   background: var(--Blanco);
   box-shadow: var(--SombraCards);
   overflow: hidden;
+  transform: rotateY(0deg);
+  transition: transform 1s;
+}
+.card_juego.enMovimientoD{
+  transform: skewY(7.5deg) skewX(15deg);
+}
+.card_juego.enMovimientoI{
+  transform: skewY(-7.5deg) skewX(-15deg);
 }
 .card_juego img {
   width: 374px;
@@ -496,7 +504,7 @@ span.loader {
   overflow: visible;
 }
 .card_juego img {
-  object-fit: cover;
+  
 }
 .card_juego .contenedorImagen {
   padding: 0;
