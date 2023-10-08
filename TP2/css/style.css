@@ -129,9 +129,10 @@ h4 {
 .boton.primario {
   background-color: var(--Primario);
 }
+
 .boton.violeta {
   background-color: var(--Acento);
-  width: 130px;
+  
   overflow: hidden;
 }
 .boton.violeta span {
@@ -632,34 +633,28 @@ span.loader {
   left: -17px;
   padding: 0;
 }
-
-/* CINTA SUJETO A CAMBIOS*/
-
-.card_juego > div.contenedor_cinta{
-  opacity: 0;
-  transition: 2s;
+.cinta svg.medio path{
+  fill: var(--Secundario);
 }
-.card_juego > div.contenedor_cinta:hover{
-  opacity: 1;
-  transition: 2s;
+.cinta svg.izquierda path,.cinta svg.derecha path{
+  fill: var(--SecundarioS1);
 }
-
-
-
 .cinta {
   position: relative;
   height: 108px;
   width: 122px;
 }
+
 .contenedor_juegos .card_juego.conCinta .cinta svg {
   display: inline;
   position: absolute;
 }
 .cinta.carrito svg.medio path{
-  fill: var(--Acento);
+  fill: var(--Exito);
 }
+
 .cinta.carrito svg.izquierda path,.cinta.carrito svg.derecha path{
-  fill: #6e1b60;
+  fill: var(--ExitoS1);
 }
 .cinta svg.izquierda {
   bottom: 0;
@@ -1043,12 +1038,21 @@ footer .bot {
     background-color: var(--Blanco);
     box-shadow: var(--SombraHeader);
     cursor: pointer;
-    
+    transition: 1s;
   }
-  .categoria_popular.rotacion{
-    animation: rotacion 2s linear infinite;
+  
+  .categoria_popular:hover {
+    background-color: var(--Secundario);
   }
-  .categoria_popular label {
+  
+  .categoria_popular:hover >.icono_categoria svg path{
+    fill: var(--Blanco);
+  }
+  
+  .categoria_popular:hover span {
+    color: var(--Blanco); 
+  }
+  .categoria_popular span {
     color: var(--SecundarioL1);
     font-size: var(--body-font-size);
     font-weight: var(--bodyBold-weight);
@@ -1465,15 +1469,6 @@ div.informacion_extra{
   100%{
     opacity: 1;
   }
-}
-@keyframes rotacion {
-  0% {
-      transform: rotateY(0deg); 
-  }
-  100% {
-      transform: rotateY(360deg); 
-  }
-
 }
 
 @keyframes aparecerCategorias {
