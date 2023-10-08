@@ -109,6 +109,7 @@ h4 {
 }
 
 .boton {
+  overflow: hidden;
   display: flex;
   padding: 10px;
   justify-content: center;
@@ -129,7 +130,22 @@ h4 {
 .boton.primario {
   background-color: var(--Primario);
 }
+.boton.verde:hover .txt_compra{
+  opacity: 0;
+}
+.boton.verde:hover .txt_paga{
+  animation: rebote 1.5s ease-in-out forwards;
+}
+.boton.verde .txt_compra{
+  position: absolute;
+  transition: .3s;
+}
+.boton.verde .txt_paga{
+  top :-40%;
+  position: absolute;
+  color: var(--Blanco);
 
+}
 .boton.violeta {
   background-color: var(--Acento);
   
@@ -1439,6 +1455,22 @@ div.informacion_extra{
   background-color: rgba(0, 0, 0, 0.25);
   position: fixed;
   animation: aparecerFondoOpacidad 300ms;
+}
+
+@keyframes rebote {
+  20% {
+    transform: translateY(200%);
+  }
+  40% {
+    transform: translateY(175%);
+  }
+  60%{
+    transform: translateY(200%);
+  }
+  80%,100%{
+    transform: translateY(175%);
+  }
+  
 }
 
 @keyframes moverJoystick {
