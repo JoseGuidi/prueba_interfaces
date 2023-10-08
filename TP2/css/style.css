@@ -119,14 +119,64 @@ h4 {
   cursor: pointer;
   position: relative;
   min-width: 125px;
+  height: 45px;
+  cursor: pointer;
+  transition: .3 ease-in-out;
+}
+.boton:active{
+  transform: scale(0.9);
 }
 .boton.primario {
   background-color: var(--Primario);
 }
 .boton.violeta {
   background-color: var(--Acento);
+  width: 130px;
+  overflow: hidden;
 }
+.boton.violeta span {
+  position: absolute;
+  left: 50%;
+  top:50%;
+  z-index: 3;
+  transform: translate(-50%,-50%);
+}
+.boton.violeta:hover .fa-cart-shopping{
+  animation: carrito 1.5s ease-in-out forwards;
+}
+.boton.violeta:hover .fa-box{
+  animation: caja 1.5s ease-in-out forwards;
+}
+.boton.violeta:hover .agregar{
+  animation: txt1 1.5s ease-in-out forwards;
+}
+.boton.violeta:hover .agregado{
+  animation: txt2 1.5s ease-in-out forwards;
+}
+.agregado{
+opacity: 0;
+}
+.agregar{
+  opacity: 1;
+}
+.fa-cart-shopping{
+  position: absolute;
+  z-index: 2;
+  top: 44%;
+  left: -18%;
+  font-size: 20px;
+  color: var(--Blanco);
+}
+.fa-box{
+  position: absolute;
+  z-index: 3;
+  top: -20%;
+  left: 52%;
+  transform: translate(-50%,-50%);
+  font-size: 14px;
+  color: var(--Blanco);
 
+}
 .boton.verde {
   background-color: var(--Exito);
 }
@@ -1338,6 +1388,48 @@ div.informacion_extra{
   position: fixed;
   animation: aparecerFondoOpacidad 300ms;
 }
+
+
+@keyframes carrito{
+  0%{
+    left:-10%;
+  }
+  40%,60%{
+    left: 40%;
+  }
+  100%{
+    left: 110%;
+  }
+}
+@keyframes caja{
+  0%,40%{
+    top: -20%;
+  }
+  60%{
+    top: 40%;
+    left: 50%;
+  }
+  100%{
+    top: 50%;
+    left:120%;
+  }
+}
+@keyframes txt1{
+  0%{
+    opacity: 1;
+  }
+  20%,100%{
+    opacity: 0;
+  }
+}
+@keyframes txt2{
+  0%,80%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
 @keyframes rotacion {
   0% {
       transform: rotateY(0deg); 
@@ -1347,6 +1439,7 @@ div.informacion_extra{
   }
 
 }
+
 @keyframes aparecerCategorias {
   0%{
     width: 0;
