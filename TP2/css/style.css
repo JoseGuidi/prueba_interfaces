@@ -356,10 +356,12 @@ header svg{
     var(--boton-letter-spacing);
   border: none;
   cursor: pointer;
+  transition: background-color 0.4s, transform 0.4s, box-shadow 0.4s;
 }
 .fondo_ingreso form button:hover {
-  transition: 300ms ease-out;
-  background-color: #952583;
+  transform: scale(1.1);
+  background-color: #881e76;
+  box-shadow:3px 3px 5px rgba(20, 20, 20, 0.122) ;
 }
 .fondo_ingreso .linea_divisora {
   width: 557px;
@@ -523,7 +525,9 @@ span.loader {
   gap: 11px;
   min-height: 120px;
 }
-
+.bannerCelu .texto a,.bannerCompu .mensaje a{
+  text-decoration: none;
+}
 .bannerCelu .texto h1 {
   font-size: 40px;
 }
@@ -564,6 +568,9 @@ span.loader {
   overflow: hidden;
   transform: rotateY(0deg);
   transition: transform 1s;
+}
+.card_juego a{
+  text-decoration: none;
 }
 .card_juego.enMovimientoD{
   transform: skewY(7.5deg) skewX(15deg);
@@ -1121,6 +1128,7 @@ section.breadcrumb ul li svg {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: var(--Blanco);
 }
 .juego .top {
   padding: 10px;
@@ -1154,6 +1162,26 @@ section.breadcrumb ul li svg {
   justify-content: space-between;
   align-items: center;
 }
+.juego .bot > div button{
+  transition: background-color .5s, transform .5s,border .5s;
+}
+.juego .bot > div button svg path{
+  transition: fill .5s;
+}
+.juego .bot > div button span{
+  transition: color .5s;
+}
+
+.juego .bot > div button:hover{
+  background-color: var(--PrimarioS2);
+  transform: skew(-6deg);
+  border: 1px solid var(--Acento);
+}
+.juego .bot > div button:hover svg path,.juego .bot > div button:hover span{
+  fill: var(--Acento);
+  color: var(--Acento);
+}
+
 .juego .bot .botonera {
   display: flex;
   justify-content: flex-end;
@@ -1177,6 +1205,7 @@ section.breadcrumb ul li svg {
 }
 .contenedor_juego main .informacion .item #btnVerMas{
   cursor: pointer;
+  text-decoration: solid 1px white underline;
 }
 .contenedor_juego main .informacion .item ul li {
   display: flex;
