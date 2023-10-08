@@ -57,7 +57,7 @@
     <div class="contenedor_juego">
       <section class="breadcrumb">
         <ul>
-          <li><h4><a href="index.html">Galeria</a></h4></li>
+          <li><h4><a id="anchorGaleria">Galeria</a></h4></li>
           <li>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +72,7 @@
               />
             </svg>
           </li>
-          <li><h4><a href="index.html/#tendencia">Tendencia</a></h4></li>
+          <li><h4><a id="anchorCategoriaTendencia">Tendencia</a></h4></li>
           <li>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -668,6 +668,11 @@
       </div>
     </div>
     <div id="fondoOpacidad" class="ocultar"></div>
+    <div class="loader ocultar">
+      <span class="loader"></span>
+      <span class="porcentaje"></span>
+    </div>
+    <script src="js/breadcrumbs.js"></script>
     <script src="js/popupcompartir.js"></script>
     <script src="js/popupvermas.js"></script>
   </body>

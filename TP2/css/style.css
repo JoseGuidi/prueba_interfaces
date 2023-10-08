@@ -461,7 +461,7 @@ header svg{
   position: fixed;
   height: 100vh;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.153);
+  background-color: rgba(0, 0, 0, 0.294);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1109,6 +1109,7 @@ section.breadcrumb ul {
 section.breadcrumb ul li a {
   text-decoration: none;
   color: var(--Blanco);
+  cursor: pointer;
 }
 section.breadcrumb ul li svg {
   transform: translateY(1.5px);
