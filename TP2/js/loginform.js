@@ -31,7 +31,7 @@ function realizarLogin(e){
         empezarCargar();
         setTimeout(()=>{
             cargando = false
-            window.location.href = "index.html";
+            window.location.href = "home.html";
             document.querySelector(".loader").classList.add('ocultar')
         },5000)
     }
