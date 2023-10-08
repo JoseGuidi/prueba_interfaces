@@ -20,7 +20,7 @@ function registrar(e) {
       setTimeout(() => {
         cargando = false;
         document.querySelector(".loader").classList.add("ocultar");
-        window.location.href = "index.html";
+        window.location.href = "home.html";
       }, 5000);
     },2000)
   }else{
