@@ -86,6 +86,9 @@ h4 {
   font-weight: var(--h4-font-weight);
   letter-spacing: var(--h4-letter-spacing);
 }
+main{
+  overflow: hidden;
+}
 .font_boton {
   font-size: var(--body_bold_boton-font-size);
   font-weight: var(--boton-font-weight);
@@ -287,6 +290,7 @@ header svg{
   border-radius: 7px;
 }
 .fondo_ingreso section.formulario {
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -339,8 +343,13 @@ header svg{
   color: var(--PrimarioL1);
 }
 .fondo_ingreso .contenedor_input {
+  transition: 0.1s;
   position: relative;
 }
+.animar_input{
+  animation: desplazar 1.5s ease-in-out forwards;
+}
+
 .fondo_ingreso .contenedor_input input {
   width: 350px;
   height: 40px;
@@ -1314,6 +1323,7 @@ section.breadcrumb ul li svg {
   font-size: var(--body_bold_boton-font-size);
 }
 .labelYerror{
+  transition: 0.1s;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1467,6 +1477,18 @@ div.informacion_extra{
   background-color: rgba(0, 0, 0, 0.25);
   position: fixed;
   animation: aparecerFondoOpacidad 300ms;
+}
+
+@keyframes desplazar {
+  0% {
+    transform: translateX(0);
+  }
+  30% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
 }
 
 @keyframes rebote {

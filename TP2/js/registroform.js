@@ -2,6 +2,8 @@
 let btnRegistro = document
   .querySelector("#btnRegistro")
   .addEventListener("click", registrar);
+const inputs=document.querySelectorAll('.contenedor_input,.labelYerror');
+const main=document.querySelector('main');
 let iNombre = document.querySelector("#iNombre");
 let iUsuario = document.querySelector("#iUsuario");
 let iApellido = document.querySelector("#iApellido");
@@ -91,6 +93,7 @@ function validarEmail(email) {
 }
 
 function empezarCargar() {
+  animar_input();
   document.querySelector(".loader").classList.remove("ocultar");
   let contador = 0;
   let intervalo = setInterval(() => {
@@ -107,4 +110,13 @@ function empezarCargar() {
       clearInterval(intervalo2);
     }
   }, 75);
+}
+
+function animar_input() {
+  inputs.forEach((input, index) => {
+    setTimeout(() => {
+      input.classList.add('animar_input');
+    }, 300 * index);
+  });
+
 }
