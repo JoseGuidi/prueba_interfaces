@@ -3,14 +3,14 @@ let cargando = false;
 let porcentajeCarga = document.querySelector(".porcentaje");
 let aGaleria = document.querySelector("#anchorGaleria").addEventListener("click",redirigirGaleria);
 let aTendencia = document.querySelector("#anchorCategoriaTendencia").addEventListener("click",redirigirTendencia);
-
+let btnLogo = document.querySelector(".logo").addEventListener("click",redirigirGaleria)
 function redirigirGaleria(){
     cargando = true
     empezarCargar()
     setTimeout(()=>{
         cargando = false;
         document.querySelector(".loader").classList.add("ocultar");
-        window.location.href = "index.html";
+        window.location.href = "home.html";
     },5000)
 }
 function redirigirTendencia(){
@@ -19,7 +19,7 @@ function redirigirTendencia(){
     setTimeout(()=>{
         cargando = false;
         document.querySelector(".loader").classList.add("ocultar");
-        window.location.href = "index.html#tendencia";
+        window.location.href = "home.html#tendencia";
     },5000)
 }
 

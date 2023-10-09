@@ -19,3 +19,13 @@ function ocultarfondoOpacidad(){
         fondoOpacidad.classList.add('ocultar')
     },200)
 }
+
+let items = document.querySelectorAll("aside.contenedor_carrito > div ul li");
+items.forEach(element => {
+    element.childNodes[5].addEventListener('mouseover',()=>{
+        element.classList.add('hover');
+    })
+    element.childNodes[5].addEventListener('mouseout',()=>{
+        element.classList.remove('hover');
+    })
+});

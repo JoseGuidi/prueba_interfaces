@@ -234,6 +234,9 @@ body {
   flex-direction: column;
   align-items: center;
 }
+img#btnPerfil{
+  cursor: pointer;
+}
 header {
   width: 100%;
   display: flex;
@@ -248,7 +251,8 @@ header > div {
   align-items: center;
   gap: 11px;
 }
-header > div a img {
+header > div a img,header > div img.logo {
+  cursor: pointer;
   width: 200px;
 }
 .contenedor_general {
@@ -704,12 +708,13 @@ span.loader {
   left: 38px;
 }
 .cinta.carrito p svg path{
-  stroke: var(--PrimarioL3);
+ /* stroke: var(--PrimarioL3);*/
 }
 /* CARRUSELES JUEGOS */
 .carrusel_juegos {
   display: flex;
   flex-direction: column;
+  margin: 10px 0;
   align-items: flex-start;
 }
 .carrusel_juegos h2 {
@@ -865,6 +870,7 @@ aside.contenedor_carrito > div ul li{
   justify-content: space-between;
   align-items: flex-start;
   border-radius: 1px;
+  transition: background-color 100ms;
 }
 aside.contenedor_carrito > div ul li div span{
   white-space: nowrap;      
@@ -876,6 +882,12 @@ aside.contenedor_carrito > div ul li img{
   width: 100px;
   height: 100px;
   object-fit: cover;
+}
+aside.contenedor_carrito > div ul li svg{
+  cursor: pointer;
+}
+aside.contenedor_carrito > div ul li.hover{
+  background-color: #565555;
 }
 aside.contenedor_carrito > div ul li > div{
   display: flex;
@@ -984,7 +996,7 @@ footer .bot {
   header {
     padding: 0 30px;
   }
-  header > div a img {
+  header > div a img, header > div img.logo {
     width: 283px;
   }
   .contenedor_general {
