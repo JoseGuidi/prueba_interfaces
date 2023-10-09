@@ -10,6 +10,7 @@ let iApellido = document.querySelector("#iApellido");
 let iPassword = document.querySelector("#iPassword");
 let iEmail = document.querySelector("#iEmail");
 let iFecha = document.querySelector("#iFecha");
+let iCaptcha = document.querySelector("#captcha")
 let cargando = false;
 let porcentajeCarga = document.querySelector(".porcentaje");
 function registrar(e) {
@@ -32,6 +33,8 @@ function registrar(e) {
 
 function inputsValidos() {
   let todos = true;
+  
+
   if (iNombre.value === "") {
     aparecerMensaje("nombre_error", "Campo requerido");
     todos = false;
@@ -67,6 +70,18 @@ function inputsValidos() {
     todos = false;
   } else {
     ocultarError("pass_error");
+  }
+
+  if(iCaptcha.checked == false){
+    todos = false;
+    document.querySelector("div.captcha").classList.add('error');
+    setTimeout(()=>{
+      document.querySelector("div.captcha").classList.remove('error');
+      
+    },3000)
+  }else{
+    document.querySelector("div.captcha").classList.remove('error');
+    
   }
   return todos;
 }
@@ -118,5 +133,7 @@ function animar_input() {
       input.classList.add('animar_input');
     }, 300 * index);
   });
-
+  setTimeout(()=>{
+    document.querySelector("div.captcha").classList.add('animar_input');
+  },3600)
 }
