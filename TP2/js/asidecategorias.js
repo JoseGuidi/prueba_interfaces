@@ -23,7 +23,7 @@ function ocultarFondo(){
     },200)
 }
 function mostrarCarrusel(id){
-    ocultarFondo()
+    fondo.classList.add('ocultar')
     let section = document.querySelector("#"+id);
     if(section){
         section.scrollIntoView({behavior:"smooth"})
