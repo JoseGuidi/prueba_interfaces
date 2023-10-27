@@ -5,6 +5,7 @@ class Tablero{
         this.fichas_viale= new Array();
         this.columnas = columnas;
         this.filas = filas;
+        this.fichaSeleccionada = null;
     }
     reiniciarTablero(){
         let c = this.columnas;
@@ -24,8 +25,11 @@ class Tablero{
         }
         
     }
-    clearCanvas(){
-        
+    imprimirImagenes(){
+        for(let i = 0; i< this.fichas_samid.length;i++){
+            this.fichas_samid[i].drawImage();
+            this.fichas_viale[i].drawImage();
+        }
     }
     mostrarFichas(){
         for(let i = 0; i < this.columnas*this.filas/2;i++){
@@ -44,44 +48,39 @@ class Tablero{
        
         let i = 0;
         let selecciono = false;
-        while(!selecciono && i < this.fichas_samid.length){
-            if(this.fichas_samid[i].clickedMe(e.layerX,e.layerY)){
-                console.log("click")
-                selecciono=true;
+        while(i < this.fichas_samid.length){
+            if(this.fichas_samid[i].clickedMe(e.offsetX,e.offsetY)){
+                this.fichaSeleccionada = this.fichas_samid[i]
                 this.fichas_samid[i].click(true);
+                this.fichas_samid[i].setNewPosition(e.offsetX,e.offsetY)
+            }
+            if(this.fichas_viale[i].clickedMe(e.offsetX,e.offsetY)){
+                this.fichas_viale[i].setNewPosition(e.offsetX,e.offsetY)
+                this.fichaSeleccionada = this.fichas_viale[i]
+                this.fichas_viale[i].click(true);
             }
             i++;
         }
     }
     moverFicha(e){
-        
-        let i = 0;
-        let selecciono = false;
-        while(!selecciono && i < this.fichas_samid.length){
-            if(this.fichas_samid[i].clickedMe(e.layerX,e.layerY) && this.fichas_samid[i].getClicked()){
-                ctx.fillStyle = '#f5f5f5';
-                ctx.fillRect(0,0,widthCanvas,heightCanvas)
-                this.fichas_samid[i].setNewPosition(e.layerX,e.layerY)
-                this.reiniciarTablero()
-                for(let j = 0;j < this.fichas_samid.length;j++){
-                    this.fichas_samid[j].setNewPosition(this.fichas_samid[j].getX(),this.fichas_samid[j].getY())
-                }
-            }
-            i++;
+        if(this.fichaSeleccionada != null){
+            this.fichaSeleccionada.setNewPosition(e.offsetX,e.offsetY)
+            this.clearCanvas()
+    
         }
+        
     }
     deseleccionarFicha(e){
-        let i = 0;
-        let selecciono = false;
-        while(!selecciono && i < this.fichas_samid.length){
-            if(this.fichas_samid[i].clickedMe(e.layerX,e.layerY)){
-                this.fichas_samid[i].click(false)
-                console.log("desclcik")
-            }
-            i++;
+        if(this.fichaSeleccionada != null){
+            this.fichaSeleccionada = null;
         }
     }
-
+    clearCanvas(){
+        ctx.fillStyle ="#f5f5f5";
+        ctx.fillRect(0,0,widthCanvas,heightCanvas)
+        this.reiniciarTablero();
+        this.imprimirImagenes()
+    }
 }
 function getNumeroRandom(max) {
     return Math.round(Math.random()*max);

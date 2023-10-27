@@ -20,18 +20,6 @@ class Ficha{
         }else{return false;}
         
     }
-    setY(y){
-        this.y = y;
-    }
-    setX(x){
-        this.x = x;
-    }
-    getX(){
-        return this.x;
-    }
-    getY(){
-        return this.y;
-    }
     click(ac){
         this.clickeando = ac;
     }
@@ -39,6 +27,14 @@ class Ficha{
         return this.clickeando
     }
     setNewPosition(x,y){
-        ctx.drawImage(this.imagen,x,y)
+        this.x = x - this.imagen.width/2;
+        this.y = y - this.imagen.height/2
+    }
+    getPosition(){
+        return {"x":this.x,"y":this.y}
+    }
+    drawImage(){
+        ctx.drawImage(this.imagen,this.x,this.y)
+
     }
 }
