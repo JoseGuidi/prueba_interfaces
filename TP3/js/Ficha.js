@@ -1,40 +1,36 @@
 class Ficha{
-    constructor(x,y,img){
-        this.x = x;
-        this.y = y;
-        img.onload = function(){
-            ctx.drawImage(img,x,y)
-        }
-        this.imagen = img
-        this.clickeando = false;
-        
+    constructor(posX, posY, contexto, imageSrc,posInicial) {
+        this.posInicial = posInicial
+        this.posX = posX
+        this.posY = posY
+        this.contexto = contexto;
+        this.image = new Image();
+        this.image.src = imageSrc;
     }
-
-    clickedMe(posx,posy){
-        /*if(posy > this.y && posy < this.imagen.height && posx > this.x && posx < this.imagen.width){
-            console.log("hola")
-        }*/
-        if(posy > this.y && posy < this.y + this.imagen.height &&
-            posx > this.x && posx < this.x+this.imagen.width){
-            return true;
-        }else{return false;}
-        
-    }
-    click(ac){
-        this.clickeando = ac;
-    }
-    getClicked(){
-        return this.clickeando
-    }
-    setNewPosition(x,y){
-        this.x = x - this.imagen.width/2;
-        this.y = y - this.imagen.height/2
+    setPosition(x,y){
+        this.posX = x;
+        this.posY = y;
     }
     getPosition(){
-        return {"x":this.x,"y":this.y}
+        return {"x":this.posX,"y":this.posY}
     }
-    drawImage(){
-        ctx.drawImage(this.imagen,this.x,this.y)
-
+    getImage(){
+        return this.image;
+    }
+    draw(){
+        if(this.image.complete){ //ya se cargo 
+            this.contexto.imageSmoothingEnabled = true;
+            this.contexto.drawImage(this.image, this.posX, this.posY,45,45);
+        }else{
+            this.image.onload = () =>{
+                this.contexto.imageSmoothingEnabled = true;
+                this.contexto.drawImage(this.image, this.posX, this.posY,45,45);
+            }
+        }
+    }
+    clickedMe(x,y){
+        let inX = x > this.posX && x < this.posX + this.image.width
+        let inY = y > this.posY && y < this.posY + this.image.height
+        return inX && inY
     }
 }
