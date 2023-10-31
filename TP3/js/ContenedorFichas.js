@@ -1,11 +1,12 @@
 class ContenedorFichas{
-    constructor(posX,posY,alto,ancho,contexto,equipo,cantidadFichas){
+    constructor(posX,posY,alto,ancho,contexto,equipo,cantidadFichas,jugador){
         this.posX = posX
         this.posY = posY
         this.alto = alto
         this.ancho = ancho
         this.contexto = contexto
         this.fichas = [];
+        this.jugador = jugador;
         
         for(let i = 0; i < cantidadFichas; i++){
             let posIn = {"x":posX,"y":posY + 50*i}

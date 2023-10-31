@@ -22,9 +22,10 @@ class Tablero{
     agregarFichaEn(col,ficha){
         let resultado = false;
         for(let j = 0; j < this.cantFilas;j++){
-            if(this.casillas[col][j] != null){
+            
+            if(this.casillas[j][col] != null){
                 resultado = true;
-                this.casillas[col][j] = ficha;
+                this.casillas[j][col] = ficha;
                 this.chequearGanador();
             }
         }

@@ -14,6 +14,10 @@ class Ficha{
     getPosition(){
         return {"x":this.posX,"y":this.posY}
     }
+    getPositionInicial(){
+        return this.posInicial;
+        
+    }
     getImage(){
         return this.image;
     }
