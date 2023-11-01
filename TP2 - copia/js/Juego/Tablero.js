@@ -18,6 +18,7 @@ class Tablero{
                 this.casillas[i][j].draw();
             }
         }
+
     }
     agregarFichaEn(col,ficha){
         // Si hay lugar en la columna, es decir mientras el casillero sea null 
@@ -26,7 +27,8 @@ class Tablero{
             
             if(this.casillas[j][col] != null){
                 resultado = true;
-                this.casillas[j][col] = ficha;
+                //no funciona
+               // this.casillas[j][col].setFicha(ficha);
                 this.chequearGanador();
             }
         }

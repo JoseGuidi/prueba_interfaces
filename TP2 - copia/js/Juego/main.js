@@ -8,12 +8,15 @@ let cantFichasPorEquipo = ((nEnLinea + 2) * (nEnLinea + 3)) / 2;
 let tamanioFicha = 30; //datoHardcodeado, puede variar dependiendo de tamaño, de momento fijo
 let xInicialTablero = 345; // posicion inicial del tablero eje X
 let yInicialTablero = 195; // posicion inicial del tablero eje Y
-let imgViale = "../img/ficha_viale.png";
-let imgSamid = "../img/ficha_samid.png";
-
+let imgViale = "../../assets/images/Juego/ficha_viale.png";
+let imgSamid = "../../assets/images/Juego/ficha_samid.png";
+const imgBackGround = "../../assets/images/Juego/fondoCanvas.jpg"
 let tablero = new Tablero(ctx, nEnLinea, tamanioFicha);
 let turno = new Turno();
 
+let juego = new Juego(nEnLinea,ctx,tablero);
+juego.generateContenedorDeFichas(45,80,widthCanvas/3,heightCanvas/2,imgViale,1);
+juego.generateContenedorDeFichas(45,80,widthCanvas/3,heightCanvas/2,imgSamid,2);
 tablero.draw();
 let contenedor_jugador1 = new ContenedorFichas(
   45,
@@ -117,11 +120,13 @@ function calcularColumna(x) {
   return colum;
 }
 function clearCanvas() {
-  ctx.fillStyle = "#f5f5f5";
-  ctx.fillRect(0, 0, widthCanvas, heightCanvas);
+  let imgFondo = new Image();
+  imgFondo.src = imgBackGround;
+  ctx.drawImage(imgFondo, 0, 0,1080,720);
   tablero.draw();
   contenedor_jugador1.draw();
   contenedor_jugador2.draw();
+
 }
 function mostrarCirculosGuia() {
   for (let i = 0; i < nEnLinea + 3; i++) {
