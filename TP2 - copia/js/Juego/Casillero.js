@@ -9,14 +9,14 @@ class Casillero{
     }
 
     draw(){
-        this.context.fillStyle = "#0e105b"
+        this.context.fillStyle = "#00000099"
         this.context.fillRect(this.posX,this.posY,this.tamFicha*2,this.tamFicha*2)
         let centroY = this.posY + this.tamFicha
         let centroX = this.posX + this.tamFicha
         
             this.context.beginPath();
             this.context.arc(centroX, centroY, this.tamFicha*0.8, 0, Math.PI * 2);
-            this.context.fillStyle = "#f5f5f5"
+            this.context.fillStyle = "#f5f5f550"
             this.context.fill();
         
     }
