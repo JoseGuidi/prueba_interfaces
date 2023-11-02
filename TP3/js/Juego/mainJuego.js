@@ -40,9 +40,9 @@ document.querySelector("#btnJugar").addEventListener("click",(e)=>{
         }
     })
 
-    if(vM && vV && vS){
-        let juego = new Juego(parseInt(vM),ctx,tamanioFicha);
-        juego.generateContenedorDeFichas(45,80,widthCanvas/3,heightCanvas/2,"../../assets/images/Juego/"+vV,1);
+    /*if(true){
+        let juego = new Juego(parseInt(4),ctx,tamanioFicha);
+        juego.generateContenedorDeFichas(0,80,widthCanvas/3,heightCanvas/2,"../../assets/images/Juego/"+vV,1);
         juego.generateContenedorDeFichas(widthCanvas - 270,80,widthCanvas/3,heightCanvas/2,"../../assets/images/Juego/"+vS,2);
         juego.draw()
         canvas.addEventListener("mousedown", (e) => {
@@ -60,6 +60,30 @@ document.querySelector("#btnJugar").addEventListener("click",(e)=>{
     }else{
         
         document.querySelector(".formularioJuego form h1").classList.add("error")
-    }
+    }*/
     
 })
+
+if(true){
+    let juego = new Juego(parseInt(4),ctx,tamanioFicha);
+    /*juego.generateContenedorDeFichas(0,80,widthCanvas/3,heightCanvas/2,"../../assets/images/Juego/"+vV,1);
+    juego.generateContenedorDeFichas(widthCanvas - 270,80,widthCanvas/3,heightCanvas/2,"../../assets/images/Juego/"+vS,2);*/
+    let altoContenedor = 720;
+    let anchoContenedor = 300;
+    juego.generateContenedorDeFichas(0,80,anchoContenedor,altoContenedor,"../../assets/images/Juego/viale4.png",1);
+    
+    juego.generateContenedorDeFichas(widthCanvas-241,80,anchoContenedor,altoContenedor,"../../assets/images/Juego/samid4.png",2);
+    juego.draw()
+    canvas.addEventListener("mousedown", (e) => {
+        juego.seleccionarFicha(e);
+    });
+    
+    canvas.addEventListener("mouseup", (e)=>{
+        juego.soltarFicha(e);
+    })
+    
+    canvas.addEventListener("mousemove", (e) => {
+        juego.trasladarFicha(e);
+    });
+    document.querySelector(".formularioJuego").classList.add("ocultar")
+}

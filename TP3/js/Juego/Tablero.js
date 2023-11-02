@@ -8,18 +8,15 @@ class Tablero{
         this.cantColumnas = cantidadEnLinea+3;
         this.casillas = [];
         this.tamañoCasilla ={"largo":tamanioFicha*2,"ancho":tamanioFicha*2}
-
-        console.log(cantidadEnLinea,this.cantFilas,this.cantColumnas)
         for (let i = 0; i < this.cantFilas; i++) {
             this.casillas[i] = [];
             for (let j = 0; j < this.cantColumnas; j++) {
-                let x = j*this.tamañoCasilla.ancho + xInicialTablero
-                let y = i*this.tamañoCasilla.largo + yInicialTablero
+                let x = j*this.tamañoCasilla.ancho + (widthCanvas/2 - this.cantColumnas*tamanioFicha)
+                let y = i*this.tamañoCasilla.largo + (heightCanvas/2 - this.cantFilas*tamanioFicha)
                 this.casillas[i][j] = new Casillero(this.ctx,x,y,this.tamFicha);
                 this.casillas[i][j].draw();
             }
         }
-
     }
     draw(){
         for (let i = 0; i < this.cantFilas; i++) {

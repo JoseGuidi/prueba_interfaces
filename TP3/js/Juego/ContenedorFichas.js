@@ -7,11 +7,9 @@ class ContenedorFichas{
         this.contexto = contexto
         this.fichas = [];
         this.jugador = jugador;
-        
         for(let i = 0; i < cantidadFichas; i++){
-            let posIn = {"x":posX,"y":posY + 50*i}
-
-            let fic = new Ficha(posX,posY + 50*i,contexto,equipo,posIn,jugador)
+            let posIn = {"x":this.getNumeroRandom(posX+40,ancho-150),"y":this.getNumeroRandom(posY+40,alto-250)}
+            let fic = new Ficha(posIn.x,posIn.y,contexto,equipo,posIn,jugador)
             this.fichas.push(fic)
         }
 
@@ -49,7 +47,7 @@ class ContenedorFichas{
         return this.fichas
     }
 
-    getNumeroRandom(maximo){
-        return Math.floor(Math.random()*maximo)
+    getNumeroRandom(inicio,maximo){
+        return inicio + Math.floor(Math.random()*maximo - tamanioFicha)
     }
 }
