@@ -167,7 +167,7 @@ class Tablero{
         let j=columna;
         let ganador=null;
         cantidad+=this.recuperarCantFichasArriba(i,j,ficha)
-        if(cantidad==4){
+        if(cantidad>=4){
             ganador=ficha.getJugador();
         }
         if(ganador==null){
@@ -175,7 +175,7 @@ class Tablero{
             i=fila;
             cantidad+=this.recuperarCantFichasIzquierda(i,j,ficha);
             cantidad+=this.recuperarCantFichasDerecha(i,j,ficha);
-            if(cantidad==4)
+            if(cantidad>=4)
                 ganador=ficha.getJugador();
         }
         if(ganador==null){
@@ -184,7 +184,7 @@ class Tablero{
             i=fila;
             cantidad+=this.recuperarCantFichasDiagonalArribaIzquierda(i,j,ficha);
             cantidad+=this.recuperarCantFichasDiagonalAbajoDerecha(i,j,ficha);
-            if(cantidad==4)
+            if(cantidad>=4)
                 ganador=ficha.getJugador();
         }
         if(ganador==null){
@@ -193,7 +193,7 @@ class Tablero{
             i=fila;
             cantidad+=this.recuperarCantFichasDiagonalArribaDerecha(i,j,ficha);
             cantidad+=this.recuperarCantFichasDiagonalAbajoIzquierda(i,j,ficha);
-            if(cantidad==4)
+            if(cantidad>=4)
                 ganador=ficha.getJugador();
         }
         setTimeout( ()=>{
