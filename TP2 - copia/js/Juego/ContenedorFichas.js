@@ -10,7 +10,8 @@ class ContenedorFichas{
         
         for(let i = 0; i < cantidadFichas; i++){
             let posIn = {"x":posX,"y":posY + 50*i}
-            let fic = new Ficha(posX,posY + 50*i,contexto,equipo,posIn)
+
+            let fic = new Ficha(posX,posY + 50*i,contexto,equipo,posIn,jugador)
             this.fichas.push(fic)
         }
 

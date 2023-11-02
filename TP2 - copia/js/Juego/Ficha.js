@@ -1,5 +1,6 @@
 class Ficha{
-    constructor(posX, posY, contexto, imageSrc,posInicial) {
+    constructor(posX, posY, contexto, imageSrc,posInicial,jugador) {
+
         this.posInicial = posInicial
         this.posX = posX
         this.posY = posY
@@ -7,6 +8,8 @@ class Ficha{
         this.image = new Image();
         this.image.src = imageSrc;
         this.colocada = false;
+
+        this.jugador=jugador;
     }
     setPosition(x,y){
         this.posX = x;
@@ -22,6 +25,7 @@ class Ficha{
     getImage(){
         return this.image;
     }
+
     draw(){
         if(this.image.complete){ //ya se cargo 
             this.contexto.imageSmoothingEnabled = true;

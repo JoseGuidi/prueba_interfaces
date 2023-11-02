@@ -54,9 +54,11 @@ class Juego{
             // intento meterla en esa columna, la columna puede estar llena.
             let pudeInsertar = this.tablero.agregarFichaEn(columna, this.fichaClickeada); // tiene xey en caso de que se pueda insertar
             if(pudeInsertar != null){
+                
                 // Saco la ficha del jugador correspondiente
                 this.fichaClickeada.setColocada(true)
                 this.fichaClickeada.setPosition(pudeInsertar.x + 7,pudeInsertar.y+7)
+
                 if(this.turno.getTurno() == 1){
                     this.jugadores[0].quitarFicha(this.fichaClickeada);
                     this.turno.changeTurno(2)
@@ -67,7 +69,7 @@ class Juego{
                 this.tablero.draw()
                 let posicionesActuales = this.fichaClickeada.getPosition();
                 this.animarFichaRegreso(this.fichaClickeada,posicionesActuales.x,posicionesActuales.y,e.offsetX-this.tamanioFicha,e.offsetY,this)
-                console.log(this.fichaClickeada)
+
                 //this.animarFichaRegreso(this.fichaClickeada,fichaClickeada.getPosition().x,fichaClickeada.getPosition().y,e.offsetX,e.offsetY,this)
             }else{
                 // la devuelvo a su lugar
