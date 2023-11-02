@@ -82,7 +82,6 @@ class Tablero{
         let cantidad=0;
         fila--;
         col--;
-        console.log(fila,col)
         while(fila>=0&&col>=0&&secuencia){
             if((this.casillas[fila][col].getFicha()!=null)&&(this.casillas[fila][col].getFicha().getJugador()==ficha.getJugador())){
                 cantidad++;
@@ -100,7 +99,6 @@ class Tablero{
         let cantidad=0;
         fila--;
         col++;
-        console.log(fila,col)
         while(fila>=0&&col<this.cantColumnas&&secuencia){
             if((this.casillas[fila][col].getFicha()!=null)&&(this.casillas[fila][col].getFicha().getJugador()==ficha.getJugador())){
                 cantidad++;
@@ -118,7 +116,6 @@ class Tablero{
         let cantidad=0;
         fila++;
         col++;
-        console.log(fila,col)
         while(fila<this.cantFilas&&col<this.cantColumnas&&secuencia){
             if((this.casillas[fila][col].getFicha()!=null)&&(this.casillas[fila][col].getFicha().getJugador()==ficha.getJugador())){
                 cantidad++;
@@ -136,7 +133,6 @@ class Tablero{
         let cantidad=0;
         fila++;
         col--;
-        console.log(fila,col)
         while(fila<this.cantFilas&&col>=0&&secuencia){
             if((this.casillas[fila][col].getFicha()!=null)&&(this.casillas[fila][col].getFicha().getJugador()==ficha.getJugador())){
                 cantidad++;
@@ -199,8 +195,10 @@ class Tablero{
             if(cantidad==4)
                 ganador=ficha.getJugador();
         }
-        if(ganador)
-            alert(ganador)
+        setTimeout( ()=>{
+            if(ganador)
+                alert(ganador)
+        },1000)
     }
     
         
