@@ -48,4 +48,8 @@ class ContenedorFichas{
     getFichas(){
         return this.fichas
     }
+
+    getNumeroRandom(maximo){
+        return Math.floor(Math.random()*maximo)
+    }
 }

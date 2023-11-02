@@ -48,4 +48,7 @@ class Ficha{
     setColocada(v){
         this.colocada = v;
     }
+    getJugador(){
+        return this.jugador
+    }
 }

@@ -1,14 +1,15 @@
 class Tablero{
     constructor(contexto,cantidadEnLinea,tamanioFicha){
         this.ctx = contexto;
-        this.cant = cantidadEnLinea;
+       
+        this.cantidadEnLinea = cantidadEnLinea;
         this.tamFicha = tamanioFicha;
-        this.cantFilas = cantidadEnLinea +2;
-        this.cantColumnas = cantidadEnLinea +3;
+        this.cantFilas = cantidadEnLinea+2;
+        this.cantColumnas = cantidadEnLinea+3;
         this.casillas = [];
         this.tamañoCasilla ={"largo":tamanioFicha*2,"ancho":tamanioFicha*2}
 
-
+        console.log(cantidadEnLinea,this.cantFilas,this.cantColumnas)
         for (let i = 0; i < this.cantFilas; i++) {
             this.casillas[i] = [];
             for (let j = 0; j < this.cantColumnas; j++) {
@@ -162,12 +163,13 @@ class Tablero{
         return cantidad;
     }
     chequearGanador(ficha,fila,columna){
+        console.log(this.cantidadEnLinea)
         let cantidad=1;
         let i=fila;
         let j=columna;
         let ganador=null;
         cantidad+=this.recuperarCantFichasArriba(i,j,ficha)
-        if(cantidad>=4){
+        if(cantidad>=this.cantidadEnLinea){
             ganador=ficha.getJugador();
         }
         if(ganador==null){
@@ -175,7 +177,7 @@ class Tablero{
             i=fila;
             cantidad+=this.recuperarCantFichasIzquierda(i,j,ficha);
             cantidad+=this.recuperarCantFichasDerecha(i,j,ficha);
-            if(cantidad>=4)
+            if(cantidad>=this.cantidadEnLinea)
                 ganador=ficha.getJugador();
         }
         if(ganador==null){
@@ -184,7 +186,7 @@ class Tablero{
             i=fila;
             cantidad+=this.recuperarCantFichasDiagonalArribaIzquierda(i,j,ficha);
             cantidad+=this.recuperarCantFichasDiagonalAbajoDerecha(i,j,ficha);
-            if(cantidad>=4)
+            if(cantidad>=this.cantidadEnLinea)
                 ganador=ficha.getJugador();
         }
         if(ganador==null){
@@ -193,7 +195,7 @@ class Tablero{
             i=fila;
             cantidad+=this.recuperarCantFichasDiagonalArribaDerecha(i,j,ficha);
             cantidad+=this.recuperarCantFichasDiagonalAbajoIzquierda(i,j,ficha);
-            if(cantidad>=4)
+            if(cantidad>=this.cantidadEnLinea)
                 ganador=ficha.getJugador();
         }
         setTimeout( ()=>{

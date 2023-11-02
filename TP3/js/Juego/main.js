@@ -5,7 +5,7 @@ let heightCanvas = canvas.height;
 
 let nEnLinea = 4; // dato obtenido de form
 let cantFichasPorEquipo = ((nEnLinea + 2) * (nEnLinea + 3)) / 2;
-let tamanioFicha = 30; //datoHardcodeado, puede variar dependiendo de tamaño, de momento fijo
+let tamanioFicha = 80; //datoHardcodeado, puede variar dependiendo de tamaño, de momento fijo
 let xInicialTablero = 345; // posicion inicial del tablero eje X
 let yInicialTablero = 195; // posicion inicial del tablero eje Y
 let imgViale = "../../assets/images/Juego/ficha_viale.png";
