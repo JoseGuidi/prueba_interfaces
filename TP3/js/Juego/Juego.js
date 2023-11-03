@@ -7,7 +7,7 @@ class Juego{
         this.tamanioFicha = tamanioFicha;
         this.tablero = new Tablero(ctx,nEnLinea,tamanioFicha);
         this.turno = new Turno();
-        
+        this.terminoElJuego = false;
         this.jugadores = [];
         
         this.fichaClickeada = null;
@@ -27,7 +27,7 @@ class Juego{
 
     draw(){
         // SERIA EL CLEAR CANVAS
-        this.ctx.clearRect(0, 0, widthCanvas, heightCanvas);
+            this.ctx.clearRect(0, 0, widthCanvas, heightCanvas);
         let imgFondo = new Image();
         imgFondo.src = imgBackGround;
         this.ctx.drawImage(imgFondo, 0, 0, widthCanvas, heightCanvas);
@@ -57,30 +57,45 @@ class Juego{
             // calculo columna
             let columna = this.calcularColumna(e.offsetX)
             // intento meterla en esa columna, la columna puede estar llena.
-            let pudeInsertar = this.tablero.agregarFichaEn(columna, this.fichaClickeada); // tiene xey en caso de que se pueda insertar
-            if(pudeInsertar != null){
-                
-                // Saco la ficha del jugador correspondiente
+            let pudeInsertar = this.tablero.agregarFichaEn(columna, this.fichaClickeada); 
+            /*
+                pudeInsertar devuelve JSON con Poscion de ultima ficha y el ganador (si es que alguien ganó)
+                 ó posicion (x,y) donde se inserto (si es que nadie gano tdv)
+            */
+            if(pudeInsertar.ganador){
                 this.fichaClickeada.setColocada(true)
-                this.fichaClickeada.setPosition(pudeInsertar.x + 7,pudeInsertar.y+7)
-
-                if(this.turno.getTurno() == 1){
-                    this.jugadores[0].quitarFicha(this.fichaClickeada);
-                    this.turno.changeTurno(2)
-                }else{
-                    this.jugadores[1].quitarFicha(this.fichaClickeada);
-                    this.turno.changeTurno(1)
-                }
-                this.tablero.draw()
+                this.fichaClickeada.setPosition(pudeInsertar.posicion.x + 7,pudeInsertar.posicion.y+7)
                 let posicionesActuales = this.fichaClickeada.getPosition();
                 this.animarFichaRegreso(this.fichaClickeada,posicionesActuales.x,posicionesActuales.y,e.offsetX-this.tamanioFicha,e.offsetY,this)
-
-                //this.animarFichaRegreso(this.fichaClickeada,fichaClickeada.getPosition().x,fichaClickeada.getPosition().y,e.offsetX,e.offsetY,this)
+                this.terminoElJuego = true;
+                setTimeout(()=>{
+                    return this.terminarJuego(pudeInsertar.ganador);
+                },1000)
             }else{
-                // la devuelvo a su lugar
-                let posInicialX = this.fichaClickeada.getPositionInicial().x;
-                let posInicialY = this.fichaClickeada.getPositionInicial().y;
-                this.animarFichaRegreso(this.fichaClickeada,posInicialX,posInicialY,e.offsetX,e.offsetY,this)
+                if(pudeInsertar != null){
+                
+                    // Saco la ficha del jugador correspondiente
+                    this.fichaClickeada.setColocada(true)
+                    this.fichaClickeada.setPosition(pudeInsertar.x + 7,pudeInsertar.y+7)
+    
+                    if(this.turno.getTurno() == 1){
+                        this.jugadores[0].quitarFicha(this.fichaClickeada);
+                        this.turno.changeTurno(2)
+                    }else{
+                        this.jugadores[1].quitarFicha(this.fichaClickeada);
+                        this.turno.changeTurno(1)
+                    }
+                    this.tablero.draw()
+                    let posicionesActuales = this.fichaClickeada.getPosition();
+                    this.animarFichaRegreso(this.fichaClickeada,posicionesActuales.x,posicionesActuales.y,e.offsetX-this.tamanioFicha,e.offsetY,this)
+    
+                    //this.animarFichaRegreso(this.fichaClickeada,fichaClickeada.getPosition().x,fichaClickeada.getPosition().y,e.offsetX,e.offsetY,this)
+                }else{
+                    // la devuelvo a su lugar
+                    let posInicialX = this.fichaClickeada.getPositionInicial().x;
+                    let posInicialY = this.fichaClickeada.getPositionInicial().y;
+                    this.animarFichaRegreso(this.fichaClickeada,posInicialX,posInicialY,e.offsetX,e.offsetY,this)
+                }
             }
         }else if(this.fichaClickeada){ // si hay ficha seleccionada, devolverla al origen.
             let posInicialX = this.fichaClickeada.getPositionInicial().x;
@@ -90,6 +105,8 @@ class Juego{
         this.draw()
         this.cronometros.draw()
         this.clickeando = false;
+        this.fichaClickeada = null;
+        return this.terminoElJuego;
     }
 
     trasladarFicha(e){
@@ -106,7 +123,15 @@ class Juego{
             this.cronometros.draw()
           }
     }
-
+    devolverFicha(e){
+        if(this.fichaClickeada){
+            let posInicialX = this.fichaClickeada.getPositionInicial().x;
+            let posInicialY = this.fichaClickeada.getPositionInicial().y;
+            console.log(this.fichaClickeada)
+            this.animarFichaRegreso(this.fichaClickeada,posInicialX,posInicialY,e.offsetX,e.offsetY,this)
+            this.fichaClickeada = null;
+        }
+    }
 
 
 
@@ -156,7 +181,7 @@ class Juego{
     }
 
     mostrarCirculosGuia() {
-        for (let i = 0; i < this.columnas; i++) {
+         for (let i = 0; i < this.columnas; i++) {
           ctx.beginPath();
           /*
           ctx.arc(
@@ -181,4 +206,27 @@ class Juego{
     getTurno(){
         return this.turno.getTurno();
     }
+    terminarJuego(resultado){
+        this.ctx.clearRect(0, 0, widthCanvas, heightCanvas);
+        let imgFondo = new Image();
+        imgFondo.src = imgBackGround;
+        this.ctx.drawImage(imgFondo, 0, 0, widthCanvas, heightCanvas);
+        this.tablero.draw()
+        this.cronometros.terminarJuego(); 
+        this.jugadores.forEach(c=>{
+            c.bloquearFichas()
+        })
+        if(resultado == 0){
+            //empate
+            return 0;
+        }else if(resultado == 1){
+            // gano 1
+            return 1;
+        }else{
+            // gano 2
+            return 2;
+        }
+    }
+
+   
 }

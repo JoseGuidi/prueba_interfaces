@@ -30,7 +30,7 @@ class Tablero{
     agregarFichaEn(col,ficha){
         // Retorna la f y c si se pudo agregar o null si no;
         let posicionCasillero = null;
-
+        let resultado;
         
         for(let j = this.cantFilas-1; j >= 0  ;j--){
         
@@ -40,7 +40,14 @@ class Tablero{
                 posicionCasillero = this.casillas[j][col].getPosition();
                 
                 //this.casillas[j][col].getFicha().setPosition(posicionCasillero.x,posicionCasillero.y)
-                this.chequearGanador(ficha,j,col);
+                resultado = this.chequearGanador(ficha,j,col);
+                if(resultado){
+                    resultado ={
+                        "posicion":posicionCasillero,
+                        "ganador":resultado
+                    }
+                    return resultado;
+                }
             }
         }
         
@@ -160,7 +167,6 @@ class Tablero{
         return cantidad;
     }
     chequearGanador(ficha,fila,columna){
-        console.log(this.cantidadEnLinea)
         let cantidad=1;
         let i=fila;
         let j=columna;
@@ -195,12 +201,8 @@ class Tablero{
             if(cantidad>=this.cantidadEnLinea)
                 ganador=ficha.getJugador();
         }
-        setTimeout( ()=>{
-            if(ganador){
-                alert(ganador)
-                location.reload();
-            }
-        },1000)
+       
+        return ganador;
     }
     
         

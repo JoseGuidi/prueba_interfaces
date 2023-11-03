@@ -63,12 +63,20 @@ document.querySelector("#btnJugar").addEventListener("click", (e) => {
     });
 
     canvas.addEventListener("mouseup", (e) => {
-      juego.soltarFicha(e);
+      let resultado = juego.soltarFicha(e);
+      if(resultado){
+        setTimeout(()=>{
+          location.reload()
+        },5000)
+      }
     });
 
     canvas.addEventListener("mousemove", (e) => {
       juego.trasladarFicha(e);
     });
+    canvas.addEventListener("mouseleave",(e)=>{
+      juego.devolverFicha(e);
+    })
     document.querySelector(".formularioJuego").classList.add("ocultar");
   } else {
     document.querySelector(".formularioJuego form h1").classList.add("error");

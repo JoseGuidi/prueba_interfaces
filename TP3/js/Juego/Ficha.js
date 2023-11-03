@@ -38,9 +38,11 @@ class Ficha{
         }
     }
     clickedMe(x,y){
-        let inX = x > this.posX && x < this.posX + this.image.width
+        if(!this.colocada){
+            let inX = x > this.posX && x < this.posX + this.image.width
         let inY = y > this.posY && y < this.posY + this.image.height
-        return inX && inY 
+        return inX && inY
+        } 
     }
     getColocada(){
         return this.colocada

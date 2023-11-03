@@ -55,4 +55,9 @@ class ContenedorFichas{
     getNumeroRandom(inicio,maximo){
         return inicio + Math.floor(Math.random()*maximo - tamanioFicha)
     }
+    bloquearFichas(){
+        this.fichas.forEach( f=>{
+            f.setColocada(true)
+        })
+    }
 }
