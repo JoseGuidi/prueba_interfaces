@@ -12,6 +12,9 @@ class Juego{
 
         this.fichaClickeada = null;
         this.clickeando = false;
+        this.mostrarCirculosGuia()
+        this.xInicioTablero = widthCanvas/2 - this.columnas*tamanioFicha;
+        this.yInicioTablero = heightCanvas/2 - this.filas*tamanioFicha;
     }
 
     generateContenedorDeFichas(xInicial,yInicial,anchoContenedor,altoContenedor,srcImagenFicha,numeroJugador){
@@ -105,10 +108,10 @@ class Juego{
 
     /* FUNCIONES QUE AYUDAN */
     lugarCorrectoParaLanzar(x, y) {
-        let xValido =(x > xInicialTablero && x < (this.columnas)*this.tamanioFicha*2+xInicialTablero)
+        let xValido =(x > this.xInicioTablero && x < (this.columnas)*this.tamanioFicha*2+this.xInicioTablero)
         let yValido = (
-            yInicialTablero - y - (1 / 2) * this.tamanioFicha <= this.tamanioFicha &&
-            yInicialTablero > y
+            this.yInicioTablero - y - (1 / 2) * this.tamanioFicha <= this.tamanioFicha &&
+            this.yInicioTablero > y
         );
         return xValido && yValido
     }
@@ -144,16 +147,25 @@ class Juego{
 
     calcularColumna(x) {
         // x es donde deje la ficha, siempre me quedo con la columna anterior si es que está en el medio
-        let colum = Math.floor((x - xInicialTablero) / (this.tamanioFicha * 2));
+        let colum = Math.floor((x - this.xInicioTablero) / (this.tamanioFicha * 2));
         return colum;
     }
 
     mostrarCirculosGuia() {
         for (let i = 0; i < this.columnas; i++) {
           ctx.beginPath();
+          /*
           ctx.arc(
             xInicialTablero + this.tamanioFicha + (this.tamanioFicha + 30) * i,
             yInicialTablero - 25,
+            this.tamanioFicha / 1.5,
+            0,
+            2 * Math.PI
+          );*/
+          
+          ctx.arc(
+            this.xInicioTablero + (this.tamanioFicha*2) * i + this.tamanioFicha,
+           this.yInicioTablero - this.tamanioFicha,
             this.tamanioFicha / 1.5,
             0,
             2 * Math.PI
@@ -162,4 +174,5 @@ class Juego{
           ctx.closePath;
         }
     }
+    
 }

@@ -196,8 +196,10 @@ class Tablero{
                 ganador=ficha.getJugador();
         }
         setTimeout( ()=>{
-            if(ganador)
+            if(ganador){
                 alert(ganador)
+                location.reload();
+            }
         },1000)
     }
     

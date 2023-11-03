@@ -8,82 +8,105 @@ const yInicialTablero = 195; // posicion inicial del tablero eje Y
 const tamanioFicha = 30;
 let imgViale = "../../assets/images/Juego/ficha_viale.png";
 let imgSamid = "../../assets/images/Juego/ficha_samid.png";
-const imgBackGround = "../../assets/images/Juego/fondoCanvas.jpg"
+const imgBackGround = "../../assets/images/Juego/fondoCanvas.jpg";
 
+document.querySelector("#btnJugar").addEventListener("click", (e) => {
+  e.preventDefault();
+  let modalidad = document.querySelectorAll('input[name="modalidad"]');
+  let fichaViale = document.querySelectorAll('input[name="viale"]');
+  let fichaSamid = document.querySelectorAll('input[name="samid"]');
+  let vM;
+  let vV;
+  let vS;
+  modalidad.forEach((el) => {
+    if (el.checked) {
+      vM = el.value;
+    }
+  });
 
+  fichaViale.forEach((el) => {
+    if (el.checked) {
+      vV = el.value;
+    }
+  });
 
+  fichaSamid.forEach((el) => {
+    if (el.checked) {
+      vS = el.value;
+    }
+  });
 
-
-document.querySelector("#btnJugar").addEventListener("click",(e)=>{
-    e.preventDefault();
-    let modalidad = document.querySelectorAll('input[name="modalidad"]');
-    let fichaViale = document.querySelectorAll('input[name="viale"]');
-    let fichaSamid = document.querySelectorAll('input[name="samid"]');
-    let vM;
-    let vV;
-    let vS;
-    modalidad.forEach( (el)=>{
-        if(el.checked){
-            vM = el.value;
-        }
-    })
-
-    fichaViale.forEach( (el)=>{
-        if(el.checked){
-            vV = el.value;
-        }
-    })
-
-    fichaSamid.forEach( (el)=>{
-        if(el.checked){
-            vS = el.value;
-        }
-    })
-
-    /*if(true){
-        let juego = new Juego(parseInt(4),ctx,tamanioFicha);
-        juego.generateContenedorDeFichas(0,80,widthCanvas/3,heightCanvas/2,"../../assets/images/Juego/"+vV,1);
-        juego.generateContenedorDeFichas(widthCanvas - 270,80,widthCanvas/3,heightCanvas/2,"../../assets/images/Juego/"+vS,2);
-        juego.draw()
-        canvas.addEventListener("mousedown", (e) => {
-            juego.seleccionarFicha(e);
-        });
-        
-        canvas.addEventListener("mouseup", (e)=>{
-            juego.soltarFicha(e);
-        })
-        
-        canvas.addEventListener("mousemove", (e) => {
-            juego.trasladarFicha(e);
-        });
-        document.querySelector(".formularioJuego").classList.add("ocultar")
-    }else{
-        
-        document.querySelector(".formularioJuego form h1").classList.add("error")
-    }*/
-    
-})
-
-if(true){
-    let juego = new Juego(parseInt(4),ctx,tamanioFicha);
-    /*juego.generateContenedorDeFichas(0,80,widthCanvas/3,heightCanvas/2,"../../assets/images/Juego/"+vV,1);
-    juego.generateContenedorDeFichas(widthCanvas - 270,80,widthCanvas/3,heightCanvas/2,"../../assets/images/Juego/"+vS,2);*/
+  if (vM && vS && vV) {
+    let juego = new Juego(parseInt(vM), ctx, tamanioFicha);
     let altoContenedor = 720;
     let anchoContenedor = 300;
-    juego.generateContenedorDeFichas(0,80,anchoContenedor,altoContenedor,"../../assets/images/Juego/viale4.png",1);
-    
-    juego.generateContenedorDeFichas(widthCanvas-241,80,anchoContenedor,altoContenedor,"../../assets/images/Juego/samid4.png",2);
-    juego.draw()
+    juego.generateContenedorDeFichas(
+      0,
+      80,
+      anchoContenedor,
+      altoContenedor,
+      "../../assets/images/Juego/"+vV,
+      1
+    );
+
+    juego.generateContenedorDeFichas(
+      widthCanvas - 241,
+      80,
+      anchoContenedor,
+      altoContenedor,
+      "../../assets/images/Juego/"+vS,
+      2
+    );
+    juego.draw();
     canvas.addEventListener("mousedown", (e) => {
-        juego.seleccionarFicha(e);
+      juego.seleccionarFicha(e);
     });
-    
-    canvas.addEventListener("mouseup", (e)=>{
-        juego.soltarFicha(e);
-    })
-    
+
+    canvas.addEventListener("mouseup", (e) => {
+      juego.soltarFicha(e);
+    });
+
     canvas.addEventListener("mousemove", (e) => {
-        juego.trasladarFicha(e);
+      juego.trasladarFicha(e);
     });
-    document.querySelector(".formularioJuego").classList.add("ocultar")
-}
+    document.querySelector(".formularioJuego").classList.add("ocultar");
+  } else {
+    document.querySelector(".formularioJuego form h1").classList.add("error");
+  }
+});
+/*
+if (true) {
+  let juego = new Juego(parseInt(4), ctx, tamanioFicha);
+  let altoContenedor = 720;
+  let anchoContenedor = 300;
+  juego.generateContenedorDeFichas(
+    0,
+    80,
+    anchoContenedor,
+    altoContenedor,
+    "../../assets/images/Juego/viale4.png",
+    1
+  );
+
+  juego.generateContenedorDeFichas(
+    widthCanvas - 241,
+    80,
+    anchoContenedor,
+    altoContenedor,
+    "../../assets/images/Juego/samid4.png",
+    2
+  );
+  juego.draw();
+  canvas.addEventListener("mousedown", (e) => {
+    juego.seleccionarFicha(e);
+  });
+
+  canvas.addEventListener("mouseup", (e) => {
+    juego.soltarFicha(e);
+  });
+
+  canvas.addEventListener("mousemove", (e) => {
+    juego.trasladarFicha(e);
+  });
+  document.querySelector(".formularioJuego").classList.add("ocultar");
+}*/
