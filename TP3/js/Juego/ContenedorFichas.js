@@ -16,9 +16,14 @@ class ContenedorFichas{
 
     }
     draw(){
+
         this.contexto.fillStyle = "rgba(0,0,0,.5)"
         this.contexto.fillRect(this.posX,this.posY,heightCanvas/3,widthCanvas/2)
         
+        this.contexto.font="30px Arial";
+        this.contexto.fillStyle = "#000"
+        this.contexto.fillText("Jugador " + this.jugador,this.posX + 50,this.posY - 10)
+
         this.fichas.forEach( e=>{
             e.draw()
         })

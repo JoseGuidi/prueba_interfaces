@@ -9,12 +9,13 @@ class Juego{
         this.turno = new Turno();
         
         this.jugadores = [];
-
+        
         this.fichaClickeada = null;
         this.clickeando = false;
-        this.mostrarCirculosGuia()
         this.xInicioTablero = widthCanvas/2 - this.columnas*tamanioFicha;
         this.yInicioTablero = heightCanvas/2 - this.filas*tamanioFicha;
+        this.cronometros = new Cronometro(405,50,ctx,this)
+        
     }
 
     generateContenedorDeFichas(xInicial,yInicial,anchoContenedor,altoContenedor,srcImagenFicha,numeroJugador){
@@ -46,6 +47,7 @@ class Juego{
         }else{
             this.fichaClickeada = this.jugadores[1].seleccionarFicha(e);
         }
+        this.cronometros.draw()
     }
 
     soltarFicha(e){
@@ -86,6 +88,7 @@ class Juego{
             this.animarFichaRegreso(this.fichaClickeada,posInicialX,posInicialY,e.offsetX,e.offsetY,this)
         }
         this.draw()
+        this.cronometros.draw()
         this.clickeando = false;
     }
 
@@ -100,6 +103,7 @@ class Juego{
             this.draw();
             this.mostrarCirculosGuia();
             this.fichaClickeada.draw();
+            this.cronometros.draw()
           }
     }
 
@@ -174,5 +178,7 @@ class Juego{
           ctx.closePath;
         }
     }
-    
+    getTurno(){
+        return this.turno.getTurno();
+    }
 }
