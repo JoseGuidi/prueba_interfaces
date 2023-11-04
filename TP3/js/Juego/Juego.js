@@ -60,7 +60,7 @@ class Juego{
             let pudeInsertar = this.tablero.agregarFichaEn(columna, this.fichaClickeada); 
             /*
                 pudeInsertar devuelve JSON con Poscion de ultima ficha y el ganador (si es que alguien ganó)
-                 ó posicion (x,y) donde se inserto (si es que nadie gano tdv)
+                ó posicion (x,y) donde se inserto (si es que nadie gano tdv)
             */
             if(pudeInsertar.ganador){
                 this.fichaClickeada.setColocada(true)

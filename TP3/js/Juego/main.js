@@ -1,4 +1,4 @@
-let canvas = document.querySelector("canvas");
+/*let canvas = document.querySelector("canvas");
 let ctx = canvas.getContext("2d");
 let widthCanvas = canvas.width;
 let heightCanvas = canvas.height;
@@ -148,7 +148,7 @@ function animarFichaRegreso(ficha, initialX, initialY,targetX,targetY) {
     /*ficha.setPosition(initialX,initialY);
     clearCanvas();*/
 
-    const duration = 1000; // Duración de la animación en milisegundos
+  /*  const duration = 1000; // Duración de la animación en milisegundos
     const startTime = performance.now();
 
     function animate(currentTime) {
@@ -171,4 +171,4 @@ function animarFichaRegreso(ficha, initialX, initialY,targetX,targetY) {
 
     requestAnimationFrame(animate);
 
-}
+}*/

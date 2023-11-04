@@ -8,7 +8,7 @@ const yInicialTablero = 195; // posicion inicial del tablero eje Y
 const tamanioFicha = 30;
 let imgViale = "../../assets/images/Juego/ficha_viale.png";
 let imgSamid = "../../assets/images/Juego/ficha_samid.png";
-const imgBackGround = "../../assets/images/Juego/fondoCanvas.jpg";
+const imgBackGround = "../../assets/images/Juego/vialesamiddisney.jpeg";
 
 document.querySelector("#btnJugar").addEventListener("click", (e) => {
   e.preventDefault();

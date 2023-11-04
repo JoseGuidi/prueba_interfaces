@@ -30,7 +30,7 @@ class Tablero{
     agregarFichaEn(col,ficha){
         // Retorna la f y c si se pudo agregar o null si no;
         let posicionCasillero = null;
-        let resultado;
+        let resultado=null;
         
         for(let j = this.cantFilas-1; j >= 0  ;j--){
         
@@ -60,7 +60,7 @@ class Tablero{
         
         while((j>=0)&&(secuencia)){
             if((this.casillas[i][j].getFicha()!=null)&&(this.casillas[i][j].getFicha().getJugador()==ficha.getJugador())){
-                this.marcadas.push(this.casillas[i][j].getFicha())
+                this.marcadas.push(this.casillas[i][j])
                 cantidad++;
                 j--;
             }else{
@@ -76,7 +76,7 @@ class Tablero{
         
         while((j<this.cantColumnas)&&(secuencia)){
             if((this.casillas[i][j].getFicha()!=null)&&(this.casillas[i][j].getFicha().getJugador()==ficha.getJugador())){
-                this.marcadas.push(this.casillas[i][j].getFicha())
+                this.marcadas.push(this.casillas[i][j])
                 cantidad++;
                 j++;
             }else{
@@ -92,7 +92,7 @@ class Tablero{
         col--;
         while(fila>=0&&col>=0&&secuencia){
             if((this.casillas[fila][col].getFicha()!=null)&&(this.casillas[fila][col].getFicha().getJugador()==ficha.getJugador())){
-                this.marcadas.push(this.casillas[fila][col].getFicha())
+                this.marcadas.push(this.casillas[fila][col])
                 cantidad++;
                 fila--;
                 col--;
@@ -110,7 +110,7 @@ class Tablero{
         col++;
         while(fila>=0&&col<this.cantColumnas&&secuencia){
             if((this.casillas[fila][col].getFicha()!=null)&&(this.casillas[fila][col].getFicha().getJugador()==ficha.getJugador())){
-                this.marcadas.push(this.casillas[fila][col].getFicha())
+                this.marcadas.push(this.casillas[fila][col])
                 cantidad++;
                 fila--;
                 col++;
@@ -128,7 +128,7 @@ class Tablero{
         col++;
         while(fila<this.cantFilas&&col<this.cantColumnas&&secuencia){
             if((this.casillas[fila][col].getFicha()!=null)&&(this.casillas[fila][col].getFicha().getJugador()==ficha.getJugador())){
-                this.marcadas.push(this.casillas[fila][col].getFicha())
+                this.marcadas.push(this.casillas[fila][col])
                 cantidad++;
                 fila++;
                 col++;
@@ -146,7 +146,7 @@ class Tablero{
         col--;
         while(fila<this.cantFilas&&col>=0&&secuencia){
             if((this.casillas[fila][col].getFicha()!=null)&&(this.casillas[fila][col].getFicha().getJugador()==ficha.getJugador())){
-                this.marcadas.push(this.casillas[fila][col].getFicha())
+                this.marcadas.push(this.casillas[fila][col])
                 cantidad++;
                 fila++;
                 col--;
@@ -163,7 +163,7 @@ class Tablero{
         let cantidad=0;
         while((i<this.cantFilas)&&(secuencia)){
             if((this.casillas[i][j].getFicha()!=null)&&(this.casillas[i][j].getFicha().getJugador()==ficha.getJugador())){
-                this.marcadas.push(this.casillas[i][j].getFicha())
+                this.marcadas.push(this.casillas[i][j])
                 cantidad++;
                 i++;
                 
@@ -178,7 +178,7 @@ class Tablero{
         let i=fila;
         let j=columna;
         let ganador=null;
-        this.marcadas.push(this.casillas[i][j].getFicha())
+        this.marcadas.push(this.casillas[i][j])
         cantidad+=this.recuperarCantFichasArriba(i,j,ficha)
         if(cantidad>=this.cantidadEnLinea){
             ganador=ficha.getJugador();
@@ -188,7 +188,7 @@ class Tablero{
         if(ganador==null){
             cantidad=1;
             i=fila;
-            this.marcadas.push(this.casillas[i][j].getFicha())
+            this.marcadas.push(this.casillas[i][j])
             cantidad+=this.recuperarCantFichasIzquierda(i,j,ficha);
             cantidad+=this.recuperarCantFichasDerecha(i,j,ficha);
             if(cantidad>=this.cantidadEnLinea)
@@ -200,7 +200,7 @@ class Tablero{
             cantidad=1;
             j=columna;
             i=fila;
-            this.marcadas.push(this.casillas[i][j].getFicha())
+            this.marcadas.push(this.casillas[i][j])
             cantidad+=this.recuperarCantFichasDiagonalArribaIzquierda(i,j,ficha);
             cantidad+=this.recuperarCantFichasDiagonalAbajoDerecha(i,j,ficha);
             if(cantidad>=this.cantidadEnLinea)
@@ -212,7 +212,7 @@ class Tablero{
             cantidad=1;
             j=columna;
             i=fila;
-            this.marcadas.push(this.casillas[i][j].getFicha())
+            this.marcadas.push(this.casillas[i][j])
             cantidad+=this.recuperarCantFichasDiagonalArribaDerecha(i,j,ficha);
             cantidad+=this.recuperarCantFichasDiagonalAbajoIzquierda(i,j,ficha);
             if(cantidad>=this.cantidadEnLinea)
@@ -221,15 +221,14 @@ class Tablero{
                 this.marcadas=[]
         }
         if(ganador)
-            alert(ganador)
-            //this.redrawWinner(this.marcadas)
+            this.redrawWinner(this.marcadas)
         return ganador;
     }
 
-    redrawWinner(fichas){
+    redrawWinner(casilleros){
         
-        fichas.forEach(ficha => {
-            //ficha.drawWithOrangeBorder();
+        casilleros.forEach(casilla => {
+            casilla.gano=true;
         });
     }
 }
