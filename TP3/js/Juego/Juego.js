@@ -10,6 +10,7 @@ class Juego{
         this.terminoElJuego = false;
         this.jugadores = [];
         
+        this.btnRestart = new ButtonRestart(widthCanvas-80,10,ctx)
         this.fichaClickeada = null;
         this.clickeando = false;
         this.xInicioTablero = widthCanvas/2 - this.columnas*tamanioFicha;
@@ -18,36 +19,42 @@ class Juego{
         
     }
 
-    generateContenedorDeFichas(xInicial,yInicial,anchoContenedor,altoContenedor,srcImagenFicha,numeroJugador){
+    generateContenedorDeFichas(xInicial,yInicial,imagen,nroJugador){
         // CREAR JUGADORES, UNICAMENTE INSTANCIAR 2 EN EL MAIN
-        let cantidadFichasPorEquipo = this.columnas*this.filas/2
-        let j = new ContenedorFichas(xInicial,yInicial,altoContenedor,anchoContenedor,this.ctx,srcImagenFicha,cantidadFichasPorEquipo,numeroJugador);
-        this.jugadores.push(j);
+        let cantidadFichas = this.columnas*this.filas/2
+        let j = new ContenedorFichas(xInicial,yInicial,imagen,this.ctx,cantidadFichas,nroJugador)
+        this.jugadores.push(j)
     }
 
     draw(){
         // SERIA EL CLEAR CANVAS
-            this.ctx.clearRect(0, 0, widthCanvas, heightCanvas);
+        this.ctx.clearRect(0, 0, 1080, 720);
         let imgFondo = new Image();
         imgFondo.src = imgBackGround;
-        this.ctx.drawImage(imgFondo, 0, 0, widthCanvas, heightCanvas);
+        this.ctx.drawImage(imgFondo, 0, 0, widthCanvas +50, heightCanvas);
         this.tablero.draw();
         this.jugadores.forEach(j => {
             j.draw();
         });
+        this.btnRestart.draw()
     }
 
     seleccionarFicha(e){
-        this.clickeando = true;
-        if(this.fichaClickeada != null){
-            this.fichaClickeada = null;
-        }
-        if(this.turno.getTurno() == 1){ //si es turno del jugador 1 
-            this.fichaClickeada = this.jugadores[0].seleccionarFicha(e);
+        if(!this.clickeoEnRestart(e)){
+            this.clickeando = true;
+            if(this.fichaClickeada != null){
+                this.fichaClickeada = null;
+            }
+            if(this.turno.getTurno() == 1){ //si es turno del jugador 1 
+                this.fichaClickeada = this.jugadores[0].seleccionarFicha(e);
+            }else{
+                this.fichaClickeada = this.jugadores[1].seleccionarFicha(e);
+            }
+            this.cronometros.draw()
         }else{
-            this.fichaClickeada = this.jugadores[1].seleccionarFicha(e);
+            //restar juego
+            this.reiniciarJuego();
         }
-        this.cronometros.draw()
     }
 
     soltarFicha(e){
@@ -127,12 +134,11 @@ class Juego{
         if(this.fichaClickeada){
             let posInicialX = this.fichaClickeada.getPositionInicial().x;
             let posInicialY = this.fichaClickeada.getPositionInicial().y;
-            console.log(this.fichaClickeada)
+           
             this.animarFichaRegreso(this.fichaClickeada,posInicialX,posInicialY,e.offsetX,e.offsetY,this)
             this.fichaClickeada = null;
         }
     }
-
 
 
     /* FUNCIONES QUE AYUDAN */
@@ -206,6 +212,9 @@ class Juego{
     getTurno(){
         return this.turno.getTurno();
     }
+    getTurnoNombre(){
+        return this.turno.getTurnoNombre()
+    }
     terminarJuego(resultado){
         this.ctx.clearRect(0, 0, widthCanvas, heightCanvas);
         let imgFondo = new Image();
@@ -228,5 +237,21 @@ class Juego{
         }
     }
 
-   
+    clickeoEnRestart(e){
+        return this.btnRestart.meClickeo(e.offsetX,e.offsetY);
+    }
+    reiniciarJuego(){
+        this.tablero = new Tablero(this.ctx,this.nEnLinea,tamanioFicha)
+        this.turno = new Turno();
+        this.cronometros.juego = null;
+        this.cronometros = new Cronometro(405,50,ctx,this)
+        let aux = this.jugadores;
+        this.jugadores = [];
+        aux.forEach( j =>{
+            let cantidadFichas = this.columnas*this.filas/2
+            j = new ContenedorFichas(j.getPosition().x,j.getPosition().y,j.getImage(),this.ctx,cantidadFichas,j.getJugador())
+            this.jugadores.push(j)
+        })
+        aux = null;
+    }
 }

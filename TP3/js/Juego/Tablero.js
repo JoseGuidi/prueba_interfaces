@@ -227,8 +227,10 @@ class Tablero{
 
     redrawWinner(casilleros){
         
-        casilleros.forEach(casilla => {
-            casilla.gano=true;
-        });
+        setTimeout(() => {
+            casilleros.forEach(casilla => {
+                casilla.gano=true;
+            });
+        }, 1000);
     }
 }

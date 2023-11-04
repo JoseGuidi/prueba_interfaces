@@ -13,6 +13,8 @@ class Cronometro{
     }
     draw(){
         if(!this.terminoJuego){
+            this.ctx.fillStyle = "#566841"
+            this.ctx.fillRect(455,0,200,60)
             this.ctx.font="60px Helvetica";
             this.ctx.fillStyle = "#000"
             let minutosConCero = this.minutos < 10 ? '0' + this.minutos : this.minutos;
@@ -22,26 +24,28 @@ class Cronometro{
             let time = minutosConCero+":"+segundosConCero
             let anchoTexto = this.ctx.measureText(time).width/2
             this.ctx.fillText(time,this.posX+anchoTexto,this.posY)
-            let turno ="Turno de jugador " + this.juego.getTurno();
+            let turno ="Turno de " + this.juego.getTurnoNombre();
             this.ctx.font="35px Helvetica";
-            this.ctx.fillStyle = "#00000085"
+            this.ctx.fillStyle = "#000000"
             anchoTexto = this.ctx.measureText(turno).width/2
             this.ctx.fillText(turno,this.posX,this.posY+50)
         }
     }
     actualizarTemporizador(){
-        this.juego.draw()
-        this.draw()
+        if(this.juego){
+            this.juego.draw()
         if (this.minutos === 0 && this.segundos === 0) {
             this.juego.terminarJuego(0)
         }else{
             if (this.segundos === 0) {
                 this.minutos--;
                 this.segundos = 59;
-              } else {
+            } else {
                 this.segundos--;
-              }
-              setTimeout(this.actualizarTemporizador, 1000);
+            }
+            setTimeout(this.actualizarTemporizador, 1000);
+        }
+        this.draw()
         }
     }
     terminarJuego(){

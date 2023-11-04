@@ -11,7 +11,7 @@ class Casillero{
 
     draw(){
         if(this.gano)
-            this.context.fillStyle = "#ffff00"
+            this.context.fillStyle = "#ffff0085"
         else
             this.context.fillStyle = "#00000099"
         this.context.fillRect(this.posX,this.posY,this.tamFicha*2,this.tamFicha*2)

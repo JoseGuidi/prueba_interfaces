@@ -8,4 +8,11 @@ class Turno{
     getTurno(){
         return this.turnoActual;
     }
+    getTurnoNombre(){
+        if(this.turnoActual == 1){
+            return "Viale"
+        }else{
+            return "Samid"
+        }
+    }
 }
