@@ -37,6 +37,7 @@ class Ficha{
             }
         }
     }
+
     clickedMe(x,y){
         if(!this.colocada){
             let inX = x > this.posX && x < this.posX + this.image.width
