@@ -41,13 +41,13 @@ document.querySelector("#btnJugar").addEventListener("click", (e) => {
     let altoContenedor = 720;
     let anchoContenedor = 300;
     juego.generateContenedorDeFichas(
-      30,
+      0,
       anchoContenedor,
       "../../assets/images/Juego/"+vS,
       1
     );
     juego.generateContenedorDeFichas(
-      widthCanvas - 265,
+      widthCanvas - 235,
       anchoContenedor,
       "../../assets/images/Juego/"+vV,
       2

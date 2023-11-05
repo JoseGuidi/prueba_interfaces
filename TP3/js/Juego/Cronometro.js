@@ -1,6 +1,6 @@
 class Cronometro{
     constructor(posX,posY,ctx,juego){
-        this.minutos = 15;
+        this.minutos = 5;
         this.segundos = 0;
         this.juego = juego;
         this.posX = posX
@@ -16,6 +16,7 @@ class Cronometro{
             this.ctx.fillStyle = "#566841"
             this.ctx.fillRect(455,0,200,60)
             this.ctx.font="60px Helvetica";
+            this.ctx.textAlign ="start"
             this.ctx.fillStyle = "#000"
             let minutosConCero = this.minutos < 10 ? '0' + this.minutos : this.minutos;
             
@@ -24,18 +25,18 @@ class Cronometro{
             let time = minutosConCero+":"+segundosConCero
             let anchoTexto = this.ctx.measureText(time).width/2
             this.ctx.fillText(time,this.posX+anchoTexto,this.posY)
-            let turno ="Turno de " + this.juego.getTurnoNombre();
+           /* let turno ="Turno de " + this.juego.getTurnoNombre();
             this.ctx.font="35px Helvetica";
             this.ctx.fillStyle = "#000000"
             anchoTexto = this.ctx.measureText(turno).width/2
-            this.ctx.fillText(turno,this.posX,this.posY+50)
+            this.ctx.fillText(turno,this.posX,this.posY+50)*/
         }
     }
     actualizarTemporizador(){
         if(this.juego){
             this.juego.draw()
         if (this.minutos === 0 && this.segundos === 0) {
-            this.juego.terminarJuego(0)
+            this.juego.empatarJuego();
         }else{
             if (this.segundos === 0) {
                 this.minutos--;

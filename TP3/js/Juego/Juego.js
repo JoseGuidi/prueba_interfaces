@@ -15,6 +15,8 @@ class Juego{
         this.clickeando = false;
         this.xInicioTablero = widthCanvas/2 - this.columnas*tamanioFicha;
         this.yInicioTablero = heightCanvas/2 - this.filas*tamanioFicha;
+        
+        this.cartel = new Cartel(this.ctx,this.xInicioTablero,0,tamanioFicha*2*this.columnas);
         this.cronometros = new Cronometro(405,50,ctx,this)
         
     }
@@ -34,9 +36,10 @@ class Juego{
         this.ctx.drawImage(imgFondo, 0, 0, widthCanvas +50, heightCanvas);
         this.tablero.draw();
         this.jugadores.forEach(j => {
-            j.draw();
+            j.draw(this.turno);
         });
         this.btnRestart.draw()
+        this.cartel.draw()
     }
 
     seleccionarFicha(e){
@@ -168,14 +171,14 @@ class Juego{
     
                 ficha.setPosition(newX, newY);
                 juego.draw();
-    
+                
                 requestAnimationFrame(animate);
             } else {
                 ficha.setPosition(initialX, initialY);
                 juego.draw();
             }
         }
-    
+        
         requestAnimationFrame(animate); //función proporcionada por los navegadores web
     
     }
@@ -225,18 +228,30 @@ class Juego{
         this.jugadores.forEach(c=>{
             c.bloquearFichas()
         })
+
+        this.ctx.fill
         if(resultado == 0){
             //empate
+            this.cartel.setMensaje("Empate");
             return 0;
         }else if(resultado == 1){
             // gano 1
+            this.cartel.setMensaje("Ganó Samid");
             return 1;
         }else{
             // gano 2
+            this.cartel.setMensaje("Ganó Viale");
             return 2;
         }
     }
-
+    empatarJuego(){
+        this.cronometros.terminarJuego(); 
+        this.jugadores.forEach(c=>{
+            c.bloquearFichas()
+        })
+        this.cartel.setMensaje("Empate")
+        this.draw()
+    }
     clickeoEnRestart(e){
         return this.btnRestart.meClickeo(e.offsetX,e.offsetY);
     }
@@ -253,5 +268,6 @@ class Juego{
             this.jugadores.push(j)
         })
         aux = null;
+        this.cartel.setMensaje(null)
     }
 }

@@ -22,16 +22,23 @@ class ContenedorFichas{
             }
         }
         this.caja = new Caja(ctx,posX,posY,230,330);
+        
 
 
     }
-    draw(){
+    draw(turno){
         /*this.contexto.fillStyle = "rgba(0,0,0,.5)"
         this.contexto.fillRect(this.posX,this.posY,this.ancho,this.alto)*/
        
         this.caja.draw()
+        this.contexto.textAlign ="start"
         this.contexto.font="30px Arial";
         this.contexto.fillStyle = "#000"
+        let texto;
+        if(turno.getTurno() == this.jugador){
+            texto = "Tu turno"
+            this.contexto.fillText(texto,this.posX + 60,this.posY - 40)
+        }
         this.contexto.fillText("Jugador " + this.jugador,this.posX + 50,this.posY - 10)
 
         this.fichas.forEach( e=>{
