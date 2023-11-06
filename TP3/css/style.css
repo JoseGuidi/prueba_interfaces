@@ -1693,3 +1693,97 @@ div.informacion_extra{
   overflow: hidden;
 }
 
+
+/* JUEGO */
+
+div.formularioJuego{
+  width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.784);
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+}
+
+.formularioJuego.ocultar{
+  display: none;
+}
+
+.formularioJuego form {
+  background-color: #ffffffa7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px 0;
+  border-radius: 10px;
+  padding: 20px;
+}
+.formularioJuego form .itemSeleccion{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.formularioJuego form .itemSeleccion > label{
+  font-size: 25px;
+  font-weight: 500;
+}
+.formularioJuego form .itemSeleccion .contenedorOpciones label{
+  font-size: 18px;
+  text-decoration: solid;
+}
+.formularioJuego form h1.error{
+  display: block;
+}
+.formularioJuego form h1{
+  color: #6e0e0e;
+  font-size: 30px;
+  display: none;
+}
+
+
+.formularioJuego button {
+  background-color: #0078d4;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 200px;
+}
+
+.formularioJuego button:hover {
+  background-color: #0056b3;
+}
+
+.avatar-label,
+.modalidad-label {
+  display: inline-block;
+  margin: 10px;
+  cursor: pointer;
+  position: relative;
+}
+.avatar-label img{
+  width: 80px;
+}
+.avatar-label .avatar-radio,
+.modalidad-label .modalidad-radio {
+  position: absolute;
+  opacity: 0;
+}
+
+.avatar-label .avatar-radio + img,
+.modalidad-label .modalidad-radio + span {
+  border: 2px solid transparent;
+}
+
+.avatar-label:hover .avatar-radio + img,
+.modalidad-label:hover .modalidad-radio + span {
+  border-color: #0078d4;
+}
+
+.avatar-radio:checked + img,
+.modalidad-radio:checked + span {
+  border-color: #0078d4;
+}

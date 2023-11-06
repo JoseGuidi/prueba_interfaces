@@ -209,6 +209,8 @@ class Juego{
             2 * Math.PI
           );
           ctx.stroke();
+          this.ctx.fillStyle="#00000020"
+          this.ctx.fill()
           ctx.closePath;
         }
     }

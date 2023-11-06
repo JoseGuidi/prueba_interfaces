@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="css/style.css" />
     <style>
       canvas {
-       background: url("assets/images/Juego/vialesamiddisney.jpeg") no-repeat center;
-        
+        background: url("assets/images/Juego/vialesamiddisney.jpeg") no-repeat
+          center;
       }
     </style>
   </head>
@@ -796,228 +796,155 @@
 
       <button class="boton violeta font_boton">Finalizar compra</button>
     </aside>
-    <style>
-      .formularioJuego {
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.693);
-        position: fixed;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .formularioJuego.ocultar{
-        display: none;
-      }
-      .formularioJuego form {
-        background-color: #ffffffa7;
-        padding: 50px 100px;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      .formularioJuego form h1.error{
-        display: block;
-      }
-      .formularioJuego form h1{
-        color: #6e0e0e;
-        font-size: 30px;
-        margin-bottom: 10px;
-        display: none;
-      }
-      label {
-        font-size: 20px;
-        color: #000;
-        display: block;
-      }
-      .avatar-label,
-      .modalidad-label {
-        display: inline-block;
-        margin: 10px;
-        cursor: pointer;
-        position: relative;
-      }
-      .avatar-label img{
-        width: 80px;
-      }
-      .avatar-label .avatar-radio,
-      .modalidad-label .modalidad-radio {
-        position: absolute;
-        opacity: 0;
-      }
-
-      .avatar-label .avatar-radio + img,
-      .modalidad-label .modalidad-radio + span {
-        border: 2px solid transparent;
-      }
-
-      .avatar-label:hover .avatar-radio + img,
-      .modalidad-label:hover .modalidad-radio + span {
-        border-color: #0078d4;
-      }
-
-      .avatar-radio:checked + img,
-      .modalidad-radio:checked + span {
-        border-color: #0078d4;
-      }
-      .formularioJuego button {
-    background-color: #0078d4;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.formularioJuego button:hover {
-    background-color: #0056b3;
-}
-    </style>
     <div class="formularioJuego">
-      
       <form action="">
-        <h1>Seleccione todos los campos</h1>
-        <label for="">Modalidad del juego</label>
-        <div>
-          <label class="modalidad-label">
-            <input
-              type="radio"
-              name="modalidad"
-              value="4"
-              class="modalidad-radio"
-            />
-            <span>4 en linea</span>
-          </label>
+        <div class="itemSeleccion">
+          <label for="">Modalidad del juego</label>
+          <div class="contenedorOpciones">
+            <label class="modalidad-label">
+              <input
+                type="radio"
+                name="modalidad"
+                value="4"
+                class="modalidad-radio"
+              />
+              <span>4 en linea</span>
+            </label>
 
-          <label class="modalidad-label">
-            <input
-              type="radio"
-              name="modalidad"
-              value="5"
-              class="modalidad-radio"
-            />
-            <span>5 en linea</span>
-          </label>
+            <label class="modalidad-label">
+              <input
+                type="radio"
+                name="modalidad"
+                value="5"
+                class="modalidad-radio"
+              />
+              <span>5 en linea</span>
+            </label>
 
-          <label class="modalidad-label">
-            <input
-              type="radio"
-              name="modalidad"
-              value="6"
-              class="modalidad-radio"
-            />
-            <span>6 en linea</span>
-          </label>
-          <label class="modalidad-label">
-            <input
-              type="radio"
-              name="modalidad"
-              value="7"
-              class="modalidad-radio"
-            />
-            <span>7 en linea</span>
-          </label>
+            <label class="modalidad-label">
+              <input
+                type="radio"
+                name="modalidad"
+                value="6"
+                class="modalidad-radio"
+              />
+              <span>6 en linea</span>
+            </label>
+            <label class="modalidad-label">
+              <input
+                type="radio"
+                name="modalidad"
+                value="7"
+                class="modalidad-radio"
+              />
+              <span>7 en linea</span>
+            </label>
+          </div>
         </div>
-        <label for="">Ficha de Viale</label>
-        <div>
-          <label class="avatar-label">
-            <input
-              type="radio"
-              name="viale"
-              value="ficha_viale.png"
-              class="avatar-radio"
-            />
-            <img src="assets/images/Juego/ficha_viale.png" alt="Viale 1" />
-          </label>
+        <div class="itemSeleccion">
+          <label for="">Ficha de Viale</label>
+          <div>
+            <label class="avatar-label">
+              <input
+                type="radio"
+                name="viale"
+                value="ficha_viale.png"
+                class="avatar-radio"
+              />
+              <img src="assets/images/Juego/ficha_viale.png" alt="Viale 1" />
+            </label>
 
-          <label class="avatar-label">
-            <input
-              type="radio"
-              name="viale"
-              value="viale2.png"
-              class="avatar-radio"
-            />
-            <img src="assets/images/Juego/viale2.png" alt="Viale 2" />
-          </label>
+            <label class="avatar-label">
+              <input
+                type="radio"
+                name="viale"
+                value="viale2.png"
+                class="avatar-radio"
+              />
+              <img src="assets/images/Juego/viale2.png" alt="Viale 2" />
+            </label>
 
-          <label class="avatar-label">
-            <input
-              type="radio"
-              name="viale"
-              value="viale3.png"
-              class="avatar-radio"
-            />
-            <img src="assets/images/Juego/viale3.png" alt="Viale 3" />
-          </label>
-          <label class="avatar-label">
-            <input
-              type="radio"
-              name="viale"
-              value="viale4.png"
-              class="avatar-radio"
-            />
-            <img src="assets/images/Juego/viale4.png" alt="Viale 3" />
-          </label>
+            <label class="avatar-label">
+              <input
+                type="radio"
+                name="viale"
+                value="viale3.png"
+                class="avatar-radio"
+              />
+              <img src="assets/images/Juego/viale3.png" alt="Viale 3" />
+            </label>
+            <label class="avatar-label">
+              <input
+                type="radio"
+                name="viale"
+                value="viale4.png"
+                class="avatar-radio"
+              />
+              <img src="assets/images/Juego/viale4.png" alt="Viale 3" />
+            </label>
+          </div>
         </div>
-        <label for="">Ficha de Samid</label>
-        <div>
-          <label class="avatar-label">
-            <input
-              type="radio"
-              name="samid"
-              value="ficha_samid.png"
-              class="avatar-radio"
-            />
-            <img src="assets/images/Juego/ficha_samid.png" alt="Samid 1" />
-          </label>
+        <div class="itemSeleccion">
+          <label for="">Ficha de Samid</label>
+          <div>
+            <label class="avatar-label">
+              <input
+                type="radio"
+                name="samid"
+                value="ficha_samid.png"
+                class="avatar-radio"
+              />
+              <img src="assets/images/Juego/ficha_samid.png" alt="Samid 1" />
+            </label>
 
-          <label class="avatar-label">
-            <input
-              type="radio"
-              name="samid"
-              value="samid2.png"
-              class="avatar-radio"
-            />
-            <img src="assets/images/Juego/samid2.png" alt="samid 2" />
-          </label>
+            <label class="avatar-label">
+              <input
+                type="radio"
+                name="samid"
+                value="samid2.png"
+                class="avatar-radio"
+              />
+              <img src="assets/images/Juego/samid2.png" alt="samid 2" />
+            </label>
 
-          <label class="avatar-label">
-            <input
-              type="radio"
-              name="samid"
-              value="samid3.png"
-              class="avatar-radio"
-            />
-            <img src="assets/images/Juego/samid3.png" alt="samid 3" />
-          </label>
-          <label class="avatar-label">
-            <input
-              type="radio"
-              name="samid"
-              value="samid4.png"
-              class="avatar-radio"
-            />
-            <img src="assets/images/Juego/samid4.png" alt="samid 4" />
-          </label>
+            <label class="avatar-label">
+              <input
+                type="radio"
+                name="samid"
+                value="samid3.png"
+                class="avatar-radio"
+              />
+              <img src="assets/images/Juego/samid3.png" alt="samid 3" />
+            </label>
+            <label class="avatar-label">
+              <input
+                type="radio"
+                name="samid"
+                value="samid4.png"
+                class="avatar-radio"
+              />
+              <img src="assets/images/Juego/samid4.png" alt="samid 4" />
+            </label>
+          </div>
         </div>
         <button id="btnJugar">JUGAR</button>
+        <div>
+          <h1>Seleccione todos los campos</h1>
+        </div>
       </form>
     </div>
 
-    <!-- 
-      <script src="js/asidecarrito.js"></script>
+    <script src="js/asidecarrito.js"></script>
     <script src="js/breadcrumbs.js"></script>
     <script src="js/popupcompartir.js"></script>
     <script src="js/popupvermas.js"></script>
     <script src="js/asideperfil.js"></script>
     <script src="js/asidecategorias.js"></script>
--->
-<script src="js/Juego/Cartel.js"></script>
-<script src="js/Juego/Caja.js"></script>
-<script src="js/Juego/ButtonRestart.js"></script>
-  <script src="js/Juego//Cronometro.js"></script>
+
+    <script src="js/Juego/Cartel.js"></script>
+    <script src="js/Juego/Caja.js"></script>
+    <script src="js/Juego/ButtonRestart.js"></script>
+    <script src="js/Juego//Cronometro.js"></script>
     <script src="js/Juego/Turno.js"></script>
     <script src="js/Juego/Tablero.js"></script>
     <script src="js/Juego/Casillero.js"></script>
