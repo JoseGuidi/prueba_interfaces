@@ -1072,7 +1072,9 @@ footer .bot {
   .bannerCompu .informacion svg {
     position: absolute;
   }
-
+  .informacion h2{
+   text-align:center;  
+  }
   .bannerCompu .informacion .mensaje {
     z-index: 10;
     display: inline-flex;
