@@ -988,6 +988,11 @@ footer {
 .secciones_footer li svg {
   margin-right: 5px;
 }
+#icon-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
 .redes_footer {
   display: flex;
   flex-direction: column;
@@ -1337,6 +1342,7 @@ section.breadcrumb ul li svg {
   padding: 10px;
   font-size: var(--body_bold_boton-font-size);
 }
+
 .formulario input:focus {
   color: var(--Negro);
   padding: 0 15px;
@@ -1360,6 +1366,28 @@ section.breadcrumb ul li svg {
   position: absolute;
 left: 7px;
 top: 5px;
+}
+
+.informacion{
+  padding: 20px;
+  
+  color:var(--BlancoS1);
+  width: 1080px;
+  background-color: var(--Primario);
+}
+.informacion *{
+  margin-top: 12px;
+  margin-bottom: 2px;
+}
+.galeria{
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  flex-direction:row;
+}
+.imgMuestra{
+  height: 250px;
+  width: 250px;
 }
 .comentario{
   display: flex;
@@ -1483,6 +1511,10 @@ div.informacion_extra{
 }
 .informacion_extra > div ul li p a{
   text-decoration: none;
+}
+.imgIconoAyuda{
+  height: 30px;
+  width: 30px;
 }
 
 /* fondo opacidad */

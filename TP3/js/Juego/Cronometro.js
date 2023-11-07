@@ -13,7 +13,7 @@ class Cronometro{
     }
     draw(){
         if(!this.terminoJuego){
-            this.ctx.fillStyle = "#566841"
+            this.ctx.fillStyle = "#eab676"
             this.ctx.fillRect(455,0,200,60)
             this.ctx.font="60px Helvetica";
             this.ctx.textAlign ="start"
