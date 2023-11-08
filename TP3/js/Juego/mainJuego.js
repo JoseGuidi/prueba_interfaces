@@ -2,7 +2,7 @@ let canvas = document.querySelector("canvas");
 let ctx = canvas.getContext("2d");
 let widthCanvas = canvas.width;
 let heightCanvas = canvas.height;
-
+console.log("Ga")
 const xInicialTablero = 345; // posicion inicial del tablero eje X
 const yInicialTablero = 195; // posicion inicial del tablero eje Y
 const tamanioFicha = 30;
