@@ -3,7 +3,7 @@ class ButtonRestart{
         this.posX = x;
         this.posY = y;
         this.img = new Image()
-        this.img.src = "../../../TP3/assets/images/Juego/restart.png"
+        this.img.src = "./../../../TP3/assets/images/Juego/restart.png"
         this.ctx = ctx;
     }
     draw(){
