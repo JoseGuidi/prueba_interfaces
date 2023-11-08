@@ -8,9 +8,9 @@ let cantFichasPorEquipo = ((nEnLinea + 2) * (nEnLinea + 3)) / 2;
 let tamanioFicha = 80; //datoHardcodeado, puede variar dependiendo de tamaño, de momento fijo
 let xInicialTablero = 345; // posicion inicial del tablero eje X
 let yInicialTablero = 195; // posicion inicial del tablero eje Y
-let imgViale = "../../TP3/assets/images/Juego/ficha_viale.png";
-let imgSamid = "../../TP3/assets/images/Juego/ficha_samid.png";
-const imgBackGround = "../../TP3/assets/images/Juego/fondoCanvas.jpg"
+let imgViale = "../../assets/images/Juego/ficha_viale.png";
+let imgSamid = "../../assets/images/Juego/ficha_samid.png";
+const imgBackGround = "../../assets/images/Juego/fondoCanvas.jpg"
 let tablero = new Tablero(ctx, nEnLinea, tamanioFicha);
 let turno = new Turno();
 

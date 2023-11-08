@@ -17,14 +17,12 @@ class ContenedorFichas{
             let posIn = {"x":this.getNumeroRandom(minimoX,maximoX),"y":this.getNumeroRandom(mininmoY,maximoY)}
             let fic = new Ficha(posIn.x,posIn.y,contexto,equipo,posIn,jugador)
             this.fichas.push(fic)
-            if(this.jugador==2){
-                console.log(posX,posY)
-            }
+            
         }
         this.caja = new Caja(ctx,posX,posY,230,330);
         
         this.flechaTurno = new Image();
-        this.flechaTurno.src = "../../TP3/assets/images/Juego/flecha.png"
+        this.flechaTurno.src = "./../../assets/images/Juego/flecha.png"
 
     }
     draw(turno){
