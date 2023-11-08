@@ -1252,22 +1252,23 @@ section.breadcrumb ul li svg {
   justify-content: space-between;
   align-items: center;
 }
-.juego .bot > div button{
+.juego .bot > div button,.btnDeCompartir{
   transition: background-color .5s, transform .5s,border .5s;
+  background-color: var(--PrimarioS2) !important;
 }
-.juego .bot > div button svg path{
+.juego .bot > div button svg path,.btnDeCompartir svg path{
   transition: fill .5s;
 }
-.juego .bot > div button span{
+.juego .bot > div button span,.btnDeCompartir span{
   transition: color .5s;
 }
 
-.juego .bot > div button:hover{
+.juego .bot > div button:hover,.btnDeCompartir:hover{
   background-color: var(--PrimarioS2);
   transform: skew(-6deg);
   border: 1px solid var(--Acento);
 }
-.juego .bot > div button:hover svg path,.juego .bot > div button:hover span{
+.juego .bot > div button:hover svg path,.juego .bot > div button:hover span,.btnDeCompartir:hover svg path,.btnDeCompartir:hover span{
   fill: var(--Acento);
   color: var(--Acento);
 }
@@ -1377,8 +1378,8 @@ top: 5px;
   width: 1080px;
   background-color: var(--Primario);
 }
-.informacion *{
-  margin-top: 12px;
+.informacion > *{
+  margin-top: 20px;
   margin-bottom: 2px;
 }
 .galeria{
