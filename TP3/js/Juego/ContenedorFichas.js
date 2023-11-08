@@ -22,7 +22,7 @@ class ContenedorFichas{
         this.caja = new Caja(ctx,posX,posY,230,330);
         
         this.flechaTurno = new Image();
-        this.flechaTurno.src = "./../../assets/images/Juego/flecha.png"
+        this.flechaTurno.src = "../../../TP3/assets/images/Juego/flecha.png"
 
     }
     draw(turno){

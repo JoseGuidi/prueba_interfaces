@@ -6,7 +6,7 @@ class Caja{
         this.ancho = ancho;
         this.largo = largo
         this.img = new Image();
-        this.img.src = "./../../assets/images/Juego/caja.png";
+        this.img.src = "../../../TP3/assets/images/Juego/caja.png";
     }
     draw(){
 
