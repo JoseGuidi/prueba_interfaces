@@ -2,13 +2,13 @@ let canvas = document.querySelector("canvas");
 let ctx = canvas.getContext("2d");
 let widthCanvas = canvas.width;
 let heightCanvas = canvas.height;
-console.log("prueba")
+console.log("prueba2")
 const xInicialTablero = 345; // posicion inicial del tablero eje X
 const yInicialTablero = 195; // posicion inicial del tablero eje Y
 const tamanioFicha = 30;
-let imgViale = "../../../../pruebas_interfaces/TP3/assets/images/Juego/ficha_viale.png";
-let imgSamid = "../../../../pruebas_interfaces/TP3/assets/images/Juego/ficha_samid.png";
-const imgBackGround = "../../../../pruebas_interfaces/TP3/assets/images/Juego/vialesamiddisney.jpeg";
+let imgViale = "../../../../prueba_interfaces/TP3/assets/images/Juego/ficha_viale.png";
+let imgSamid = "../../../../prueba_interfaces/TP3/assets/images/Juego/ficha_samid.png";
+const imgBackGround = "../../../../prueba_interfaces/TP3/assets/images/Juego/vialesamiddisney.jpeg";
 
 document.querySelector("#btnJugar").addEventListener("click", (e) => {
   e.preventDefault();
@@ -43,13 +43,13 @@ document.querySelector("#btnJugar").addEventListener("click", (e) => {
     juego.generateContenedorDeFichas(
       0,
       anchoContenedor,
-      "../../../../pruebas_interfaces/TP3/assets/images/Juego/"+vS,
+      "../../../../prueba_interfaces/TP3/assets/images/Juego/"+vS,
       1
     );
     juego.generateContenedorDeFichas(
       widthCanvas - 235,
       anchoContenedor,
-      "../../../../pruebas_interfaces/TP3/assets/images/Juego/"+vV,
+      "../../../../prueba_interfaces/TP3/assets/images/Juego/"+vV,
       2
     );
 
